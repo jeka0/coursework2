@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using ServiceLayer;
 using DataAccessLayer;
 
 namespace Курсовой_проект_2
@@ -116,6 +116,8 @@ namespace Курсовой_проект_2
         {
             point2 = new Point(this.Location.X, this.Location.Y);
             Form1 form1 = new Form1();
+            presenter.authorizationView = form1;
+            form1.presenter = presenter;
             form1.Show();
             this.Close();
         }
@@ -160,25 +162,24 @@ namespace Курсовой_проект_2
             Error3.Hide();
             if (!(login.Text== "Введите логин"|| login.Text == ""|| pass.Text == "Введите пароль" || pass.Text == "" || textBox2.Text == "Введите имя" || textBox2.Text == "" || textBox3.Text == "Введите фамилию" || textBox3.Text == ""))
             {
-                try
-                {
-                    bool same = false, err=false, Tpass = false;
-                    Database.FileCheck(ref same, ref err, ref Tpass, login, pass);
+                //try
+               // {
+                    bool err=false;
                     if (!err)
                     {
-                        if (!same)
+                        if (presenter.UserRegistration())
                         {
-                            Database.CreateNewUser(login.Text, pass.Text, textBox2.Text, textBox3.Text);
-                            MainForm.Login = login.Text;
-                            MainForm.pass = pass.Text;
+                            presenter.CreateNewUser();
                             MainForm main = new MainForm();
+                            presenter.mainView = main;
+                            main.presenter = presenter;
                             main.Show();
                             this.Close();
                         }
                         else Error2.Show();
                     }else Error3.Show();
-                }
-                catch { Error0.Show(); }
+               // }
+                //catch { Error0.Show(); }
             }
             else Error1.Show();
         }

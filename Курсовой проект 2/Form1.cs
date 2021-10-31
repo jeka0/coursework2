@@ -31,7 +31,6 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error3.Hide();
-            Error4.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -111,7 +110,9 @@ namespace Курсовой_проект_2
         private void textBox1_Click(object sender, EventArgs e)
         {
             point2 = new Point(this.Location.X, this.Location.Y);
-            Form2 form2 = new Form2();
+            Form2 form2 =  new Form2();
+            presenter.registrationView = form2;
+            form2.presenter = presenter;
             form2.Show();
             this.Close();
         }
@@ -122,26 +123,20 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error3.Hide();
-            Error4.Hide();
             if (!(login.Text == "" || login.Text == "Введите логин" || pass.Text == "" || pass.Text == "Введите пароль"))
             {
                 try 
                 {
-                    bool same = false, err = false, Tpass = false;
-                    Database.FileCheck(ref same, ref err, ref Tpass, login, pass);
+                    bool err = false;
                     if (!err)
                     {
-                        if (same)
+                        if (presenter.UserAuthorization())
                         {
-                            if (Tpass)
-                            {
-                                MainForm.Login = login.Text;
-                                MainForm.pass = pass.Text;
-                                MainForm main = new MainForm();
-                                main.Show();
-                                this.Close();
-                            }
-                            else Error4.Show();
+                            MainForm main = new MainForm();
+                            presenter.mainView = main;
+                            main.presenter = presenter;
+                            main.Show();
+                            this.Close();
                         }
                         else Error2.Show();
                     }

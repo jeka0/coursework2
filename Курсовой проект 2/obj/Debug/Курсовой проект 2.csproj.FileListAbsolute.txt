@@ -15,3 +15,5 @@ D:\Курсовой проект 2\Курсовой проект 2\bin\Debug\Ser
 D:\Курсовой проект 2\Курсовой проект 2\bin\Debug\DataAccessLayer.pdb
 D:\Курсовой проект 2\Курсовой проект 2\bin\Debug\ServiceLayer.pdb
 D:\Курсовой проект 2\Курсовой проект 2\obj\Debug\Курсовой проект 2.csproj.CopyComplete
+D:\Курсовой проект 2\Курсовой проект 2\bin\Debug\BusinessLayer.dll
+D:\Курсовой проект 2\Курсовой проект 2\bin\Debug\BusinessLayer.pdb

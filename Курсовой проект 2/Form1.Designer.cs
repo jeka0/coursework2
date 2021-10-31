@@ -46,7 +46,6 @@ namespace Курсовой_проект_2
             this.Error2 = new System.Windows.Forms.Label();
             this.Error0 = new System.Windows.Forms.Label();
             this.Error3 = new System.Windows.Forms.Label();
-            this.Error4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,18 +230,18 @@ namespace Курсовой_проект_2
             this.Error2.BackColor = System.Drawing.Color.Red;
             this.Error2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error2.ForeColor = System.Drawing.Color.White;
-            this.Error2.Location = new System.Drawing.Point(12, 148);
+            this.Error2.Location = new System.Drawing.Point(12, 161);
             this.Error2.Name = "Error2";
-            this.Error2.Size = new System.Drawing.Size(152, 66);
+            this.Error2.Size = new System.Drawing.Size(152, 41);
             this.Error2.TabIndex = 20;
-            this.Error2.Text = "ОШИБКА: Аккаунт с таким логином не существует!!!!!!";
+            this.Error2.Text = "ОШИБКА: Неверный логин или пароль!!!!!!";
             // 
             // Error0
             // 
             this.Error0.BackColor = System.Drawing.Color.Red;
             this.Error0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error0.ForeColor = System.Drawing.Color.White;
-            this.Error0.Location = new System.Drawing.Point(12, 149);
+            this.Error0.Location = new System.Drawing.Point(12, 148);
             this.Error0.Name = "Error0";
             this.Error0.Size = new System.Drawing.Size(152, 79);
             this.Error0.TabIndex = 21;
@@ -253,22 +252,11 @@ namespace Курсовой_проект_2
             this.Error3.BackColor = System.Drawing.Color.Red;
             this.Error3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error3.ForeColor = System.Drawing.Color.White;
-            this.Error3.Location = new System.Drawing.Point(12, 149);
+            this.Error3.Location = new System.Drawing.Point(12, 148);
             this.Error3.Name = "Error3";
             this.Error3.Size = new System.Drawing.Size(152, 68);
             this.Error3.TabIndex = 22;
             this.Error3.Text = "ОШИБКА: Структура файла accounts.txt была нарушена!!!!!";
-            // 
-            // Error4
-            // 
-            this.Error4.BackColor = System.Drawing.Color.Red;
-            this.Error4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Error4.ForeColor = System.Drawing.Color.White;
-            this.Error4.Location = new System.Drawing.Point(12, 149);
-            this.Error4.Name = "Error4";
-            this.Error4.Size = new System.Drawing.Size(171, 66);
-            this.Error4.TabIndex = 23;
-            this.Error4.Text = "ОШИБКА: Для данного аккаунта был введен неверный пароль!!!!!!!";
             // 
             // Form1
             // 
@@ -276,7 +264,6 @@ namespace Курсовой_проект_2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Error4);
             this.Controls.Add(this.Error3);
             this.Controls.Add(this.Error0);
             this.Controls.Add(this.Error2);
@@ -325,7 +312,6 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label Error2;
         private System.Windows.Forms.Label Error0;
         private System.Windows.Forms.Label Error3;
-        private System.Windows.Forms.Label Error4;
     }
 }
 

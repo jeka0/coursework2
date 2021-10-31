@@ -45,9 +45,16 @@
     <Compile Include="Database.cs" />
     <Compile Include="IAuthorizationView.cs" />
     <Compile Include="IMainView.cs" />
+    <Compile Include="IModel.cs" />
     <Compile Include="IPresenter.cs" />
     <Compile Include="IRegistrationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{a5b8ae4b-3215-4b36-ac1f-91eaa62abb12}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
