@@ -12,9 +12,14 @@ using DataAccessLayer;
 
 namespace Курсовой_проект_2
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form, IRegistrationView
     {
         bool clu11 = true, clu22 = true;
+        public IPresenter presenter { get; set; }
+        public String GetLogin { get { return login.Text; } }
+        public String GetPassword { get { return pass.Text; } }
+        public String GetSurname { get { return textBox3.Text; } }
+        public String GetName { get { return textBox2.Text; } }
         public static Point point2 = new Point(500,300);
         public Form2()
         {
