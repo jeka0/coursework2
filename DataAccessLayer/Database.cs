@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
-namespace Курсовой_проект_2
+namespace DataAccessLayer
 {
-    class Database
+    public class Database
     {
         public static String[] ReadNameFromFile(String Login)
         {
@@ -46,13 +45,13 @@ namespace Курсовой_проект_2
             Write.WriteLine(login + ' ' + pass);
             Write.Close();
             Directory.CreateDirectory("Data/" + login);
-            WriteUserData(login, pass, Name, Name2,true);
+            WriteUserData(login, pass, Name, Name2, true);
             File.Create("Data/" + login + "/Expenses.txt").Close();
             File.Create("Data/" + login + "/Income.txt").Close();
             File.Create("Data/" + login + "/Months.txt").Close();
         }
 
-        public static void WriteUserData(String login, String pass, String Name, String Name2,bool flag=false)
+        public static void WriteUserData(String login, String pass, String Name, String Name2, bool flag = false)
         {
             StreamWriter WR = new StreamWriter("Data/" + login + '/' + login + ".txt");
             WR.WriteLine(login);
@@ -69,12 +68,12 @@ namespace Курсовой_проект_2
         public static void WriteNewCategorie(String login, ComboBox categories)
         {
             StringBuilder categorie = new StringBuilder();
-            for (int i=0; i<categories.Items.Count;i++)
+            for (int i = 0; i < categories.Items.Count; i++)
             {
                 categorie.Append(categories.Items[i]);
-                if(i!= categories.Items.Count-1) categorie.Append('|');
+                if (i != categories.Items.Count - 1) categorie.Append('|');
             }
-            StreamWriter WR = new StreamWriter("Data/" + login + '/' + login + ".txt",true);
+            StreamWriter WR = new StreamWriter("Data/" + login + '/' + login + ".txt", true);
             WR.WriteLine(categorie);
             WR.Close();
         }
@@ -100,7 +99,7 @@ namespace Курсовой_проект_2
 
         }
 
-        public static void ReadCategoriesFromFile(String login ,ComboBox categories, ComboBox categories2)
+        public static void ReadCategoriesFromFile(String login, ComboBox categories, ComboBox categories2)
         {
             StreamReader read = new StreamReader("Data/" + login + '/' + login + ".txt");
             int i = 0;
