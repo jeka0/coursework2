@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using BusinessLayer;
 
-namespace Курсовой_проект_2
+namespace ServiceLayer
 {
     class ApplicationWork
     {
