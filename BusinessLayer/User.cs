@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class Class1
+    public class User
     {
+        public String Login;
+        public String Password;
+        public String Surname;
+        public String Name;
     }
 }
