@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ServiceLayer;
 
 namespace Курсовой_проект_2
 {
@@ -16,7 +17,9 @@ namespace Курсовой_проект_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new Form1().Show();
+            var view = new Form1();
+            new ApplicationWork(new MainForm(), view, new Form2());
+            view.Show();
             Application.Run();
         }
     }

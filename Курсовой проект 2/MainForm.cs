@@ -12,13 +12,56 @@ using ServiceLayer;
 
 namespace Курсовой_проект_2
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IMainView
     {
         public static String Login;
         public static String pass;
         private static String[] NameMas;
         private static TextBox[] Old = new TextBox[2] {null,null };
         private int[] index = new int[2] { 10, 10 };
+        public IPresenter presenter { get; set; }
+        public String GetDate { 
+            get 
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Date.Value.Day.ToString() + '.' + Date.Value.Month.ToString() + '.' + Date.Value.Year.ToString();
+                else
+                if (indx == 1) return Date2.Value.Day.ToString() + '.' + Date2.Value.Month.ToString() + '.' + Date2.Value.Year.ToString(); else return null;
+            } }
+        public String GetTime { 
+            get 
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Time.Value.Hour.ToString() + ':' + Time.Value.Minute.ToString() + ':' + Time.Value.Second.ToString();
+                else
+                if (indx == 1) return Time2.Value.Hour.ToString() + ':' + Time2.Value.Minute.ToString() + ':' + Time2.Value.Second.ToString(); else return null;
+            } }
+        public String GetCategory { 
+            get 
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Categories.Text;
+                else
+                if (indx == 1) return Categories2.Text; else return null;
+            } }
+        public String GetComment {
+            get
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Comment.Text;
+                else
+                if (indx == 1) return Comment2.Text; else return null;
+            }
+        }
+        public String GetAmount {
+            get
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Amount.Text;
+                else
+                if (indx == 1) return Amount2.Text; else return null;
+            }
+        }
         public MainForm()
         {
             InitializeComponent();

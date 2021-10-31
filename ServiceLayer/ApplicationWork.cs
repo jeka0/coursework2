@@ -10,8 +10,20 @@ using DataAccessLayer;
 
 namespace ServiceLayer
 {
-    public class ApplicationWork
+    public class ApplicationWork: IPresenter
     {
+        public IMainView mainView { get; set; }
+        public IAuthorizationView authorizationView { get; set; }
+        public IRegistrationView registrationView { get; set; }
+        public ApplicationWork(IMainView mView, IAuthorizationView authorView, IRegistrationView regView)
+        {
+            mainView = mView;
+            mainView.presenter = this;
+            authorizationView = authorView;
+            authorizationView.presenter = this;
+            registrationView = regView;
+            registrationView.presenter = this;
+        }
         public static void AddNewElement(String login,ref TextBox Old, ref int index, Panel Screen, String DateStr, String TimeStr, String Categories, String Comment, String Amount, String file, bool Flag)
         {
             Point point = new Point(0, index);
