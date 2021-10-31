@@ -1,0 +1,6 @@
+D:\Курсовой проект 2\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\Курсовой проект 2\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

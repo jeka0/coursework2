@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using BusinessLayer;
+using DataAccessLayer;
 
 namespace ServiceLayer
 {
-    class ApplicationWork
+    public class ApplicationWork
     {
         public static void AddNewElement(String login,ref TextBox Old, ref int index, Panel Screen, String DateStr, String TimeStr, String Categories, String Comment, String Amount, String file, bool Flag)
         {
