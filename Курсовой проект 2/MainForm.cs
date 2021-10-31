@@ -14,12 +14,42 @@ namespace Курсовой_проект_2
 {
     public partial class MainForm : Form, IMainView
     {
-        public static String Login;
-        public static String pass;
-        private static String[] NameMas;
-        private static TextBox[] Old = new TextBox[2] {null,null };
-        private int[] index = new int[2] { 10, 10 };
         public IPresenter presenter { get; set; }
+        public String SetLogin { set { login0.Text = value; } }
+        public String SetSurname { set { Surname0.Text = value; } }
+        public String SetName { set { name0.Text = value; } }
+        public ComboBox GetCategories { get { return Categories; } }
+        public ComboBox GetCategories2 { get { return Categories2; } }
+        public int GetIndx { get { return tabControl1.SelectedIndex; } }
+        public Label GetLabel
+        {
+            get
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return NoExpenses;
+                else
+                if (indx == 1) return NoIncome; else return null;
+            }
+        }
+        public String GetNewCategory
+        {
+            get
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return NewCategories.Text;
+                else
+                if (indx == 1) return NewCategories2.Text; else return null;
+            }
+        }
+        public Panel GetScreen {
+            get
+            {
+                int indx = tabControl1.SelectedIndex;
+                if (indx == 0) return Screen;
+                else
+                if (indx == 1) return Screen2; else return null;
+            }
+         }
         public String GetDate { 
             get 
             {
@@ -78,13 +108,12 @@ namespace Курсовой_проект_2
             Date.ShowUpDown = true; Date2.ShowUpDown = true;
             Time.ShowUpDown = true; Time2.ShowUpDown = true;
             Categories.DropDownStyle = ComboBoxStyle.DropDownList; Categories2.DropDownStyle = ComboBoxStyle.DropDownList;
-            Database.ReadCategoriesFromFile(Login, Categories, Categories2);
+            presenter.LoadСategories();
             Categories.Text = "Общее"; Categories2.Text = "Общее";
-            NameMas = Database.ReadNameFromFile(Login);
-            login0.Text = Login; name0.Text = NameMas[0]; Surname0.Text = NameMas[1];
-            if (!Database.IsFileEmpty(Login, "Expenses")) { ApplicationWork.AddElementFromFile("Expenses", Login,ref Old[0], ref index[0], Screen); NoExpenses.Hide(); }
+            presenter.UpdateUserData();
+            presenter.LoadElements();
             tabControl1.SelectTab(1);
-            if (!Database.IsFileEmpty(Login, "Income")) { ApplicationWork.AddElementFromFile("Income", Login,ref Old[1], ref index[1], Screen2); NoIncome.Hide(); }
+            presenter.LoadElements();
             tabControl1.SelectTab(0);
 
         }
@@ -133,10 +162,8 @@ namespace Курсовой_проект_2
             Error3.Hide();
             if (!(Comment.Text == "" || Comment.Text == "Введите комментарий" || Amount.Text == "" || Amount.Text == "Введите сумму"))
             {
-                String DateStr = Date.Value.Day.ToString() + '.' + Date.Value.Month.ToString() + '.' + Date.Value.Year.ToString();
-                String TimeStr = Time.Value.Hour.ToString() + ':' + Time.Value.Minute.ToString() + ':' + Time.Value.Second.ToString();
                 NoExpenses.Hide();
-                ApplicationWork.AddNewElement(Login, ref Old[0], ref index[0], Screen, DateStr, TimeStr, Categories.Text, Comment.Text, Amount.Text, "Expenses", true);
+                presenter.UpdateElements();
             }
             else Error3.Show();
         }
@@ -146,14 +173,15 @@ namespace Курсовой_проект_2
             Error3.Hide();
             if (!(NewCategories.Text == "" || NewCategories.Text == "Введите категорию"))
             {
-                if (!ApplicationWork.CheckCategories(NewCategories.Text, Categories))
+                if (!presenter.CheckCategories())
                 {
                     Error1.Hide();
                     Error2.Hide();
                     Categories.Items.Add(NewCategories.Text);
-                    Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
-                    Database.WriteNewCategorie(Login, Categories);
-                    Database.WriteNewCategorie(Login, Categories2);
+                    presenter.AddCategory();
+                    //Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
+                    //Database.WriteNewCategorie(Login, Categories);
+                    //Database.WriteNewCategorie(Login, Categories2);
                 }
                 else Error1.Show();
             }
@@ -187,10 +215,8 @@ namespace Курсовой_проект_2
             Error3.Hide();
             if (!(Comment2.Text == "" || Comment2.Text == "Введите комментарий" || Amount2.Text == "" || Amount2.Text == "Введите сумму"))
             {
-                String DateStr = Date2.Value.Day.ToString() + '.' + Date2.Value.Month.ToString() + '.' + Date2.Value.Year.ToString();
-                String TimeStr = Time2.Value.Hour.ToString() + ':' + Time2.Value.Minute.ToString() + ':' + Time2.Value.Second.ToString();
                 NoIncome.Hide();
-                ApplicationWork.AddNewElement(Login, ref Old[1], ref index[1], Screen2, DateStr, TimeStr, Categories2.Text, Comment2.Text, Amount2.Text, "Income", true);
+                presenter.UpdateElements();
             }
             else Error3.Show();
         }
@@ -200,14 +226,15 @@ namespace Курсовой_проект_2
             Error3.Hide();
             if (!(NewCategories2.Text == "" || NewCategories2.Text == "Введите категорию"))
             {
-                if (!ApplicationWork.CheckCategories(NewCategories2.Text, Categories2))
+                if (!presenter.CheckCategories())
                 {
                     Error1.Hide();
                     Error2.Hide();
                     Categories2.Items.Add(NewCategories2.Text);
-                    Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
-                    Database.WriteNewCategorie(Login, Categories);
-                    Database.WriteNewCategorie(Login, Categories2);
+                    presenter.AddCategory();
+                    //Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
+                    //Database.WriteNewCategorie(Login, Categories);
+                    //Database.WriteNewCategorie(Login, Categories2);
                 }
                 else Error1.Show();
             }

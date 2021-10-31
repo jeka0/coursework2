@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
@@ -13,6 +14,15 @@ namespace DataAccessLayer
         String GetTime { get; }
         String GetCategory { get; }
         String GetComment { get; }
-        String GetAmount{ get; }
-}
+        String GetAmount { get; }
+        String SetLogin { set; }
+        String SetSurname { set; }
+        String SetName { set; }
+        ComboBox GetCategories { get; }
+        ComboBox GetCategories2 { get; }
+        int GetIndx { get; }
+        Panel GetScreen { get; }
+        String GetNewCategory { get; }
+        Label GetLabel { get; }
+    }
 }

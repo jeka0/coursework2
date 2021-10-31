@@ -4,3 +4,6 @@ D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.csp
 D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\Курсовой проект 2\DataAccessLayer\bin\Debug\BusinessLayer.dll
+D:\Курсовой проект 2\DataAccessLayer\bin\Debug\BusinessLayer.pdb
+D:\Курсовой проект 2\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete

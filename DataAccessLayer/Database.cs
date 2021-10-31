@@ -5,112 +5,60 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using BusinessLayer;
+using System.Xml.Serialization;
 
 namespace DataAccessLayer
 {
-    public class Database
+    public class Database : IModel
     {
-        public static String[] ReadNameFromFile(String Login)
+        List<User> users;
+        public List<User> GetUsers { get { return users; } }
+        public Database(String file)
         {
-            StreamReader read = new StreamReader("Data/" + Login + '/' + Login + ".txt");
-            for (int i = 0; i < 2; i++) read.ReadLine();
-            String[] Mas = read.ReadLine().Split();
-            read.Close();
-            return Mas;
+            ReadUsersXml("Data/"+file);
         }
-
-        public static void AddElementInFile(String File, String Login, String Date, String Time, String Categories, String Comment, String Amount)
+        public void SaveXml<T>(String file, T item)
         {
-            StreamWriter write = new StreamWriter("Data/" + Login + '/' + File + ".txt", true);
-            write.WriteLine(Date + '|' + Time + '|' + Categories + '|' + Comment + '|' + Amount);
-            write.Close();
-        }
-
-        public static void FileCheck(ref bool same, ref bool err, ref bool Tpass, TextBox login, TextBox pass)
-        {
-            StreamReader Read = new StreamReader("Data/accounts.txt");
-            while (!Read.EndOfStream)
+            XmlSerializer formatter = new XmlSerializer(typeof(T));
+            using (FileStream fs = new FileStream(file, FileMode.Create))
             {
-                string str = Read.ReadLine();
-                string[] StrMas = str.Split();
-                if (StrMas.Length != 2 || StrMas[1] == "") { err = true; break; }
-                if (StrMas[0] == login.Text) { same = true; if (StrMas[1] == pass.Text) Tpass = true; break; }
+                formatter.Serialize(fs, item);
             }
-            Read.Close();
         }
-
-        public static void CreateNewUser(String login, String pass, String Name, String Name2)
+        public void CreateFolder(String folder)
         {
-            StreamWriter Write = new StreamWriter("Data/accounts.txt", true);
-            Write.WriteLine(login + ' ' + pass);
-            Write.Close();
-            Directory.CreateDirectory("Data/" + login);
-            WriteUserData(login, pass, Name, Name2, true);
-            File.Create("Data/" + login + "/Expenses.txt").Close();
-            File.Create("Data/" + login + "/Income.txt").Close();
-            File.Create("Data/" + login + "/Months.txt").Close();
+            Directory.CreateDirectory(folder);
         }
-
-        public static void WriteUserData(String login, String pass, String Name, String Name2, bool flag = false)
+        public void ReadUsersXml(String file)
         {
-            StreamWriter WR = new StreamWriter("Data/" + login + '/' + login + ".txt");
-            WR.WriteLine(login);
-            WR.WriteLine(pass);
-            WR.WriteLine(Name + ' ' + Name2);
-            if (flag)
+            if (File.Exists(file))
             {
-                WR.WriteLine("Общее");
-                WR.WriteLine("Общее");
+                XmlSerializer formatter = new XmlSerializer(typeof(List<User>));
+                using (FileStream fs = new FileStream(file, FileMode.Open))
+                {
+                    users = (List<User>)formatter.Deserialize(fs);
+                }
             }
-            WR.Close();
+            else { users = new List<User>(); SaveXml<List<User>>(file, users); }
         }
-
-        public static void WriteNewCategorie(String login, ComboBox categories)
+        public Elements ReadElementsXml(String file)
         {
-            StringBuilder categorie = new StringBuilder();
-            for (int i = 0; i < categories.Items.Count; i++)
+            if (File.Exists(file))
             {
-                categorie.Append(categories.Items[i]);
-                if (i != categories.Items.Count - 1) categorie.Append('|');
+                XmlSerializer formatter = new XmlSerializer(typeof(Elements));
+                using (FileStream fs = new FileStream(file, FileMode.Open))
+                {
+                    return (Elements)formatter.Deserialize(fs);
+                }
             }
-            StreamWriter WR = new StreamWriter("Data/" + login + '/' + login + ".txt", true);
-            WR.WriteLine(categorie);
-            WR.Close();
-        }
-        public static bool IsFileEmpty(String login, String File)
-        {
-            bool Flag = true;
-            StreamReader read = new StreamReader("Data/" + login + '/' + File + ".txt");
-            if (!read.EndOfStream) Flag = false;
-            read.Close();
-            return Flag;
-        }
-
-        public static List<String> ReadAllFile(String File)
-        {
-            List<String> elements = new List<string>();
-            StreamReader read = new StreamReader(File);
-            while (!read.EndOfStream)
+            else 
             {
-                elements.Add(read.ReadLine());
+                var elements = new Elements();
+                elements.categories.Add("Общее");
+                SaveXml<Elements>(file, elements);
+                return elements;
             }
-            read.Close();
-            return elements;
-
-        }
-
-        public static void ReadCategoriesFromFile(String login, ComboBox categories, ComboBox categories2)
-        {
-            StreamReader read = new StreamReader("Data/" + login + '/' + login + ".txt");
-            int i = 0;
-            while (!read.EndOfStream)
-            {
-                if (i == 3) categories.Items.AddRange(read.ReadLine().Split('|'));
-                else if (i == 4) categories2.Items.AddRange(read.ReadLine().Split('|'));
-                else read.ReadLine();
-                i++;
-            }
-            read.Close();
         }
     }
 }

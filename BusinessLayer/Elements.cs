@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class Spending
+    public class Elements
     {
         public List<String> categories = new List<String>();
         public List<Item> items = new List<Item>();
