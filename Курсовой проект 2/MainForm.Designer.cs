@@ -90,6 +90,8 @@ namespace Курсовой_проект_2
             this.Error1 = new System.Windows.Forms.Label();
             this.Error2 = new System.Windows.Forms.Label();
             this.Error3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -760,7 +762,7 @@ namespace Курсовой_проект_2
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(1069, 123);
+            this.label13.Location = new System.Drawing.Point(1052, 104);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(117, 29);
             this.label13.TabIndex = 21;
@@ -770,9 +772,9 @@ namespace Курсовой_проект_2
             // 
             this.login0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login0.ForeColor = System.Drawing.Color.White;
-            this.login0.Location = new System.Drawing.Point(1040, 161);
+            this.login0.Location = new System.Drawing.Point(1049, 161);
             this.login0.Name = "login0";
-            this.login0.Size = new System.Drawing.Size(182, 29);
+            this.login0.Size = new System.Drawing.Size(169, 29);
             this.login0.TabIndex = 22;
             this.login0.Text = "login";
             this.login0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -781,9 +783,9 @@ namespace Курсовой_проект_2
             // 
             this.name0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name0.ForeColor = System.Drawing.Color.White;
-            this.name0.Location = new System.Drawing.Point(1040, 222);
+            this.name0.Location = new System.Drawing.Point(1050, 222);
             this.name0.Name = "name0";
-            this.name0.Size = new System.Drawing.Size(182, 29);
+            this.name0.Size = new System.Drawing.Size(168, 29);
             this.name0.TabIndex = 23;
             this.name0.Text = "name";
             this.name0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -792,9 +794,9 @@ namespace Курсовой_проект_2
             // 
             this.Surname0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Surname0.ForeColor = System.Drawing.Color.White;
-            this.Surname0.Location = new System.Drawing.Point(1040, 254);
+            this.Surname0.Location = new System.Drawing.Point(1050, 254);
             this.Surname0.Name = "Surname0";
-            this.Surname0.Size = new System.Drawing.Size(182, 29);
+            this.Surname0.Size = new System.Drawing.Size(168, 29);
             this.Surname0.TabIndex = 24;
             this.Surname0.Text = "Surname";
             this.Surname0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -832,6 +834,24 @@ namespace Курсовой_проект_2
             this.Error3.TabIndex = 27;
             this.Error3.Text = "ОШИБКА: Строка комментариев или суммы не заполнена!!!!!!!!";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(12, 123);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(186, 437);
+            this.panel2.TabIndex = 28;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(1046, 123);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(176, 437);
+            this.panel3.TabIndex = 29;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -850,7 +870,10 @@ namespace Курсовой_проект_2
             this.Controls.Add(this.Income);
             this.Controls.Add(this.Expenses);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -931,5 +954,7 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label Error1;
         private System.Windows.Forms.Label Error2;
         private System.Windows.Forms.Label Error3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -179,9 +179,6 @@ namespace Курсовой_проект_2
                     Error2.Hide();
                     Categories.Items.Add(NewCategories.Text);
                     presenter.AddCategory();
-                    //Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
-                    //Database.WriteNewCategorie(Login, Categories);
-                    //Database.WriteNewCategorie(Login, Categories2);
                 }
                 else Error1.Show();
             }
@@ -232,9 +229,6 @@ namespace Курсовой_проект_2
                     Error2.Hide();
                     Categories2.Items.Add(NewCategories2.Text);
                     presenter.AddCategory();
-                    //Database.WriteUserData(Login, pass, NameMas[0], NameMas[1]);
-                    //Database.WriteNewCategorie(Login, Categories);
-                    //Database.WriteNewCategorie(Login, Categories2);
                 }
                 else Error1.Show();
             }

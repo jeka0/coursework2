@@ -84,8 +84,9 @@ namespace ServiceLayer
         public void AddNewElement(Item item)
         {
             int ind = mainView.GetIndx;
+            Panel Screen = mainView.GetScreen;
             Point point = new Point(0, index[ind]);
-            if (Old != null) mainView.GetScreen.ScrollControlIntoView(Old[ind]);
+            if (Old != null) Screen.ScrollControlIntoView(Old[ind]);
             TextBox[] textBoxes = new TextBox[5];
             for (int i = 0; i < 5; i++)
             {
@@ -104,15 +105,15 @@ namespace ServiceLayer
                     case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.Amount + " руб."; break;
                 }
                 textBoxes[i].Location = point;
-                mainView.GetScreen.Controls.Add(textBoxes[i]);
             }
-            mainView.GetScreen.ScrollControlIntoView(textBoxes[0]);
-            mainView.GetLabel.Hide();
+            Screen.Controls.AddRange(textBoxes);
+            Screen.ScrollControlIntoView(textBoxes[0]);
             Old[ind] = textBoxes[0];
             if (index[ind] < 430) index[ind] += 30; else if (index[ind] == 430) index[ind] += 13;
         }
         public void UpdateElements()
         {
+            mainView.GetLabel.Hide();
             Elements elements=null;String file = null;
             int ind = mainView.GetIndx;
             if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income;file = "Data/" + SelectedUser.Login + "/Income.xml"; }
@@ -123,12 +124,14 @@ namespace ServiceLayer
         }
         public void LoadElements()
         {
+            mainView.GetLabel.Hide();
             Elements elements=null;
             int ind = mainView.GetIndx;
             if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            foreach (Item item in elements.items)
+            List<Item> list = elements.items;
+            for (int i = 0; i < list.Count && i<23;i++)
             {
-                AddNewElement(item);
+                AddNewElement(list[i]);
             }
         }
         public bool CheckCategories()
