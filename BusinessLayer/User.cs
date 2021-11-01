@@ -12,5 +12,10 @@ namespace BusinessLayer
         public String Password;
         public String Surname;
         public String Name;
+        public double Money;
+        public void CalculateBalance(double itemvalue)
+        {
+            Money += itemvalue;
+        }
     }
 }

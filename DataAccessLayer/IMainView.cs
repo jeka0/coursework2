@@ -14,7 +14,8 @@ namespace DataAccessLayer
         String GetTime { get; }
         String GetCategory { get; }
         String GetComment { get; }
-        String GetAmount { get; }
+        String SetSum { set; }
+        double GetAmount { get; }
         String SetLogin { set; }
         String SetSurname { set; }
         String SetName { set; }

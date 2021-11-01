@@ -92,12 +92,17 @@ namespace Курсовой_проект_2
             this.Error3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelSum = new System.Windows.Forms.Label();
+            this.labelAccountBalance = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Screen.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Screen2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -770,20 +775,22 @@ namespace Курсовой_проект_2
             // 
             // login0
             // 
+            this.login0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.login0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login0.ForeColor = System.Drawing.Color.White;
-            this.login0.Location = new System.Drawing.Point(1049, 161);
+            this.login0.Location = new System.Drawing.Point(2, 66);
             this.login0.Name = "login0";
-            this.login0.Size = new System.Drawing.Size(169, 29);
+            this.login0.Size = new System.Drawing.Size(169, 33);
             this.login0.TabIndex = 22;
             this.login0.Text = "login";
-            this.login0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.login0.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // name0
             // 
+            this.name0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.name0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name0.ForeColor = System.Drawing.Color.White;
-            this.name0.Location = new System.Drawing.Point(1050, 222);
+            this.name0.Location = new System.Drawing.Point(3, 169);
             this.name0.Name = "name0";
             this.name0.Size = new System.Drawing.Size(168, 29);
             this.name0.TabIndex = 23;
@@ -792,9 +799,11 @@ namespace Курсовой_проект_2
             // 
             // Surname0
             // 
+            this.Surname0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Surname0.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Surname0.ForeColor = System.Drawing.Color.White;
-            this.Surname0.Location = new System.Drawing.Point(1050, 254);
+            this.Surname0.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Surname0.Location = new System.Drawing.Point(3, 130);
             this.Surname0.Name = "Surname0";
             this.Surname0.Size = new System.Drawing.Size(168, 29);
             this.Surname0.TabIndex = 24;
@@ -828,11 +837,11 @@ namespace Курсовой_проект_2
             this.Error3.BackColor = System.Drawing.Color.Red;
             this.Error3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error3.ForeColor = System.Drawing.Color.White;
-            this.Error3.Location = new System.Drawing.Point(16, 562);
+            this.Error3.Location = new System.Drawing.Point(22, 548);
             this.Error3.Name = "Error3";
-            this.Error3.Size = new System.Drawing.Size(182, 61);
+            this.Error3.Size = new System.Drawing.Size(176, 75);
             this.Error3.TabIndex = 27;
-            this.Error3.Text = "ОШИБКА: Строка комментариев или суммы не заполнена!!!!!!!!";
+            this.Error3.Text = "ОШИБКА: Строка суммы не заполнена или в нее введено неверное значение!!!!!!!!";
             // 
             // panel2
             // 
@@ -847,10 +856,62 @@ namespace Курсовой_проект_2
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.labelAccountBalance);
+            this.panel3.Controls.Add(this.labelSum);
+            this.panel3.Controls.Add(this.login0);
+            this.panel3.Controls.Add(this.name0);
+            this.panel3.Controls.Add(this.Surname0);
             this.panel3.Location = new System.Drawing.Point(1046, 123);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 437);
             this.panel3.TabIndex = 29;
+            // 
+            // labelSum
+            // 
+            this.labelSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSum.ForeColor = System.Drawing.Color.White;
+            this.labelSum.Location = new System.Drawing.Point(3, 251);
+            this.labelSum.Name = "labelSum";
+            this.labelSum.Size = new System.Drawing.Size(168, 29);
+            this.labelSum.TabIndex = 30;
+            this.labelSum.Text = "Sum";
+            this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAccountBalance
+            // 
+            this.labelAccountBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAccountBalance.ForeColor = System.Drawing.Color.White;
+            this.labelAccountBalance.Location = new System.Drawing.Point(3, 200);
+            this.labelAccountBalance.Name = "labelAccountBalance";
+            this.labelAccountBalance.Size = new System.Drawing.Size(168, 51);
+            this.labelAccountBalance.TabIndex = 30;
+            this.labelAccountBalance.Text = "Остаток на счете:";
+            this.labelAccountBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(3, 99);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(168, 31);
+            this.label26.TabIndex = 31;
+            this.label26.Text = "Фамилия имя:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(37, 35);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 31);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "Логин:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -861,9 +922,6 @@ namespace Курсовой_проект_2
             this.Controls.Add(this.Error3);
             this.Controls.Add(this.Error2);
             this.Controls.Add(this.Error1);
-            this.Controls.Add(this.Surname0);
-            this.Controls.Add(this.name0);
-            this.Controls.Add(this.login0);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.Report);
             this.Controls.Add(this.History);
@@ -887,6 +945,7 @@ namespace Курсовой_проект_2
             this.tabPage2.PerformLayout();
             this.Screen2.ResumeLayout(false);
             this.Screen2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -956,5 +1015,9 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label Error3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelSum;
+        private System.Windows.Forms.Label labelAccountBalance;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }

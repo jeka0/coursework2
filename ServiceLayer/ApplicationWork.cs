@@ -80,6 +80,7 @@ namespace ServiceLayer
             mainView.SetLogin = SelectedUser.Login;
             mainView.SetName = SelectedUser.Name;
             mainView.SetSurname = SelectedUser.Surname;
+            UpdateSum();
         }
         public void AddNewElement(Item item)
         {
@@ -102,7 +103,7 @@ namespace ServiceLayer
                     case 1: textBoxes[i].Size = new Size(97, 24); point.X = 120; textBoxes[i].Text = item.Time; break;
                     case 2: textBoxes[i].Size = new Size(165, 24); point.X = 223; textBoxes[i].Text = item.Category; break;
                     case 3: textBoxes[i].Size = new Size(291, 24); point.X = 394; textBoxes[i].Text = item.Comment; break;
-                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.Amount + " руб."; break;
+                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.Amount.ToString() + " руб."; break;
                 }
                 textBoxes[i].Location = point;
             }
@@ -117,19 +118,24 @@ namespace ServiceLayer
             Elements elements=null;String file = null;
             int ind = mainView.GetIndx;
             if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income;file = "Data/" + SelectedUser.Login + "/Income.xml"; }
-            Item item = new Item() { Date = mainView.GetDate, Time = mainView.GetTime, Category = mainView.GetCategory, Comment = mainView.GetComment, Amount = mainView.GetAmount };
+            double value = mainView.GetAmount;
+            SelectedUser.CalculateBalance(value);
+            Item item = new Item() { Date = mainView.GetDate, Time = mainView.GetTime, Category = mainView.GetCategory, Comment = mainView.GetComment, Amount = value };
             elements.items.Add(item);
             AddNewElement(item);
             model.SaveXml<Elements>(file,elements);
+            model.SaveXml<List<User>>("Data/accounts.xml", users);
         }
         public void LoadElements()
         {
-            mainView.GetLabel.Hide();
             Elements elements=null;
             int ind = mainView.GetIndx;
             if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
             List<Item> list = elements.items;
-            for (int i = 0; i < list.Count && i<23;i++)
+            int i = 0;
+            if (list.Count > 23) i = list.Count - 23;
+            if(list.Count > 0) mainView.GetLabel.Hide();
+            for (; i < list.Count;i++)
             {
                 AddNewElement(list[i]);
             }
@@ -154,6 +160,12 @@ namespace ServiceLayer
             elements.categories.Add(mainView.GetNewCategory);
             model.SaveXml<Elements>(file, elements);
 
+        }
+        public void UpdateSum()
+        {
+            double value = SelectedUser.Money;
+            if(value < 100000000 && value > -100000000) mainView.SetSum = value.ToString("0.##") + " руб.";else
+            mainView.SetSum = value.ToString("0.## +E0") + " руб.";
         }
     }
 }

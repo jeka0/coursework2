@@ -18,6 +18,7 @@ namespace Курсовой_проект_2
         public String SetLogin { set { login0.Text = value; } }
         public String SetSurname { set { Surname0.Text = value; } }
         public String SetName { set { name0.Text = value; } }
+        public String SetSum { set { labelSum.Text = value; } }
         public ComboBox GetCategories { get { return Categories; } }
         public ComboBox GetCategories2 { get { return Categories2; } }
         public int GetIndx { get { return tabControl1.SelectedIndex; } }
@@ -83,13 +84,13 @@ namespace Курсовой_проект_2
                 if (indx == 1) return Comment2.Text; else return null;
             }
         }
-        public String GetAmount {
+        public double GetAmount {
             get
             {
                 int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Amount.Text;
+                if (indx == 0) return Convert.ToDouble(Amount.Text)*(-1);
                 else
-                if (indx == 1) return Amount2.Text; else return null;
+                if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
             }
         }
         public MainForm()
@@ -160,10 +161,12 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            if (!(Comment.Text == "" || Comment.Text == "Введите комментарий" || Amount.Text == "" || Amount.Text == "Введите сумму"))
+            double amount;
+            if (!(Amount.Text == "" || Amount.Text == "Введите сумму") && Double.TryParse(Amount.Text,out amount) && amount>0)
             {
                 NoExpenses.Hide();
                 presenter.UpdateElements();
+                presenter.UpdateSum();
             }
             else Error3.Show();
         }
@@ -210,10 +213,12 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            if (!(Comment2.Text == "" || Comment2.Text == "Введите комментарий" || Amount2.Text == "" || Amount2.Text == "Введите сумму"))
+            double amount;
+            if (!(Amount2.Text == "" || Amount2.Text == "Введите сумму") && Double.TryParse(Amount2.Text, out amount) && amount > 0)
             {
                 NoIncome.Hide();
                 presenter.UpdateElements();
+                presenter.UpdateSum();
             }
             else Error3.Show();
         }

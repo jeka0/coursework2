@@ -12,6 +12,6 @@ namespace BusinessLayer
         public String Time;
         public String Category;
         public String Comment;
-        public String Amount;
+        public double Amount;
     }
 }

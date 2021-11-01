@@ -24,5 +24,6 @@ namespace DataAccessLayer
         bool CheckCategories();
         User SelectedUser { get; }
         void AddCategory();
+        void UpdateSum();
     }
 }
