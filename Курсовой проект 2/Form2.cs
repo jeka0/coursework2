@@ -20,7 +20,7 @@ namespace Курсовой_проект_2
         public String GetPassword { get { return pass.Text; } }
         public String GetSurname { get { return textBox3.Text; } }
         public String GetName { get { return textBox2.Text; } }
-        public static Point point2 = new Point(500,300);
+        public Point point2;
         public Form2()
         {
             InitializeComponent();
@@ -114,8 +114,8 @@ namespace Курсовой_проект_2
         }
         private void textBox1_Click(object sender, EventArgs e)
         {
-            point2 = new Point(this.Location.X, this.Location.Y);
             Form1 form1 = new Form1();
+            form1.point2 = this.Location;
             presenter.authorizationView = form1;
             form1.presenter = presenter;
             form1.Show();
@@ -186,7 +186,7 @@ namespace Курсовой_проект_2
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.Location = Form1.point2;
+            this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();
             Error1.Hide();

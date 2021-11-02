@@ -106,6 +106,8 @@ namespace Курсовой_проект_2
             tabControl1.Multiline = true;
             Date.Format = DateTimePickerFormat.Short; Date2.Format = DateTimePickerFormat.Short;
             Time.Format = DateTimePickerFormat.Time; Time2.Format = DateTimePickerFormat.Time;
+            DateTime minDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1), maxDate = minDate.AddDays(DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month) - 1);
+            Date.MinDate = minDate; Date.MaxDate = maxDate; Date2.MinDate = minDate; Date2.MaxDate = maxDate;
             Date.ShowUpDown = true; Date2.ShowUpDown = true;
             Time.ShowUpDown = true; Time2.ShowUpDown = true;
             Categories.DropDownStyle = ComboBoxStyle.DropDownList; Categories2.DropDownStyle = ComboBoxStyle.DropDownList;

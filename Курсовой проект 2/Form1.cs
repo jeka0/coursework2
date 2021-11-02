@@ -17,6 +17,7 @@ namespace Курсовой_проект_2
         public IPresenter presenter { get; set; }
         public String GetLogin { get { return login.Text; } }
         public String GetPassword { get { return pass.Text; } }
+        public Point point2;
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Курсовой_проект_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Location = Form2.point2;
+            this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();
             Error1.Hide();
@@ -106,11 +107,10 @@ namespace Курсовой_проект_2
             if (e.KeyChar == ' ') e.Handled = true;
             if (e.KeyChar == 13) { Enter.PerformClick(); e.Handled = true; }
             }
-        public static Point point2;
         private void textBox1_Click(object sender, EventArgs e)
         {
-            point2 = new Point(this.Location.X, this.Location.Y);
             Form2 form2 =  new Form2();
+            form2.point2 = this.Location;
             presenter.registrationView = form2;
             form2.presenter = presenter;
             form2.Show();

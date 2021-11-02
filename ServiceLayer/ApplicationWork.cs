@@ -22,14 +22,8 @@ namespace ServiceLayer
         public List<User> users;
         private TextBox[] Old = new TextBox[2] { null, null };
         private int[] index = new int[2] { 10, 10 };
-        public ApplicationWork(IModel model, IAuthorizationView authorView/*, IMainView mView, IAuthorizationView authorView, IRegistrationView regView*/)
+        public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
-            /*mainView = mView;
-            mainView.presenter = this;
-            authorizationView = authorView;
-            authorizationView.presenter = this;
-            registrationView = regView;
-            registrationView.presenter = this;*/
             authorizationView = authorView;
             authorizationView.presenter = this;
             this.model = model;
@@ -37,8 +31,8 @@ namespace ServiceLayer
         }
         public void LoadСategories()
         {
-            Expenses = this.model.ReadElementsXml("Data/" + SelectedUser.Login + "/Expenses.xml");
-            Income = this.model.ReadElementsXml("Data/" + SelectedUser.Login + "/Income.xml");
+            Expenses = this.model.ReadElements("Data/" + SelectedUser.Login + "/Expenses.xml");
+            Income = this.model.ReadElements("Data/" + SelectedUser.Login + "/Income.xml");
             UpdateСategories();
         }
         public void UpdateСategories()
@@ -58,12 +52,12 @@ namespace ServiceLayer
             };
             SelectedUser = newUser;
             users.Add(newUser);
-            model.SaveXml<List<User>>("Data/accounts.xml", users);
+            model.Save<List<User>>("Data/accounts.xml", users);
             var elements = new Elements();
             elements.categories.Add("Общее");
             model.CreateFolder("Data/" + newUser.Login);
-            model.SaveXml<Elements>("Data/" + newUser.Login + "/Expenses.xml", elements);
-            model.SaveXml<Elements>("Data/" + newUser.Login + "/Income.xml", elements);
+            model.Save<Elements>("Data/" + newUser.Login + "/Expenses.xml", elements);
+            model.Save<Elements>("Data/" + newUser.Login + "/Income.xml", elements);
         }
         public bool UserAuthorization()
         {
@@ -82,7 +76,7 @@ namespace ServiceLayer
             mainView.SetSurname = SelectedUser.Surname;
             UpdateSum();
         }
-        public void AddNewElement(Item item)
+        private void AddNewElement(Item item)
         {
             int ind = mainView.GetIndx;
             Panel Screen = mainView.GetScreen;
@@ -103,7 +97,7 @@ namespace ServiceLayer
                     case 1: textBoxes[i].Size = new Size(97, 24); point.X = 120; textBoxes[i].Text = item.Time; break;
                     case 2: textBoxes[i].Size = new Size(165, 24); point.X = 223; textBoxes[i].Text = item.Category; break;
                     case 3: textBoxes[i].Size = new Size(291, 24); point.X = 394; textBoxes[i].Text = item.Comment; break;
-                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.Amount.ToString() + " руб."; break;
+                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.GetStrAmount(); break;
                 }
                 textBoxes[i].Location = point;
             }
@@ -123,34 +117,24 @@ namespace ServiceLayer
             Item item = new Item() { Date = mainView.GetDate, Time = mainView.GetTime, Category = mainView.GetCategory, Comment = mainView.GetComment, Amount = value };
             elements.items.Add(item);
             AddNewElement(item);
-            model.SaveXml<Elements>(file,elements);
-            model.SaveXml<List<User>>("Data/accounts.xml", users);
+            model.Save<Elements>(file,elements);
+            model.Save<List<User>>("Data/accounts.xml", users);
         }
         public void LoadElements()
         {
             Elements elements=null;
             int ind = mainView.GetIndx;
             if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            List<Item> list = elements.items;
-            int i = 0;
-            if (list.Count > 23) i = list.Count - 23;
-            if(list.Count > 0) mainView.GetLabel.Hide();
-            for (; i < list.Count;i++)
-            {
-                AddNewElement(list[i]);
-            }
+            int i = 0, count = elements.items.Count;
+            if (count > 0) { mainView.GetLabel.Hide(); if (count > 23) i = count - 23; }
+            for (; i < count; i++)AddNewElement(elements.items[i]);
         }
         public bool CheckCategories()
         {
             Elements elements = null;
             int ind = mainView.GetIndx;
             if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            bool Flag = false;
-            for (int i = 0; i < elements.categories.Count; i++)
-            {
-                if (mainView.GetNewCategory == elements.categories[i].ToString()) { Flag = true; break; }
-            }
-            return Flag;
+            return elements.CheckCategories(mainView.GetNewCategory);
         }
         public void AddCategory()
         {
@@ -158,14 +142,12 @@ namespace ServiceLayer
             int ind = mainView.GetIndx;
             if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income; file = "Data/" + SelectedUser.Login + "/Income.xml"; }
             elements.categories.Add(mainView.GetNewCategory);
-            model.SaveXml<Elements>(file, elements);
+            model.Save<Elements>(file, elements);
 
         }
         public void UpdateSum()
         {
-            double value = SelectedUser.Money;
-            if(value < 100000000 && value > -100000000) mainView.SetSum = value.ToString("0.##") + " руб.";else
-            mainView.SetSum = value.ToString("0.## +E0") + " руб.";
+            mainView.SetSum = SelectedUser.GetStrAmount();
         }
     }
 }

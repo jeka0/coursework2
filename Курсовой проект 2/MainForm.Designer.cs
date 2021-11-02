@@ -92,10 +92,10 @@ namespace Курсовой_проект_2
             this.Error3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelSum = new System.Windows.Forms.Label();
-            this.labelAccountBalance = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.labelAccountBalance = new System.Windows.Forms.Label();
+            this.labelSum = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -868,28 +868,16 @@ namespace Курсовой_проект_2
             this.panel3.Size = new System.Drawing.Size(176, 437);
             this.panel3.TabIndex = 29;
             // 
-            // labelSum
+            // label27
             // 
-            this.labelSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSum.ForeColor = System.Drawing.Color.White;
-            this.labelSum.Location = new System.Drawing.Point(3, 251);
-            this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(168, 29);
-            this.labelSum.TabIndex = 30;
-            this.labelSum.Text = "Sum";
-            this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelAccountBalance
-            // 
-            this.labelAccountBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAccountBalance.ForeColor = System.Drawing.Color.White;
-            this.labelAccountBalance.Location = new System.Drawing.Point(3, 200);
-            this.labelAccountBalance.Name = "labelAccountBalance";
-            this.labelAccountBalance.Size = new System.Drawing.Size(168, 51);
-            this.labelAccountBalance.TabIndex = 30;
-            this.labelAccountBalance.Text = "Остаток на счете:";
-            this.labelAccountBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(37, 35);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 31);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "Логин:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
@@ -902,16 +890,28 @@ namespace Курсовой_проект_2
             this.label26.Text = "Фамилия имя:";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label27
+            // labelAccountBalance
             // 
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(37, 35);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 31);
-            this.label27.TabIndex = 32;
-            this.label27.Text = "Логин:";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAccountBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAccountBalance.ForeColor = System.Drawing.Color.White;
+            this.labelAccountBalance.Location = new System.Drawing.Point(3, 200);
+            this.labelAccountBalance.Name = "labelAccountBalance";
+            this.labelAccountBalance.Size = new System.Drawing.Size(168, 51);
+            this.labelAccountBalance.TabIndex = 30;
+            this.labelAccountBalance.Text = "Остаток на счете:";
+            this.labelAccountBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSum
+            // 
+            this.labelSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSum.ForeColor = System.Drawing.Color.White;
+            this.labelSum.Location = new System.Drawing.Point(3, 251);
+            this.labelSum.Name = "labelSum";
+            this.labelSum.Size = new System.Drawing.Size(168, 29);
+            this.labelSum.TabIndex = 30;
+            this.labelSum.Text = "Sum";
+            this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 

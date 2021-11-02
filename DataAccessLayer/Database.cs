@@ -16,9 +16,9 @@ namespace DataAccessLayer
         public List<User> GetUsers { get { return users; } }
         public Database(String file)
         {
-            ReadUsersXml("Data/"+file);
+            ReadUsers("Data/"+file);
         }
-        public void SaveXml<T>(String file, T item)
+        public void Save<T>(String file, T item)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(T));
             using (FileStream fs = new FileStream(file, FileMode.Create))
@@ -30,7 +30,7 @@ namespace DataAccessLayer
         {
             Directory.CreateDirectory(folder);
         }
-        public void ReadUsersXml(String file)
+        public void ReadUsers(String file)
         {
             if (File.Exists(file))
             {
@@ -40,9 +40,9 @@ namespace DataAccessLayer
                     users = (List<User>)formatter.Deserialize(fs);
                 }
             }
-            else { users = new List<User>(); SaveXml<List<User>>(file, users); }
+            else { users = new List<User>(); Save<List<User>>(file, users); }
         }
-        public Elements ReadElementsXml(String file)
+        public Elements ReadElements(String file)
         {
             if (File.Exists(file))
             {
@@ -56,7 +56,7 @@ namespace DataAccessLayer
             {
                 var elements = new Elements();
                 elements.categories.Add("Общее");
-                SaveXml<Elements>(file, elements);
+                Save<Elements>(file, elements);
                 return elements;
             }
         }
