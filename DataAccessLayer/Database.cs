@@ -32,7 +32,7 @@ namespace DataAccessLayer
         }
         public void ReadUsers(String file)
         {
-            if (File.Exists(file))
+            try
             {
                 XmlSerializer formatter = new XmlSerializer(typeof(List<User>));
                 using (FileStream fs = new FileStream(file, FileMode.Open))
@@ -40,7 +40,7 @@ namespace DataAccessLayer
                     users = (List<User>)formatter.Deserialize(fs);
                 }
             }
-            else { users = new List<User>(); Save<List<User>>(file, users); }
+            catch { users = new List<User>(); Save<List<User>>(file, users); }
         }
         public Elements ReadElements(String file)
         {

@@ -111,7 +111,6 @@ namespace Курсовой_проект_2
             Date.ShowUpDown = true; Date2.ShowUpDown = true;
             Time.ShowUpDown = true; Time2.ShowUpDown = true;
             Categories.DropDownStyle = ComboBoxStyle.DropDownList; Categories2.DropDownStyle = ComboBoxStyle.DropDownList;
-            presenter.LoadСategories();
             Categories.Text = "Общее"; Categories2.Text = "Общее";
             presenter.UpdateUserData();
             presenter.LoadElements();

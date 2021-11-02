@@ -44,26 +44,14 @@ namespace Курсовой_проект_2
 
         private void clue1_Click(object sender, EventArgs e)
         {
-            if (clu11)
-            {
-                Clue11.Show(); clu11 = false;
-            }
-            else
-            {
-                Clue11.Hide(); clu11 = true;
-            }
+            if (clu11){ Clue11.Show(); clu11 = false; }
+            else{ Clue11.Hide(); clu11 = true; }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            if (clu22)
-            {
-                Clue22.Show(); clu22 = false;
-            }
-            else
-            {
-                Clue22.Hide(); clu22 = true;
-            }
+            if (clu22){ Clue22.Show(); clu22 = false; }
+            else{ Clue22.Hide(); clu22 = true; }
         }
         Point point;
 
@@ -159,27 +147,24 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error0.Hide();
-            Error3.Hide();
+            Error0.Hide();
             if (!(login.Text== "Введите логин"|| login.Text == ""|| pass.Text == "Введите пароль" || pass.Text == "" || textBox2.Text == "Введите имя" || textBox2.Text == "" || textBox3.Text == "Введите фамилию" || textBox3.Text == ""))
             {
-                //try
-               // {
-                    bool err=false;
-                    if (!err)
+                try
+                {
+                    if (presenter.UserRegistration())
                     {
-                        if (presenter.UserRegistration())
-                        {
-                            presenter.CreateNewUser();
-                            MainForm main = new MainForm();
-                            presenter.mainView = main;
-                            main.presenter = presenter;
-                            main.Show();
-                            this.Close();
-                        }
-                        else Error2.Show();
-                    }else Error3.Show();
-               // }
-                //catch { Error0.Show(); }
+                        presenter.CreateNewUser();
+                        MainForm main = new MainForm();
+                        presenter.mainView = main;
+                        main.presenter = presenter;
+                        presenter.LoadСategories();
+                        main.Show();
+                        this.Close();
+                    }
+                    else Error2.Show();
+                }
+                catch { Error0.Show(); }
             }
             else Error1.Show();
         }
@@ -192,7 +177,7 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error0.Hide();
-            Error3.Hide();
+            Error0.Hide();
         }
     }
 }
