@@ -122,6 +122,7 @@ namespace Курсовой_проект_2
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
+            presenter.SaveAccount();
             Application.Exit();
         }
 

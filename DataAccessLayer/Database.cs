@@ -16,7 +16,11 @@ namespace DataAccessLayer
         public List<User> GetUsers { get { return users; } }
         public Database(String file)
         {
-            ReadUsers("Data/"+file);
+            try
+            {
+                users = Read<List<User>>(file);
+            }
+            catch { users = new List<User>(); Save<List<User>>(file, users); }
         }
         public void Save<T>(String file, T item)
         {
@@ -26,31 +30,23 @@ namespace DataAccessLayer
                 formatter.Serialize(fs, item);
             }
         }
+        public T Read<T>(String file)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(T));
+            using (FileStream fs = new FileStream(file, FileMode.Open))
+            {
+                return (T)formatter.Deserialize(fs);
+            }
+        }
         public void CreateFolder(String folder)
         {
             Directory.CreateDirectory(folder);
-        }
-        public void ReadUsers(String file)
-        {
-            try
-            {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<User>));
-                using (FileStream fs = new FileStream(file, FileMode.Open))
-                {
-                    users = (List<User>)formatter.Deserialize(fs);
-                }
-            }
-            catch { users = new List<User>(); Save<List<User>>(file, users); }
         }
         public Elements ReadElements(String file)
         {
             if (File.Exists(file))
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(Elements));
-                using (FileStream fs = new FileStream(file, FileMode.Open))
-                {
-                    return (Elements)formatter.Deserialize(fs);
-                }
+                return Read<Elements>(file);
             }
             else 
             {

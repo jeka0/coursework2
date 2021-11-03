@@ -11,7 +11,6 @@ namespace DataAccessLayer
      {
         List<User> GetUsers { get; }
         void Save<T>(String file, T item);
-        void ReadUsers(String file);
         void CreateFolder(String folder);
         Elements ReadElements(String file);
      }

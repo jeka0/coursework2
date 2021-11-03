@@ -16,8 +16,7 @@ namespace ServiceLayer
         public IModel model { get; set; }
         public IAuthorizationView authorizationView { get; set; }
         public IRegistrationView registrationView { get; set; }
-        public Elements Expenses;
-        public Elements Income;
+        public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
         private TextBox[] Old = new TextBox[2] { null, null };
@@ -40,7 +39,12 @@ namespace ServiceLayer
             mainView.GetCategories.Items.AddRange(Expenses.categories.ToArray());
             mainView.GetCategories2.Items.AddRange(Income.categories.ToArray());
         }
-
+        private Elements IdentifyElements()
+        {
+            int ind = mainView.GetIndx;
+            if (ind == 0) return Expenses; else if (ind == 1) return Income;
+            return null;
+        }
         public void CreateNewUser()
         {
             User newUser = new User() 
@@ -52,12 +56,11 @@ namespace ServiceLayer
             };
             SelectedUser = newUser;
             users.Add(newUser);
-            model.Save<List<User>>("Data/accounts.xml", users);
             var elements = new Elements();
             elements.categories.Add("Общее");
+            Expenses = elements; Income = elements;
             model.CreateFolder("Data/" + newUser.Login);
-            model.Save<Elements>("Data/" + newUser.Login + "/Expenses.xml", elements);
-            model.Save<Elements>("Data/" + newUser.Login + "/Income.xml", elements);
+            SaveAccount();
         }
         public bool UserAuthorization()
         {
@@ -80,7 +83,7 @@ namespace ServiceLayer
             int ind = mainView.GetIndx;
             Panel Screen = mainView.GetScreen;
             Point point = new Point(0, index[ind]);
-            if (Old != null) Screen.ScrollControlIntoView(Old[ind]);
+            if (Old[ind] != null) Screen.ScrollControlIntoView(Old[ind]);
             TextBox[] textBoxes = new TextBox[5];
             for (int i = 0; i < 5; i++)
             {
@@ -108,45 +111,43 @@ namespace ServiceLayer
         public void UpdateElements()
         {
             mainView.GetLabel.Hide();
-            Elements elements=null;String file = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income;file = "Data/" + SelectedUser.Login + "/Income.xml"; }
-            double value = mainView.GetAmount;
-            SelectedUser.CalculateBalance(value);
-            Item item = new Item() { Date = mainView.GetDate, Time = mainView.GetTime, Category = mainView.GetCategory, Comment = mainView.GetComment, Amount = value };
+            Elements elements = IdentifyElements();
+            Item item = new Item() 
+            { 
+                Date = mainView.GetDate, 
+                Time = mainView.GetTime, 
+                Category = mainView.GetCategory, 
+                Comment = mainView.GetComment, 
+                Amount = mainView.GetAmount 
+            };
+            SelectedUser.CalculateBalance(item.Amount);
             elements.items.Add(item);
             AddNewElement(item);
-            model.Save<Elements>(file,elements);
-            model.Save<List<User>>("Data/accounts.xml", users);
         }
         public void LoadElements()
         {
-            Elements elements=null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
+            Elements elements= IdentifyElements();
             int i = 0, count = elements.items.Count;
             if (count > 0) { mainView.GetLabel.Hide(); if (count > 23) i = count - 23; }
             for (; i < count; i++)AddNewElement(elements.items[i]);
         }
         public bool CheckCategories()
         {
-            Elements elements = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            return elements.CheckCategories(mainView.GetNewCategory);
+            return IdentifyElements().CheckCategories(mainView.GetNewCategory);
         }
         public void AddCategory()
         {
-            Elements elements = null; String file = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income; file = "Data/" + SelectedUser.Login + "/Income.xml"; }
-            elements.categories.Add(mainView.GetNewCategory);
-            model.Save<Elements>(file, elements);
-
+            IdentifyElements().categories.Add(mainView.GetNewCategory);
         }
         public void UpdateSum()
         {
             mainView.SetSum = SelectedUser.GetStrAmount();
+        }
+        public void SaveAccount()
+        {
+            model.Save<List<User>>("Data/accounts.xml", users);
+            model.Save<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml", Expenses);
+            model.Save<Elements>("Data/" + SelectedUser.Login + "/Income.xml", Income);
         }
     }
 }

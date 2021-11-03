@@ -5,13 +5,6 @@
     <Password>12345</Password>
     <Surname>Латош</Surname>
     <Name>Евгений</Name>
-    <Money>985</Money>
-  </User>
-  <User>
-    <Login>IO</Login>
-    <Password>0123</Password>
-    <Surname>КТО</Surname>
-    <Name>ЧТО</Name>
-    <Money>10773</Money>
+    <Money>400</Money>
   </User>
 </ArrayOfUser>
