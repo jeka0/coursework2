@@ -9,7 +9,7 @@ namespace DataAccessLayer
      public interface IAuthorizationView
      {
         IPresenter presenter { get; set; }
-        String GetLogin { get; }
-        String GetPassword { get; }
+        String GetLogin();
+        String GetPassword();
      }
 }

@@ -15,8 +15,8 @@ namespace Курсовой_проект_2
     {
         bool clu11 = true, clu22 = true;
         public IPresenter presenter { get; set; }
-        public String GetLogin { get { return login.Text; } }
-        public String GetPassword { get { return pass.Text; } }
+        public String GetLogin() { return login.Text; }
+        public String GetPassword() { return pass.Text; }
         public Point point2 = new Point(550,300);
         public Form1()
         {

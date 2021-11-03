@@ -8,90 +8,74 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccessLayer;
-using ServiceLayer;
 
 namespace Курсовой_проект_2
 {
     public partial class MainForm : Form, IMainView
     {
         public IPresenter presenter { get; set; }
-        public String SetLogin { set { login0.Text = value; } }
-        public String SetSurname { set { Surname0.Text = value; } }
-        public String SetName { set { name0.Text = value; } }
-        public String SetSum { set { labelSum.Text = value; } }
-        public ComboBox GetCategories { get { return Categories; } }
-        public ComboBox GetCategories2 { get { return Categories2; } }
-        public int GetIndx { get { return tabControl1.SelectedIndex; } }
-        public Label GetLabel
+        public void SetLogin(String value) { login0.Text = value; } 
+        public void SetSurname(String value) { Surname0.Text = value; }
+        public void SetName(String value) { name0.Text = value; }
+        public void SetSum(String value) { labelSum.Text = value; }
+        public ComboBox GetCategories() { return Categories; }
+        public ComboBox GetCategories2() { return Categories2; }
+        public int GetIndx() { return tabControl1.SelectedIndex; }
+        public Label GetLabel()
         {
-            get
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return NoExpenses;
-                else
-                if (indx == 1) return NoIncome; else return null;
-            }
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return NoExpenses;
+            else
+            if (indx == 1) return NoIncome; else return null;
         }
-        public String GetNewCategory
+        public String GetNewCategory()
         {
-            get
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return NewCategories.Text;
-                else
-                if (indx == 1) return NewCategories2.Text; else return null;
-            }
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return NewCategories.Text;
+            else
+            if (indx == 1) return NewCategories2.Text; else return null;
         }
-        public Panel GetScreen {
-            get
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Screen;
-                else
-                if (indx == 1) return Screen2; else return null;
-            }
-         }
-        public String GetDate { 
-            get 
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Date.Value.Day.ToString() + '.' + Date.Value.Month.ToString() + '.' + Date.Value.Year.ToString();
-                else
-                if (indx == 1) return Date2.Value.Day.ToString() + '.' + Date2.Value.Month.ToString() + '.' + Date2.Value.Year.ToString(); else return null;
-            } }
-        public String GetTime { 
-            get 
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Time.Value.Hour.ToString() + ':' + Time.Value.Minute.ToString() + ':' + Time.Value.Second.ToString();
-                else
-                if (indx == 1) return Time2.Value.Hour.ToString() + ':' + Time2.Value.Minute.ToString() + ':' + Time2.Value.Second.ToString(); else return null;
-            } }
-        public String GetCategory { 
-            get 
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Categories.Text;
-                else
-                if (indx == 1) return Categories2.Text; else return null;
-            } }
-        public String GetComment {
-            get
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Comment.Text;
-                else
-                if (indx == 1) return Comment2.Text; else return null;
-            }
+        public Panel GetScreen()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Screen;
+            else
+            if (indx == 1) return Screen2; else return null;
         }
-        public double GetAmount {
-            get
-            {
-                int indx = tabControl1.SelectedIndex;
-                if (indx == 0) return Convert.ToDouble(Amount.Text)*(-1);
-                else
-                if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
-            }
+        public String GetDate()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Date.Value.Day.ToString() + '.' + Date.Value.Month.ToString() + '.' + Date.Value.Year.ToString();
+            else
+            if (indx == 1) return Date2.Value.Day.ToString() + '.' + Date2.Value.Month.ToString() + '.' + Date2.Value.Year.ToString(); else return null;
+        }
+        public String GetTime()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Time.Value.Hour.ToString() + ':' + Time.Value.Minute.ToString() + ':' + Time.Value.Second.ToString();
+            else
+            if (indx == 1) return Time2.Value.Hour.ToString() + ':' + Time2.Value.Minute.ToString() + ':' + Time2.Value.Second.ToString(); else return null;
+        }
+        public String GetCategory()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Categories.Text;
+            else
+            if (indx == 1) return Categories2.Text; else return null;
+        }
+        public String GetComment()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Comment.Text;
+            else
+            if (indx == 1) return Comment2.Text; else return null;
+        }
+        public double GetAmount()
+        {
+            int indx = tabControl1.SelectedIndex;
+            if (indx == 0) return Convert.ToDouble(Amount.Text) * (-1);
+            else
+            if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
         }
         public MainForm()
         {

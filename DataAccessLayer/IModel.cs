@@ -9,7 +9,7 @@ namespace DataAccessLayer
 {
      public interface IModel
      {
-        List<User> GetUsers { get; }
+        List<User> GetUsers();
         void Save<T>(String file, T item);
         void CreateFolder(String folder);
         Elements ReadElements(String file);

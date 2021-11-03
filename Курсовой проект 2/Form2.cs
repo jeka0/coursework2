@@ -16,10 +16,10 @@ namespace Курсовой_проект_2
     {
         bool clu11 = true, clu22 = true;
         public IPresenter presenter { get; set; }
-        public String GetLogin { get { return login.Text; } }
-        public String GetPassword { get { return pass.Text; } }
-        public String GetSurname { get { return textBox3.Text; } }
-        public String GetName { get { return textBox2.Text; } }
+        public String GetLogin() { return login.Text; }
+        public String GetPassword() { return pass.Text; } 
+        public String GetSurname() { return textBox3.Text; }
+        public String GetName() { return textBox2.Text; } 
         public Point point2;
         public Form2()
         {

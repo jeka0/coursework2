@@ -26,7 +26,7 @@ namespace ServiceLayer
             authorizationView = authorView;
             authorizationView.presenter = this;
             this.model = model;
-            users = this.model.GetUsers;
+            users = this.model.GetUsers();
         }
         public void LoadСategories()
         {
@@ -36,12 +36,12 @@ namespace ServiceLayer
         }
         public void UpdateСategories()
         {
-            mainView.GetCategories.Items.AddRange(Expenses.categories.ToArray());
-            mainView.GetCategories2.Items.AddRange(Income.categories.ToArray());
+            mainView.GetCategories().Items.AddRange(Expenses.categories.ToArray());
+            mainView.GetCategories2().Items.AddRange(Income.categories.ToArray());
         }
         private Elements IdentifyElements()
         {
-            int ind = mainView.GetIndx;
+            int ind = mainView.GetIndx();
             if (ind == 0) return Expenses; else if (ind == 1) return Income;
             return null;
         }
@@ -49,10 +49,10 @@ namespace ServiceLayer
         {
             User newUser = new User() 
             { 
-                Login = registrationView.GetLogin,
-                Password = registrationView.GetPassword,
-                Name = registrationView.GetName,
-                Surname = registrationView.GetSurname 
+                Login = registrationView.GetLogin(),
+                Password = registrationView.GetPassword(),
+                Name = registrationView.GetName(),
+                Surname = registrationView.GetSurname() 
             };
             SelectedUser = newUser;
             users.Add(newUser);
@@ -64,24 +64,24 @@ namespace ServiceLayer
         }
         public bool UserAuthorization()
         {
-            SelectedUser = users.Find(a => authorizationView.GetLogin == a.Login && authorizationView.GetPassword == a.Password);
+            SelectedUser = users.Find(a => authorizationView.GetLogin() == a.Login && authorizationView.GetPassword() == a.Password);
             if (SelectedUser != null) return true; else return false;
         }
         public bool UserRegistration()
         {
-            if (users.Find(a => registrationView.GetLogin == a.Login) == null) return true; else return false;
+            if (users.Find(a => registrationView.GetLogin() == a.Login) == null) return true; else return false;
         }
         public void UpdateUserData()
         {
-            mainView.SetLogin = SelectedUser.Login;
-            mainView.SetName = SelectedUser.Name;
-            mainView.SetSurname = SelectedUser.Surname;
+            mainView.SetLogin(SelectedUser.Login);
+            mainView.SetName(SelectedUser.Name);
+            mainView.SetSurname(SelectedUser.Surname);
             UpdateSum();
         }
         private void AddNewElement(Item item)
         {
-            int ind = mainView.GetIndx;
-            Panel Screen = mainView.GetScreen;
+            int ind = mainView.GetIndx();
+            Panel Screen = mainView.GetScreen();
             Point point = new Point(0, index[ind]);
             if (Old[ind] != null) Screen.ScrollControlIntoView(Old[ind]);
             TextBox[] textBoxes = new TextBox[5];
@@ -110,15 +110,15 @@ namespace ServiceLayer
         }
         public void UpdateElements()
         {
-            mainView.GetLabel.Hide();
+            mainView.GetLabel().Hide();
             Elements elements = IdentifyElements();
             Item item = new Item() 
             { 
-                Date = mainView.GetDate, 
-                Time = mainView.GetTime, 
-                Category = mainView.GetCategory, 
-                Comment = mainView.GetComment, 
-                Amount = mainView.GetAmount 
+                Date = mainView.GetDate(), 
+                Time = mainView.GetTime(), 
+                Category = mainView.GetCategory(), 
+                Comment = mainView.GetComment(), 
+                Amount = mainView.GetAmount() 
             };
             SelectedUser.CalculateBalance(item.Amount);
             elements.items.Add(item);
@@ -128,20 +128,20 @@ namespace ServiceLayer
         {
             Elements elements= IdentifyElements();
             int i = 0, count = elements.items.Count;
-            if (count > 0) { mainView.GetLabel.Hide(); if (count > 23) i = count - 23; }
+            if (count > 0) { mainView.GetLabel().Hide(); if (count > 23) i = count - 23; }
             for (; i < count; i++)AddNewElement(elements.items[i]);
         }
         public bool CheckCategories()
         {
-            return IdentifyElements().CheckCategories(mainView.GetNewCategory);
+            return IdentifyElements().CheckCategories(mainView.GetNewCategory());
         }
         public void AddCategory()
         {
-            IdentifyElements().categories.Add(mainView.GetNewCategory);
+            IdentifyElements().categories.Add(mainView.GetNewCategory());
         }
         public void UpdateSum()
         {
-            mainView.SetSum = SelectedUser.GetStrAmount();
+            mainView.SetSum(SelectedUser.GetStrAmount());
         }
         public void SaveAccount()
         {

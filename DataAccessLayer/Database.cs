@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Windows.Forms;
 using BusinessLayer;
 using System.Xml.Serialization;
 
@@ -13,7 +12,7 @@ namespace DataAccessLayer
     public class Database : IModel
     {
         List<User> users;
-        public List<User> GetUsers { get { return users; } }
+        public List<User> GetUsers() { return users; } 
         public Database(String file)
         {
             try
