@@ -61,13 +61,12 @@ namespace ServiceLayer
         }
         public bool UserAuthorization()
         {
-            foreach (User user in users) { if (authorizationView.GetLogin == user.Login && authorizationView.GetPassword == user.Password) { SelectedUser = user; return true; } }
-            return false;
+            SelectedUser = users.Find(a => authorizationView.GetLogin == a.Login && authorizationView.GetPassword == a.Password);
+            if (SelectedUser != null) return true; else return false;
         }
         public bool UserRegistration()
         {
-            foreach (User user in users) { if (registrationView.GetLogin == user.Login) return false; }
-            return true;
+            if (users.Find(a => registrationView.GetLogin == a.Login) == null) return true; else return false;
         }
         public void UpdateUserData()
         {

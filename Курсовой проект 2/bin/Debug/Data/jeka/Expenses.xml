@@ -3,5 +3,13 @@
   <categories>
     <string>Общее</string>
   </categories>
-  <items />
+  <items>
+    <Item>
+      <Date>3.11.2021</Date>
+      <Time>8:51:37</Time>
+      <Category>Общее</Category>
+      <Comment>aaaaaaaaaaaaaaaaaaaaaaaaaaa</Comment>
+      <Amount>-15</Amount>
+    </Item>
+  </items>
 </Elements>
