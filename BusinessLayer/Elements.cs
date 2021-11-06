@@ -14,5 +14,9 @@ namespace BusinessLayer
         {
             if (categories.Find(a => a == newCategory) != null) return true; else return false;
         }
+        public List<Item> FindItemsByDate(String date)
+        {
+            return items.FindAll(a => a.Date == date);
+        }
     }
 }

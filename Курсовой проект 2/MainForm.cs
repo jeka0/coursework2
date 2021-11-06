@@ -26,7 +26,9 @@ namespace Курсовой_проект_2
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return NoExpenses;
             else
-            if (indx == 1) return NoIncome; else return null;
+            if (indx == 1) return NoIncome;
+            else
+            if (indx == 2) return NoHistory; else return null;
         }
         public String GetNewCategory()
         {
@@ -40,21 +42,27 @@ namespace Курсовой_проект_2
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Screen;
             else
-            if (indx == 1) return Screen2; else return null;
+                if (indx == 1) return Screen2; 
+            else
+                if (indx == 2) return Screen3; 
+            else return null;
         }
         public String GetDate()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return Date.Value.Day.ToString() + '.' + Date.Value.Month.ToString() + '.' + Date.Value.Year.ToString();
+            if (indx == 0) return Date.Value.ToShortDateString();
             else
-            if (indx == 1) return Date2.Value.Day.ToString() + '.' + Date2.Value.Month.ToString() + '.' + Date2.Value.Year.ToString(); else return null;
+                if (indx == 1) return Date2.Value.ToShortDateString();
+            else
+                if (indx == 2) return Date3.Value.ToShortDateString();
+            else return null;
         }
         public String GetTime()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return Time.Value.Hour.ToString() + ':' + Time.Value.Minute.ToString() + ':' + Time.Value.Second.ToString();
+            if (indx == 0) return Time.Value.ToLongTimeString();
             else
-            if (indx == 1) return Time2.Value.Hour.ToString() + ':' + Time2.Value.Minute.ToString() + ':' + Time2.Value.Second.ToString(); else return null;
+            if (indx == 1) return Time2.Value.ToLongTimeString(); else return null;
         }
         public String GetCategory()
         {
@@ -76,6 +84,17 @@ namespace Курсовой_проект_2
             if (indx == 0) return Convert.ToDouble(Amount.Text) * (-1);
             else
             if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
+        }
+        public int GetRecordType()
+        {
+            if (radioButtonAll.Checked) return 0;
+            else if (radioButtonExpenses.Checked) return 1;
+            else return 2;
+        }
+        public int GetSortType()
+        {
+            if (radioButtonTime.Checked) return 0;
+            else return 1;
         }
         public MainForm()
         {
@@ -100,6 +119,8 @@ namespace Курсовой_проект_2
             presenter.LoadElements();
             tabControl1.SelectTab(1);
             presenter.LoadElements();
+            tabControl1.SelectTab(2);
+            presenter.UpdateHistory();
             tabControl1.SelectTab(0);
 
         }
@@ -324,6 +345,41 @@ namespace Курсовой_проект_2
         private void Time2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8) e.Handled = true;
+        }
+
+        private void Date3_ValueChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void radioButtonExpenses_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void radioButtonIncome_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void radioButtonTime_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void radioButtonAmount_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            presenter.UpdateHistory();
         }
     }
 }

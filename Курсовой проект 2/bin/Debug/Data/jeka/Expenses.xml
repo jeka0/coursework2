@@ -2,30 +2,182 @@
 <Elements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <categories>
     <string>Общее</string>
-    <string>Еда</string>
-    <string>123</string>
   </categories>
   <items>
     <Item>
-      <Date>3.11.2021</Date>
-      <Time>20:37:56</Time>
-      <Category>Еда</Category>
-      <Comment>На что-то</Comment>
-      <Amount>-30</Amount>
-    </Item>
-    <Item>
-      <Date>3.11.2021</Date>
-      <Time>20:58:43</Time>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
       <Category>Общее</Category>
       <Comment>Введите комментарий</Comment>
-      <Amount>-70</Amount>
+      <Amount>-1</Amount>
     </Item>
     <Item>
-      <Date>3.11.2021</Date>
-      <Time>21:53:14</Time>
-      <Category>Еда</Category>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
       <Comment>Введите комментарий</Comment>
-      <Amount>-100</Amount>
+      <Amount>-12</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-123</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1234</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-12345</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-123456</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1234567</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-11</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-111</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1111</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-11111</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>06.11.2021</Date>
+      <Time>18:17:53</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>07.11.2021</Date>
+      <Time>18:22:17</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>-5</Amount>
     </Item>
   </items>
 </Elements>

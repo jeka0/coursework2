@@ -78,6 +78,14 @@ namespace Курсовой_проект_2
             this.Date2 = new System.Windows.Forms.DateTimePicker();
             this.Add2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Screen3 = new System.Windows.Forms.Panel();
+            this.NoHistory = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Expenses = new System.Windows.Forms.Button();
             this.Income = new System.Windows.Forms.Button();
@@ -96,13 +104,29 @@ namespace Курсовой_проект_2
             this.label26 = new System.Windows.Forms.Label();
             this.labelAccountBalance = new System.Windows.Forms.Label();
             this.labelSum = new System.Windows.Forms.Label();
+            this.Date3 = new System.Windows.Forms.DateTimePicker();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButtonAll = new System.Windows.Forms.RadioButton();
+            this.radioButtonExpenses = new System.Windows.Forms.RadioButton();
+            this.radioButtonIncome = new System.Windows.Forms.RadioButton();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButtonTime = new System.Windows.Forms.RadioButton();
+            this.radioButtonAmount = new System.Windows.Forms.RadioButton();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Screen.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Screen2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.Screen3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -685,12 +709,113 @@ namespace Курсовой_проект_2
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.tabPage3.Controls.Add(this.buttonRefresh);
+            this.tabPage3.Controls.Add(this.label33);
+            this.tabPage3.Controls.Add(this.label36);
+            this.tabPage3.Controls.Add(this.panel4);
+            this.tabPage3.Controls.Add(this.label35);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Controls.Add(this.Date3);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.label28);
+            this.tabPage3.Controls.Add(this.label29);
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.Controls.Add(this.label32);
+            this.tabPage3.Controls.Add(this.Screen3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(838, 615);
             this.tabPage3.TabIndex = 6;
             this.tabPage3.Text = "tabPage3";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(360, 6);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(119, 29);
+            this.label34.TabIndex = 26;
+            this.label34.Text = "История";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(692, 137);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(56, 16);
+            this.label28.TabIndex = 25;
+            this.label28.Text = "Сумма";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(395, 137);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(108, 16);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "Комментарий";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(224, 137);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(86, 16);
+            this.label30.TabIndex = 23;
+            this.label30.Text = "Категории";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(121, 137);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(58, 16);
+            this.label31.TabIndex = 22;
+            this.label31.Text = "Время ";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(19, 137);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(44, 16);
+            this.label32.TabIndex = 21;
+            this.label32.Text = "Дата";
+            // 
+            // Screen3
+            // 
+            this.Screen3.AutoScroll = true;
+            this.Screen3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Screen3.Controls.Add(this.NoHistory);
+            this.Screen3.Location = new System.Drawing.Point(4, 156);
+            this.Screen3.Name = "Screen3";
+            this.Screen3.Size = new System.Drawing.Size(828, 437);
+            this.Screen3.TabIndex = 20;
+            // 
+            // NoHistory
+            // 
+            this.NoHistory.AutoSize = true;
+            this.NoHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NoHistory.ForeColor = System.Drawing.Color.Silver;
+            this.NoHistory.Location = new System.Drawing.Point(244, 200);
+            this.NoHistory.Name = "NoHistory";
+            this.NoHistory.Size = new System.Drawing.Size(326, 29);
+            this.NoHistory.TabIndex = 22;
+            this.NoHistory.Text = "Нету записей на эту дату";
             // 
             // tabPage4
             // 
@@ -815,7 +940,7 @@ namespace Курсовой_проект_2
             this.Error1.BackColor = System.Drawing.Color.Red;
             this.Error1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error1.ForeColor = System.Drawing.Color.White;
-            this.Error1.Location = new System.Drawing.Point(61, 54);
+            this.Error1.Location = new System.Drawing.Point(48, 48);
             this.Error1.Name = "Error1";
             this.Error1.Size = new System.Drawing.Size(137, 66);
             this.Error1.TabIndex = 25;
@@ -826,7 +951,7 @@ namespace Курсовой_проект_2
             this.Error2.BackColor = System.Drawing.Color.Red;
             this.Error2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error2.ForeColor = System.Drawing.Color.White;
-            this.Error2.Location = new System.Drawing.Point(33, 47);
+            this.Error2.Location = new System.Drawing.Point(33, 35);
             this.Error2.Name = "Error2";
             this.Error2.Size = new System.Drawing.Size(165, 79);
             this.Error2.TabIndex = 26;
@@ -913,6 +1038,150 @@ namespace Курсовой_проект_2
             this.labelSum.Text = "Sum";
             this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Date3
+            // 
+            this.Date3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Date3.Location = new System.Drawing.Point(22, 62);
+            this.Date3.Name = "Date3";
+            this.Date3.Size = new System.Drawing.Size(218, 21);
+            this.Date3.TabIndex = 27;
+            this.Date3.ValueChanged += new System.EventHandler(this.Date3_ValueChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.radioButtonAll);
+            this.panel5.Controls.Add(this.radioButtonIncome);
+            this.panel5.Controls.Add(this.radioButtonExpenses);
+            this.panel5.Location = new System.Drawing.Point(485, 35);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(153, 90);
+            this.panel5.TabIndex = 28;
+            // 
+            // radioButtonAll
+            // 
+            this.radioButtonAll.AutoSize = true;
+            this.radioButtonAll.Checked = true;
+            this.radioButtonAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButtonAll.ForeColor = System.Drawing.Color.White;
+            this.radioButtonAll.Location = new System.Drawing.Point(3, 14);
+            this.radioButtonAll.Name = "radioButtonAll";
+            this.radioButtonAll.Size = new System.Drawing.Size(100, 20);
+            this.radioButtonAll.TabIndex = 0;
+            this.radioButtonAll.TabStop = true;
+            this.radioButtonAll.Text = "Все записи";
+            this.radioButtonAll.UseVisualStyleBackColor = true;
+            this.radioButtonAll.CheckedChanged += new System.EventHandler(this.radioButtonAll_CheckedChanged);
+            // 
+            // radioButtonExpenses
+            // 
+            this.radioButtonExpenses.AutoSize = true;
+            this.radioButtonExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButtonExpenses.ForeColor = System.Drawing.Color.White;
+            this.radioButtonExpenses.Location = new System.Drawing.Point(3, 40);
+            this.radioButtonExpenses.Name = "radioButtonExpenses";
+            this.radioButtonExpenses.Size = new System.Drawing.Size(130, 20);
+            this.radioButtonExpenses.TabIndex = 1;
+            this.radioButtonExpenses.Text = "Только расходы";
+            this.radioButtonExpenses.UseVisualStyleBackColor = true;
+            this.radioButtonExpenses.CheckedChanged += new System.EventHandler(this.radioButtonExpenses_CheckedChanged);
+            // 
+            // radioButtonIncome
+            // 
+            this.radioButtonIncome.AutoSize = true;
+            this.radioButtonIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButtonIncome.ForeColor = System.Drawing.Color.White;
+            this.radioButtonIncome.Location = new System.Drawing.Point(3, 66);
+            this.radioButtonIncome.Name = "radioButtonIncome";
+            this.radioButtonIncome.Size = new System.Drawing.Size(123, 20);
+            this.radioButtonIncome.TabIndex = 2;
+            this.radioButtonIncome.Text = "Только доходы";
+            this.radioButtonIncome.UseVisualStyleBackColor = true;
+            this.radioButtonIncome.CheckedChanged += new System.EventHandler(this.radioButtonIncome_CheckedChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(489, 27);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(97, 16);
+            this.label35.TabIndex = 29;
+            this.label35.Text = "Вид записи:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(18, 35);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(128, 20);
+            this.label36.TabIndex = 30;
+            this.label36.Text = "Выбрать дату";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(656, 27);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(131, 16);
+            this.label33.TabIndex = 31;
+            this.label33.Text = "Вид сортировки:";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.radioButtonTime);
+            this.panel4.Controls.Add(this.radioButtonAmount);
+            this.panel4.Location = new System.Drawing.Point(652, 35);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(155, 90);
+            this.panel4.TabIndex = 30;
+            // 
+            // radioButtonTime
+            // 
+            this.radioButtonTime.Checked = true;
+            this.radioButtonTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButtonTime.ForeColor = System.Drawing.Color.White;
+            this.radioButtonTime.Location = new System.Drawing.Point(3, 10);
+            this.radioButtonTime.Name = "radioButtonTime";
+            this.radioButtonTime.Size = new System.Drawing.Size(131, 37);
+            this.radioButtonTime.TabIndex = 0;
+            this.radioButtonTime.Text = "Сортировать по времени";
+            this.radioButtonTime.UseVisualStyleBackColor = true;
+            this.radioButtonTime.CheckedChanged += new System.EventHandler(this.radioButtonTime_CheckedChanged);
+            // 
+            // radioButtonAmount
+            // 
+            this.radioButtonAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButtonAmount.ForeColor = System.Drawing.Color.White;
+            this.radioButtonAmount.Location = new System.Drawing.Point(3, 43);
+            this.radioButtonAmount.Name = "radioButtonAmount";
+            this.radioButtonAmount.Size = new System.Drawing.Size(131, 48);
+            this.radioButtonAmount.TabIndex = 2;
+            this.radioButtonAmount.Text = "Сортировать по сумме";
+            this.radioButtonAmount.UseVisualStyleBackColor = true;
+            this.radioButtonAmount.CheckedChanged += new System.EventHandler(this.radioButtonAmount_CheckedChanged);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefresh.ForeColor = System.Drawing.Color.White;
+            this.buttonRefresh.Location = new System.Drawing.Point(22, 96);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(98, 30);
+            this.buttonRefresh.TabIndex = 32;
+            this.buttonRefresh.Text = "Обновить";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -945,7 +1214,14 @@ namespace Курсовой_проект_2
             this.tabPage2.PerformLayout();
             this.Screen2.ResumeLayout(false);
             this.Screen2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.Screen3.ResumeLayout(false);
+            this.Screen3.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1019,5 +1295,25 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label labelAccountBalance;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel Screen3;
+        private System.Windows.Forms.Label NoHistory;
+        private System.Windows.Forms.DateTimePicker Date3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton radioButtonAll;
+        private System.Windows.Forms.RadioButton radioButtonIncome;
+        private System.Windows.Forms.RadioButton radioButtonExpenses;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radioButtonTime;
+        private System.Windows.Forms.RadioButton radioButtonAmount;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

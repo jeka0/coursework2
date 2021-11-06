@@ -24,5 +24,6 @@ namespace DataAccessLayer
         void AddCategory();
         void UpdateSum();
         void SaveAccount();
+        void UpdateHistory();
     }
 }

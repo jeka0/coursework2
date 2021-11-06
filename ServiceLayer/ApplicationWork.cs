@@ -19,8 +19,8 @@ namespace ServiceLayer
         public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
-        private TextBox[] Old = new TextBox[2] { null, null };
-        private int[] index = new int[2] { 10, 10 };
+        private TextBox[] Old = new TextBox[3] { null, null, null };
+        private int[] index = new int[3] { 10, 10, 10 };
         public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
             authorizationView = authorView;
@@ -41,9 +41,22 @@ namespace ServiceLayer
         }
         private Elements IdentifyElements()
         {
-            int ind = mainView.GetIndx();
-            if (ind == 0) return Expenses; else if (ind == 1) return Income;
-            return null;
+            int ind = mainView.GetIndx(), rec = mainView.GetRecordType();
+            if (ind == 0 || (ind == 2 && rec == 1)) return Expenses; else if (ind == 1 || (ind == 2 && rec == 2)) return Income;
+            else if (ind == 2 && rec == 0)
+            { 
+                Elements elements = new Elements();
+                elements.items.AddRange(Expenses.items);
+                elements.items.AddRange(Income.items);
+                return elements;
+            }
+            else return null;
+        }
+        private Comparison<Item> IdentifyComparison()
+        {
+            if (mainView.GetSortType() == 0) return (a, b) => a.Time.CompareTo(b.Time);
+            else
+            if (mainView.GetSortType() == 1) return (a, b) => a.Amount.CompareTo(b.Amount); else return null;
         }
         public void CreateNewUser()
         {
@@ -123,6 +136,20 @@ namespace ServiceLayer
             SelectedUser.CalculateBalance(item.Amount);
             elements.items.Add(item);
             AddNewElement(item);
+        }
+        public void UpdateHistory()
+        {
+            if (mainView.GetIndx()==2)
+            {
+                Panel Screen = mainView.GetScreen();
+                index[2] = 10; Old[2] = null;
+                if (Screen.Controls.Count > 0) Screen.ScrollControlIntoView(Screen.Controls[0]);
+                Screen.Controls.Clear();
+                List<Item> items = IdentifyElements().FindItemsByDate(mainView.GetDate());
+                items.Sort(IdentifyComparison());
+                if (items.Count == 0) Screen.Controls.Add(mainView.GetLabel());
+                foreach (Item item in items) AddNewElement(item);
+            }
         }
         public void LoadElements()
         {

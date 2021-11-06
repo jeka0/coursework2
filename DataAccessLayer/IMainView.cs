@@ -22,6 +22,8 @@ namespace DataAccessLayer
         ComboBox GetCategories();
         ComboBox GetCategories2();
         int GetIndx();
+        int GetRecordType();
+        int GetSortType();
         Panel GetScreen();
         String GetNewCategory();
         Label GetLabel();
