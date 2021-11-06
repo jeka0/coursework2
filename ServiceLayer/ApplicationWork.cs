@@ -19,7 +19,7 @@ namespace ServiceLayer
         public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
-        private TextBox[] Old = new TextBox[3] { null, null, null };
+        private Label[] Old = new Label[3] { null, null, null };
         private int[] index = new int[3] { 10, 10, 10 };
         public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
@@ -97,28 +97,27 @@ namespace ServiceLayer
             Panel Screen = mainView.GetScreen();
             Point point = new Point(0, index[ind]);
             if (Old[ind] != null) Screen.ScrollControlIntoView(Old[ind]);
-            TextBox[] textBoxes = new TextBox[5];
+            Label[] labels = new Label[5];
             for (int i = 0; i < 5; i++)
             {
-                textBoxes[i] = new TextBox();
-                textBoxes[i].BackColor = Color.FromArgb(45, 45, 48);
-                textBoxes[i].ForeColor = Color.White;
-                textBoxes[i].Font = new Font(textBoxes[i].Font.Name, 11, textBoxes[i].Font.Style, textBoxes[i].Font.Unit);
-                textBoxes[i].BorderStyle = BorderStyle.FixedSingle;
-                textBoxes[i].ReadOnly = true;
+                labels[i] = new Label();
+                labels[i].BackColor = Color.FromArgb(45, 45, 48);
+                labels[i].ForeColor = Color.White;
+                labels[i].Font = new Font(labels[i].Font.Name, 11, labels[i].Font.Style, labels[i].Font.Unit);
+                labels[i].BorderStyle = BorderStyle.FixedSingle;
                 switch (i)
                 {
-                    case 0: textBoxes[i].Size = new Size(97, 24); point.X = 17; textBoxes[i].Text = item.Date; break;
-                    case 1: textBoxes[i].Size = new Size(97, 24); point.X = 120; textBoxes[i].Text = item.Time; break;
-                    case 2: textBoxes[i].Size = new Size(165, 24); point.X = 223; textBoxes[i].Text = item.Category; break;
-                    case 3: textBoxes[i].Size = new Size(291, 24); point.X = 394; textBoxes[i].Text = item.Comment; break;
-                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.GetStrAmount(); break;
+                    case 0: labels[i].Size = new Size(97, 24); point.X = 17; labels[i].Text = item.Date; break;
+                    case 1: labels[i].Size = new Size(97, 24); point.X = 120; labels[i].Text = item.Time; break;
+                    case 2: labels[i].Size = new Size(165, 24); point.X = 223; labels[i].Text = item.Category; break;
+                    case 3: labels[i].Size = new Size(291, 24); point.X = 394; labels[i].Text = item.Comment; break;
+                    case 4: labels[i].Size = new Size(115, 24); point.X = 691; labels[i].Text = item.GetStrAmount(); break;
                 }
-                textBoxes[i].Location = point;
+                labels[i].Location = point;
             }
-            Screen.Controls.AddRange(textBoxes);
-            Screen.ScrollControlIntoView(textBoxes[0]);
-            Old[ind] = textBoxes[0];
+            Screen.Controls.AddRange(labels);
+            Screen.ScrollControlIntoView(labels[0]);
+            Old[ind] = labels[0];
             if (index[ind] < 430) index[ind] += 30; else if (index[ind] == 430) index[ind] += 13;
         }
         public void UpdateElements()
