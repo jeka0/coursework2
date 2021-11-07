@@ -24,8 +24,8 @@ namespace DataAccessLayer
         int GetIndx();
         int GetRecordType();
         int GetSortType();
-        Panel GetScreen();
         String GetNewCategory();
         Label GetLabel();
+        DataGridView GetDataGridView();
     }
 }

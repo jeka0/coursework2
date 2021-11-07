@@ -19,8 +19,6 @@ namespace ServiceLayer
         public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
-        private Label[] Old = new Label[3] { null, null, null };
-        private int[] index = new int[3] { 10, 10, 10 };
         public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
             authorizationView = authorView;
@@ -93,32 +91,10 @@ namespace ServiceLayer
         }
         private void AddNewElement(Item item)
         {
-            int ind = mainView.GetIndx();
-            Panel Screen = mainView.GetScreen();
-            Point point = new Point(0, index[ind]);
-            if (Old[ind] != null) Screen.ScrollControlIntoView(Old[ind]);
-            Label[] labels = new Label[5];
-            for (int i = 0; i < 5; i++)
-            {
-                labels[i] = new Label();
-                labels[i].BackColor = Color.FromArgb(45, 45, 48);
-                labels[i].ForeColor = Color.White;
-                labels[i].Font = new Font(labels[i].Font.Name, 11, labels[i].Font.Style, labels[i].Font.Unit);
-                labels[i].BorderStyle = BorderStyle.FixedSingle;
-                switch (i)
-                {
-                    case 0: labels[i].Size = new Size(97, 24); point.X = 17; labels[i].Text = item.Date; break;
-                    case 1: labels[i].Size = new Size(97, 24); point.X = 120; labels[i].Text = item.Time; break;
-                    case 2: labels[i].Size = new Size(165, 24); point.X = 223; labels[i].Text = item.Category; break;
-                    case 3: labels[i].Size = new Size(291, 24); point.X = 394; labels[i].Text = item.Comment; break;
-                    case 4: labels[i].Size = new Size(115, 24); point.X = 691; labels[i].Text = item.GetStrAmount(); break;
-                }
-                labels[i].Location = point;
-            }
-            Screen.Controls.AddRange(labels);
-            Screen.ScrollControlIntoView(labels[0]);
-            Old[ind] = labels[0];
-            if (index[ind] < 430) index[ind] += 30; else if (index[ind] == 430) index[ind] += 13;
+            var dataGridView = mainView.GetDataGridView();
+            dataGridView.Rows.Add(item.Date, item.Time, item.Category, item.Comment, item.GetStrAmount());
+            int count = dataGridView.Rows.Count;
+            if (count != 0) dataGridView.FirstDisplayedScrollingRowIndex = count - 1;
         }
         public void UpdateElements()
         {
@@ -140,13 +116,11 @@ namespace ServiceLayer
         {
             if (mainView.GetIndx()==2)
             {
-                Panel Screen = mainView.GetScreen();
-                index[2] = 10; Old[2] = null;
-                if (Screen.Controls.Count > 0) Screen.ScrollControlIntoView(Screen.Controls[0]);
-                Screen.Controls.Clear();
+                var dataGridView = mainView.GetDataGridView();
+                dataGridView.Rows.Clear();
                 List<Item> items = IdentifyElements().FindItemsByDate(mainView.GetDate());
+                if (items.Count == 0) mainView.GetLabel().Show(); else mainView.GetLabel().Hide();
                 items.Sort(IdentifyComparison());
-                if (items.Count == 0) Screen.Controls.Add(mainView.GetLabel());
                 foreach (Item item in items) AddNewElement(item);
             }
         }

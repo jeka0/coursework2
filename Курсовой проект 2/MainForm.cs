@@ -37,14 +37,14 @@ namespace Курсовой_проект_2
             else
             if (indx == 1) return NewCategories2.Text; else return null;
         }
-        public Panel GetScreen()
+        public DataGridView GetDataGridView()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return Screen;
+            if (indx == 0) return dataGridView1;
             else
-                if (indx == 1) return Screen2; 
+                if (indx == 1) return dataGridView2;
             else
-                if (indx == 2) return Screen3; 
+                if (indx == 2) return dataGridView3;
             else return null;
         }
         public String GetDate()
