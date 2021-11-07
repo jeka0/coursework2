@@ -13,5 +13,6 @@ namespace DataAccessLayer
         void Save<T>(String file, T item);
         void CreateFolder(String folder);
         Elements ReadElements(String file);
+        List<MonthlyReport> ReadMonthlyReports(String file);
      }
 }

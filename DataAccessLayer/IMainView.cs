@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DataAccessLayer
 {
@@ -21,9 +22,12 @@ namespace DataAccessLayer
         void SetName(String value);
         ComboBox GetCategories();
         ComboBox GetCategories2();
+        Chart GetGeneralSchedule();
+        Chart GetCategoryChart();
         int GetIndx();
         int GetRecordType();
         int GetSortType();
+        int GetReportType();
         String GetNewCategory();
         Label GetLabel();
         DataGridView GetDataGridView();

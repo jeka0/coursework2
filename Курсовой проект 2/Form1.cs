@@ -133,6 +133,7 @@ namespace Курсовой_проект_2
                         presenter.mainView = main;
                         main.presenter = presenter;
                         presenter.LoadСategories();
+                        presenter.LoadMonthlyReports();
                         main.Show();
                         this.Close();
                     }

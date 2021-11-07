@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using DataAccessLayer;
 
 namespace Курсовой_проект_2
@@ -21,6 +22,8 @@ namespace Курсовой_проект_2
         public ComboBox GetCategories() { return Categories; }
         public ComboBox GetCategories2() { return Categories2; }
         public int GetIndx() { return tabControl1.SelectedIndex; }
+        public Chart GetGeneralSchedule() { return GeneralSchedule; }
+        public Chart GetCategoryChart() { return CategoryChart; }
         public Label GetLabel()
         {
             int indx = tabControl1.SelectedIndex;
@@ -91,6 +94,11 @@ namespace Курсовой_проект_2
             else if (radioButtonExpenses.Checked) return 1;
             else return 2;
         }
+        public int GetReportType()
+        {
+            if (radioButtonIncomeReport.Checked) return 0;
+            else return 1;
+        }
         public int GetSortType()
         {
             if (radioButtonTime.Checked) return 0;
@@ -122,6 +130,7 @@ namespace Курсовой_проект_2
             tabControl1.SelectTab(2);
             presenter.UpdateHistory();
             tabControl1.SelectTab(0);
+            presenter.UpdateCharts();
 
         }
 
@@ -160,6 +169,7 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
+            presenter.UpdateCharts();
             tabControl1.SelectTab(3);
         }
 
@@ -380,6 +390,16 @@ namespace Курсовой_проект_2
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             presenter.UpdateHistory();
+        }
+
+        private void radioButtonIncomeReport_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateCharts();
+        }
+
+        private void radioButtonExpenseReport_CheckedChanged(object sender, EventArgs e)
+        {
+            presenter.UpdateCharts();
         }
     }
 }

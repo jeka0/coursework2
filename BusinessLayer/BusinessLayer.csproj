@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObject.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Elements.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="MonthlyReport.cs" />

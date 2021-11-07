@@ -18,6 +18,7 @@ namespace DataAccessLayer
         void UpdateUserData();
         void UpdateСategories();
         void LoadСategories();
+        void LoadMonthlyReports();
         void UpdateElements();
         void LoadElements();
         bool CheckCategories();
@@ -25,5 +26,6 @@ namespace DataAccessLayer
         void UpdateSum();
         void SaveAccount();
         void UpdateHistory();
+        void UpdateCharts();
     }
 }

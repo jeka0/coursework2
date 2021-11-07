@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using BusinessLayer;
 using DataAccessLayer;
@@ -19,6 +19,8 @@ namespace ServiceLayer
         public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
+        public MonthlyReport SelectedMonthlyReport { get; private set; }
+        public List<MonthlyReport> monthlyReports;
         public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
             authorizationView = authorView;
@@ -31,6 +33,18 @@ namespace ServiceLayer
             Expenses = this.model.ReadElements("Data/" + SelectedUser.Login + "/Expenses.xml");
             Income = this.model.ReadElements("Data/" + SelectedUser.Login + "/Income.xml");
             UpdateСategories();
+        }
+        public void LoadMonthlyReports()
+        {
+            monthlyReports = this.model.ReadMonthlyReports("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            int count = monthlyReports.Count;
+            if (count != 0) SelectedMonthlyReport = monthlyReports[count-1]; else 
+            { 
+                SelectedMonthlyReport = new MonthlyReport(); 
+                SelectedMonthlyReport.Date = DateTime.Today.Month.ToString() +'.'+ DateTime.Today.Year.ToString();
+                monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month-1).ToString() + '.' + DateTime.Today.Year.ToString()});
+                monthlyReports.Add(SelectedMonthlyReport); 
+            }
         }
         public void UpdateСategories()
         {
@@ -108,9 +122,27 @@ namespace ServiceLayer
                 Comment = mainView.GetComment(), 
                 Amount = mainView.GetAmount() 
             };
+            SelectedMonthlyReport.AddNote(item);
             SelectedUser.CalculateBalance(item.Amount);
             elements.items.Add(item);
             AddNewElement(item);
+        }
+        public void UpdateCharts()
+        {
+            SelectedMonthlyReport.CalculateTotalValues();
+            List<Category> categories = null;int ind = mainView.GetReportType();
+            if (ind == 0) categories = SelectedMonthlyReport.TotalIncome; else categories = SelectedMonthlyReport.TotalExpenses;
+            var generalSchedule = mainView.GetGeneralSchedule();
+            var categoryChart = mainView.GetCategoryChart();
+            generalSchedule.Series[0].Points.Clear();
+            categoryChart.Series[0].Points.Clear();
+            foreach (var item in monthlyReports) 
+            {
+                double value;
+                if (ind == 0) value = item.AmountTotalIncome; else value = item.AmountTotalExpenses;
+                generalSchedule.Series[0].Points.AddXY(item.Date, Convert.ToInt32(value)); 
+            }
+            foreach (var item in categories) categoryChart.Series[0].Points.AddXY(item.category,Convert.ToInt32(item.amount));
         }
         public void UpdateHistory()
         {
@@ -146,6 +178,7 @@ namespace ServiceLayer
         public void SaveAccount()
         {
             model.Save<List<User>>("Data/accounts.xml", users);
+            model.Save<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml", monthlyReports);
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml", Expenses);
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Income.xml", Income);
         }

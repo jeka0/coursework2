@@ -2,6 +2,22 @@
 <Elements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <categories>
     <string>Общее</string>
+    <string>New</string>
   </categories>
-  <items />
+  <items>
+    <Item>
+      <Date>07.11.2021</Date>
+      <Time>20:47:55</Time>
+      <Category>Общее</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>15</Amount>
+    </Item>
+    <Item>
+      <Date>07.11.2021</Date>
+      <Time>20:47:55</Time>
+      <Category>New</Category>
+      <Comment>Введите комментарий</Comment>
+      <Amount>20</Amount>
+    </Item>
+  </items>
 </Elements>

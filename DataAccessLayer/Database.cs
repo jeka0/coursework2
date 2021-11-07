@@ -43,16 +43,29 @@ namespace DataAccessLayer
         }
         public Elements ReadElements(String file)
         {
-            if (File.Exists(file))
+            try
             {
                 return Read<Elements>(file);
             }
-            else 
+            catch
             {
                 var elements = new Elements();
                 elements.categories.Add("Общее");
                 Save<Elements>(file, elements);
                 return elements;
+            }
+        }
+        public List<MonthlyReport> ReadMonthlyReports(String file)
+        {
+            try
+            {
+                return Read<List<MonthlyReport>>(file);
+            }
+            catch
+            {
+                var monthlyReport = new List<MonthlyReport>();
+                Save<List<MonthlyReport>>(file, monthlyReport);
+                return monthlyReport;
             }
         }
     }
