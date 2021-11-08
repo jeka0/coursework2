@@ -9,3 +9,5 @@ D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.csproj.Co
 D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.csproj.CopyComplete
 D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.dll
 D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.pdb
+D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.Properties.Resource.resources
+D:\Курсовой проект 2\ServiceLayer\obj\Debug\ServiceLayer.csproj.GenerateResource.cache

@@ -2,14 +2,29 @@
 <Elements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <categories>
     <string>Общее</string>
+    <string>New</string>
   </categories>
   <items>
     <Item>
-      <Date>07.11.2021</Date>
-      <Time>20:47:55</Time>
+      <Date>08.11.2021</Date>
+      <Time>22:32:48</Time>
       <Category>Общее</Category>
       <Comment>Введите комментарий</Comment>
-      <Amount>-8</Amount>
+      <Amount>-20</Amount>
+    </Item>
+    <Item>
+      <Date>08.11.2021</Date>
+      <Time>22:56:04</Time>
+      <Category>New</Category>
+      <Comment>Fuf</Comment>
+      <Amount>-80</Amount>
+    </Item>
+    <Item>
+      <Date>08.11.2021</Date>
+      <Time>22:56:04</Time>
+      <Category>Общее</Category>
+      <Comment>Fuf</Comment>
+      <Amount>-10</Amount>
     </Item>
   </items>
 </Elements>

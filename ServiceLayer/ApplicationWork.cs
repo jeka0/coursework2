@@ -30,13 +30,16 @@ namespace ServiceLayer
         }
         public void LoadСategories()
         {
-            Expenses = this.model.ReadElements("Data/" + SelectedUser.Login + "/Expenses.xml");
-            Income = this.model.ReadElements("Data/" + SelectedUser.Login + "/Income.xml");
+            Expenses = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml");
+            if (Expenses == null) { Expenses = new Elements(); Expenses.categories.Add("Общее"); }
+            Income = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Income.xml");
+            if (Income == null) { Income = new Elements(); Income.categories.Add("Общее"); }
             UpdateСategories();
         }
         public void LoadMonthlyReports()
         {
-            monthlyReports = this.model.ReadMonthlyReports("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            monthlyReports = this.model.Read<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            if (monthlyReports == null) monthlyReports = new List<MonthlyReport>();
             int count = monthlyReports.Count;
             if (count != 0) SelectedMonthlyReport = monthlyReports[count-1]; else 
             { 
@@ -123,26 +126,36 @@ namespace ServiceLayer
                 Amount = mainView.GetAmount() 
             };
             SelectedMonthlyReport.AddNote(item);
+            SelectedMonthlyReport.CalculateTotalValues();
+            SelectedMonthlyReport.CalculatePercents();
+            SelectedMonthlyReport.Sort();
             SelectedUser.CalculateBalance(item.Amount);
             elements.items.Add(item);
             AddNewElement(item);
         }
         public void UpdateCharts()
         {
-            SelectedMonthlyReport.CalculateTotalValues();
-            List<Category> categories = null;int ind = mainView.GetReportType();
-            if (ind == 0) categories = SelectedMonthlyReport.TotalIncome; else categories = SelectedMonthlyReport.TotalExpenses;
-            var generalSchedule = mainView.GetGeneralSchedule();
-            var categoryChart = mainView.GetCategoryChart();
-            generalSchedule.Series[0].Points.Clear();
-            categoryChart.Series[0].Points.Clear();
+            int ind = mainView.GetReportType();
+            Chart generalSchedule = mainView.GetGeneralSchedule(), categoryChart = mainView.GetCategoryChart();
+            var tabels = mainView.GetDataGridViewReports();
+            generalSchedule.Series[0].Points.Clear(); categoryChart.Series[0].Points.Clear();
+            tabels[0].Rows.Clear(); tabels[1].Rows.Clear();
+            double oldValue=0;
             foreach (var item in monthlyReports) 
             {
-                double value;
-                if (ind == 0) value = item.AmountTotalIncome; else value = item.AmountTotalExpenses;
-                generalSchedule.Series[0].Points.AddXY(item.Date, Convert.ToInt32(value)); 
+                double value = item.GetTotalAmount(ind);
+                Bitmap picture;
+                if (value < oldValue) picture = Properties.Resource.Down; else picture = Properties.Resource.Up;
+                generalSchedule.Series[0].Points.AddXY(item.Date, Convert.ToInt32(value));
+                tabels[1].Rows.Add(item.Date, picture,"на " + item.AmountToString(value - oldValue), item.AmountToString(value));
+                oldValue = value;
             }
-            foreach (var item in categories) categoryChart.Series[0].Points.AddXY(item.category,Convert.ToInt32(item.amount));
+            tabels[1].Sort(tabels[1].Columns[0],System.ComponentModel.ListSortDirection.Descending);
+            foreach (var item in SelectedMonthlyReport.GetTotalList(ind))
+            {
+                categoryChart.Series[0].Points.AddXY(item.category, Convert.ToInt32(item.amount));
+                tabels[0].Rows.Add(item.category,item.percent + " %",item.AmountToString(item.amount));
+            }
         }
         public void UpdateHistory()
         {

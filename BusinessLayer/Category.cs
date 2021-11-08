@@ -9,6 +9,7 @@ namespace BusinessLayer
     public class Category:BusinessObject
     {
         public String category;
+        public int percent;
         public double amount;
     }
 }

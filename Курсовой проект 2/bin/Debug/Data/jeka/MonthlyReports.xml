@@ -4,28 +4,36 @@
     <Date>10.2021</Date>
     <TotalIncome />
     <TotalExpenses />
-    <AmountTotalIncome>0</AmountTotalIncome>
-    <AmountTotalExpenses>0</AmountTotalExpenses>
+    <AmountTotalIncome>50</AmountTotalIncome>
+    <AmountTotalExpenses>-60</AmountTotalExpenses>
   </MonthlyReport>
   <MonthlyReport>
     <Date>11.2021</Date>
     <TotalIncome>
       <Category>
-        <category>Общее</category>
-        <amount>15</amount>
+        <category>Что</category>
+        <percent>69</percent>
+        <amount>45</amount>
       </Category>
       <Category>
-        <category>New</category>
+        <category>Общее</category>
+        <percent>30</percent>
         <amount>20</amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
+        <category>New</category>
+        <percent>72</percent>
+        <amount>-80</amount>
+      </Category>
+      <Category>
         <category>Общее</category>
-        <amount>-8</amount>
+        <percent>27</percent>
+        <amount>-30</amount>
       </Category>
     </TotalExpenses>
-    <AmountTotalIncome>35</AmountTotalIncome>
-    <AmountTotalExpenses>-8</AmountTotalExpenses>
+    <AmountTotalIncome>65</AmountTotalIncome>
+    <AmountTotalExpenses>-110</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

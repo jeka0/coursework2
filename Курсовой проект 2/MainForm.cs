@@ -50,6 +50,10 @@ namespace Курсовой_проект_2
                 if (indx == 2) return dataGridView3;
             else return null;
         }
+        public DataGridView[] GetDataGridViewReports()
+        {
+            return new DataGridView[] { dataGridViewReport1, dataGridViewReport2 };
+        }
         public String GetDate()
         {
             int indx = tabControl1.SelectedIndex;

@@ -18,6 +18,7 @@ namespace DataAccessLayer
             try
             {
                 users = Read<List<User>>(file);
+                if(users==null) users = new List<User>();
             }
             catch { users = new List<User>(); Save<List<User>>(file, users); }
         }
@@ -31,42 +32,19 @@ namespace DataAccessLayer
         }
         public T Read<T>(String file)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(T));
-            using (FileStream fs = new FileStream(file, FileMode.Open))
+            if (File.Exists(file))
             {
-                return (T)formatter.Deserialize(fs);
+                XmlSerializer formatter = new XmlSerializer(typeof(T));
+                using (FileStream fs = new FileStream(file, FileMode.Open))
+                {
+                    return (T)formatter.Deserialize(fs);
+                }
             }
+            else return default;
         }
         public void CreateFolder(String folder)
         {
             Directory.CreateDirectory(folder);
-        }
-        public Elements ReadElements(String file)
-        {
-            try
-            {
-                return Read<Elements>(file);
-            }
-            catch
-            {
-                var elements = new Elements();
-                elements.categories.Add("Общее");
-                Save<Elements>(file, elements);
-                return elements;
-            }
-        }
-        public List<MonthlyReport> ReadMonthlyReports(String file)
-        {
-            try
-            {
-                return Read<List<MonthlyReport>>(file);
-            }
-            catch
-            {
-                var monthlyReport = new List<MonthlyReport>();
-                Save<List<MonthlyReport>>(file, monthlyReport);
-                return monthlyReport;
-            }
         }
     }
 }
