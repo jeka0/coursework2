@@ -21,7 +21,6 @@ namespace DataAccessLayer
         void SetSurname(String value);
         void SetName(String value);
         ComboBox GetCategories();
-        ComboBox GetCategories2();
         Chart GetGeneralSchedule();
         Chart GetCategoryChart();
         int GetIndx();

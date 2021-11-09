@@ -18,5 +18,9 @@ namespace BusinessLayer
             else
                 return value.ToString("0.# +E0") + " руб.";
         }
+        public int ConvertToInt32(double value)
+        {
+            if (value > int.MaxValue) return int.MaxValue; else if (value < int.MinValue) return int.MinValue; else return Convert.ToInt32(value);
+        }
     }
 }

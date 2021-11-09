@@ -34,7 +34,6 @@ namespace ServiceLayer
             if (Expenses == null) { Expenses = new Elements(); Expenses.categories.Add("Общее"); }
             Income = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Income.xml");
             if (Income == null) { Income = new Elements(); Income.categories.Add("Общее"); }
-            UpdateСategories();
         }
         public void LoadMonthlyReports()
         {
@@ -51,8 +50,10 @@ namespace ServiceLayer
         }
         public void UpdateСategories()
         {
-            mainView.GetCategories().Items.AddRange(Expenses.categories.ToArray());
-            mainView.GetCategories2().Items.AddRange(Income.categories.ToArray());
+            var categories = mainView.GetCategories();
+            categories.Items.Clear();
+            categories.Items.AddRange(IdentifyElements().categories.ToArray());
+            categories.Text = categories.Items[0].ToString();
         }
         private Elements IdentifyElements()
         {
@@ -116,7 +117,6 @@ namespace ServiceLayer
         public void UpdateElements()
         {
             mainView.GetLabel().Hide();
-            Elements elements = IdentifyElements();
             Item item = new Item() 
             { 
                 Date = mainView.GetDate(), 
@@ -130,7 +130,7 @@ namespace ServiceLayer
             SelectedMonthlyReport.CalculatePercents();
             SelectedMonthlyReport.Sort();
             SelectedUser.CalculateBalance(item.Amount);
-            elements.items.Add(item);
+            IdentifyElements().items.Add(item);
             AddNewElement(item);
         }
         public void UpdateCharts()
@@ -146,14 +146,14 @@ namespace ServiceLayer
                 double value = item.GetTotalAmount(ind);
                 Bitmap picture;
                 if (value < oldValue) picture = Properties.Resource.Down; else picture = Properties.Resource.Up;
-                generalSchedule.Series[0].Points.AddXY(item.Date, Convert.ToInt32(value));
+                generalSchedule.Series[0].Points.AddXY(item.Date, item.ConvertToInt32(value));
                 tabels[1].Rows.Add(item.Date, picture,"на " + item.AmountToString(value - oldValue), item.AmountToString(value));
                 oldValue = value;
             }
             tabels[1].Sort(tabels[1].Columns[0],System.ComponentModel.ListSortDirection.Descending);
             foreach (var item in SelectedMonthlyReport.GetTotalList(ind))
             {
-                categoryChart.Series[0].Points.AddXY(item.category, Convert.ToInt32(item.amount));
+                categoryChart.Series[0].Points.AddXY(item.category, item.ConvertToInt32(item.amount));
                 tabels[0].Rows.Add(item.category,item.percent + " %",item.AmountToString(item.amount));
             }
         }
@@ -194,6 +194,11 @@ namespace ServiceLayer
             model.Save<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml", monthlyReports);
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml", Expenses);
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Income.xml", Income);
+        }
+        public bool ValidateAmount(String value)
+        {
+            double amount;
+            return Double.TryParse(value, out amount) && amount > 0;
         }
     }
 }
