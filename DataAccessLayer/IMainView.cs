@@ -30,6 +30,7 @@ namespace DataAccessLayer
         String GetNewCategory();
         Label GetLabel();
         DataGridView GetDataGridView();
-        DataGridView[] GetDataGridViewReports();
+        DataGridView GetCategoryTable();
+        DataGridView GetTableOfMonths();
     }
 }

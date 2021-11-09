@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Drawing;
 using BusinessLayer;
 using DataAccessLayer;
 
@@ -135,27 +133,9 @@ namespace ServiceLayer
         }
         public void UpdateCharts()
         {
-            int ind = mainView.GetReportType();
-            Chart generalSchedule = mainView.GetGeneralSchedule(), categoryChart = mainView.GetCategoryChart();
-            var tabels = mainView.GetDataGridViewReports();
-            generalSchedule.Series[0].Points.Clear(); categoryChart.Series[0].Points.Clear();
-            tabels[0].Rows.Clear(); tabels[1].Rows.Clear();
-            double oldValue=0;
-            foreach (var item in monthlyReports) 
-            {
-                double value = item.GetTotalAmount(ind);
-                Bitmap picture;
-                if (value < oldValue) picture = Properties.Resource.Down; else picture = Properties.Resource.Up;
-                generalSchedule.Series[0].Points.AddXY(item.Date, item.ConvertToInt32(value));
-                tabels[1].Rows.Add(item.Date, picture,"на " + item.AmountToString(value - oldValue), item.AmountToString(value));
-                oldValue = value;
-            }
-            tabels[1].Sort(tabels[1].Columns[0],System.ComponentModel.ListSortDirection.Descending);
-            foreach (var item in SelectedMonthlyReport.GetTotalList(ind))
-            {
-                categoryChart.Series[0].Points.AddXY(item.category, item.ConvertToInt32(item.amount));
-                tabels[0].Rows.Add(item.category,item.percent + " %",item.AmountToString(item.amount));
-            }
+            SupportingWork.mainView = mainView;
+            SupportingWork.FillInMonthlyReport(monthlyReports);
+            SupportingWork.FillInCategoryReport(SelectedMonthlyReport.GetTotalList(mainView.GetReportType()));
         }
         public void UpdateHistory()
         {
@@ -197,8 +177,7 @@ namespace ServiceLayer
         }
         public bool ValidateAmount(String value)
         {
-            double amount;
-            return Double.TryParse(value, out amount) && amount > 0;
+            return Double.TryParse(value, out double amount) && amount > 0;
         }
     }
 }

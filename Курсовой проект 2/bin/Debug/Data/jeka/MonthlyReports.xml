@@ -39,16 +39,21 @@
     <TotalExpenses>
       <Category>
         <category>Общее</category>
-        <percent>96</percent>
+        <percent>70</percent>
         <amount>-1308</amount>
       </Category>
       <Category>
+        <category>X</category>
+        <percent>26</percent>
+        <amount>-500</amount>
+      </Category>
+      <Category>
         <category>New</category>
-        <percent>3</percent>
+        <percent>2</percent>
         <amount>-45</amount>
       </Category>
     </TotalExpenses>
     <AmountTotalIncome>93</AmountTotalIncome>
-    <AmountTotalExpenses>-1353</AmountTotalExpenses>
+    <AmountTotalExpenses>-1853</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

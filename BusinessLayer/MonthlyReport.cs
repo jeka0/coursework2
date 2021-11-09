@@ -35,8 +35,8 @@ namespace BusinessLayer
         }
         public void CalculatePercents()
         {
-            foreach (var item in TotalIncome) item.percent = (int)(100 * item.amount / AmountTotalIncome);
-            foreach (var item in TotalExpenses) item.percent = (int)(100 * item.amount / AmountTotalExpenses);
+            foreach (var item in TotalIncome) item.CalculatePercent(AmountTotalIncome);
+            foreach (var item in TotalExpenses) item.CalculatePercent(AmountTotalExpenses);
         }
         public double GetTotalAmount(int index) { if (index == 0) return AmountTotalIncome; else return AmountTotalExpenses; }
         public List<Category> GetTotalList(int index) { if (index == 0) return TotalIncome; else return TotalExpenses; }

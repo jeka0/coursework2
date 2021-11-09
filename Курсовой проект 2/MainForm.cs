@@ -22,91 +22,106 @@ namespace Курсовой_проект_2
         public int GetIndx() { return tabControl1.SelectedIndex; }
         public Chart GetGeneralSchedule() { return GeneralSchedule; }
         public Chart GetCategoryChart() { return CategoryChart; }
+        public DataGridView GetCategoryTable() { return dataGridViewReport1; }
+        public DataGridView GetTableOfMonths() { return dataGridViewReport2; }
         public Label GetLabel()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return NoExpenses; else if (indx == 1) return NoIncome; else if (indx == 2) return NoHistory; else return null;
         }
+
         public ComboBox GetCategories()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Categories; else if (indx == 1) return Categories2; else return null;
         }
+
         public String GetNewCategory()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return NewCategories.Text; else if (indx == 1) return NewCategories2.Text; else return null;
         }
+
         public DataGridView GetDataGridView()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return dataGridView1; else if (indx == 1) return dataGridView2; else if (indx == 2) return dataGridView3; else return null;
         }
-        public DataGridView[] GetDataGridViewReports()
-        {
-            return new DataGridView[] { dataGridViewReport1, dataGridViewReport2 };
-        }
+
         public String GetDate()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Date.Value.ToShortDateString(); else if (indx == 1) return Date2.Value.ToShortDateString(); else if (indx == 2) return Date3.Value.ToShortDateString(); else return null;
         }
+
         public String GetTime()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Time.Value.ToLongTimeString(); else if (indx == 1) return Time2.Value.ToLongTimeString(); else return null;
         }
+
         public String GetCategory()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Categories.Text; else if (indx == 1) return Categories2.Text; else return null;
         }
+
         public String GetComment()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) { if (Comment.Text == "Введите комментарий") return "-";else return Comment.Text; } else if (indx == 1) { if (Comment2.Text == "Введите комментарий") return "-"; else return Comment2.Text; } else return null;
         }
+
         public double GetAmount()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Convert.ToDouble(Amount.Text) * (-1); else if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
         }
+
         public int GetRecordType()
         {
             if (radioButtonAll.Checked) return 0; else if (radioButtonExpenses.Checked) return 1; else return 2;
         }
+
         public int GetReportType()
         {
             if (radioButtonIncomeReport.Checked) return 0; else return 1;
         }
+
         public int GetSortType()
         {
             if (radioButtonTime.Checked) return 0; else return 1;
         }
+
         public MainForm()
         {
             InitializeComponent();
         }
+
         private TextBox IdentifyAmount()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Amount; else return Amount2;
         }
+
         private TextBox IdentifyNewCategories()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return NewCategories; else return NewCategories2;
         }
+
         private Button IdentifyAdd()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Add; else return Add2;
         }
+
         private Button IdentifyAddCategories()
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return AddCategories; else return AddCategories2;
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Error1.Hide();

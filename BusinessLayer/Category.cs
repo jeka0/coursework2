@@ -11,5 +11,9 @@ namespace BusinessLayer
         public String category;
         public int percent;
         public double amount;
+        public void CalculatePercent(double totalAmount)
+        {
+            percent = (int)(100 * amount / totalAmount);
+        }
     }
 }
