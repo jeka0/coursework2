@@ -3,6 +3,7 @@
   <categories>
     <string>Общее</string>
     <string>oo</string>
+    <string>Что</string>
   </categories>
   <items>
     <Item>
@@ -25,6 +26,13 @@
       <Category>oo</Category>
       <Comment>-</Comment>
       <Amount>-50</Amount>
+    </Item>
+    <Item>
+      <Date>09.11.2021</Date>
+      <Time>21:48:16</Time>
+      <Category>Что</Category>
+      <Comment>-</Comment>
+      <Amount>-25</Amount>
     </Item>
   </items>
 </Elements>

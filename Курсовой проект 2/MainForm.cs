@@ -145,7 +145,6 @@ namespace Курсовой_проект_2
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
             presenter.SaveAccount();
-            Application.Exit();
         }
 
         private void Expenses_Click(object sender, EventArgs e)
@@ -276,6 +275,45 @@ namespace Курсовой_проект_2
         private void UpdateChartsEvent(object sender, EventArgs e)
         {
             presenter.UpdateCharts();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            presenter.authorizationView = form1;
+            form1.presenter = presenter;
+            form1.Show();
+            this.Close();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        Point point;
+        private void Border_MouseDown(object sender, MouseEventArgs e)
+        {
+            point = new Point(e.X, e.Y);
+        }
+
+        private void Border_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - point.X;
+                this.Top += e.Y - point.Y;
+            }
+        }
+
+        private void Exit_MouseEnter(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.FromArgb(45, 45, 48);
+        }
+
+        private void Exit_MouseLeave(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.Gray;
+            Exit.ForeColor = Color.White;
         }
     }
 }

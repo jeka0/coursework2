@@ -12,28 +12,33 @@
     <TotalIncome>
       <Category>
         <category>New</category>
-        <percent>75</percent>
+        <percent>71</percent>
         <amount>135</amount>
       </Category>
       <Category>
         <category>Общее</category>
-        <percent>25</percent>
-        <amount>45</amount>
+        <percent>28</percent>
+        <amount>53</amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
         <category>oo</category>
-        <percent>66</percent>
+        <percent>57</percent>
         <amount>-100</amount>
       </Category>
       <Category>
         <category>Общее</category>
-        <percent>33</percent>
+        <percent>28</percent>
         <amount>-50</amount>
       </Category>
+      <Category>
+        <category>Что</category>
+        <percent>14</percent>
+        <amount>-25</amount>
+      </Category>
     </TotalExpenses>
-    <AmountTotalIncome>180</AmountTotalIncome>
-    <AmountTotalExpenses>-150</AmountTotalExpenses>
+    <AmountTotalIncome>188</AmountTotalIncome>
+    <AmountTotalExpenses>-175</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>
