@@ -24,13 +24,10 @@ namespace DataAccessLayer
         }
         public void Save<T>(String file, T item)
         {
-            if (File.Exists(file))
+            XmlSerializer formatter = new XmlSerializer(typeof(T));
+            using (FileStream fs = new FileStream(file, FileMode.Create))
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(T));
-                using (FileStream fs = new FileStream(file, FileMode.Create))
-                {
-                    formatter.Serialize(fs, item);
-                }
+                formatter.Serialize(fs, item);
             }
         }
         public T Read<T>(String file)

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfMonthlyReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MonthlyReport>
+    <Date>10.2021</Date>
+    <TotalIncome />
+    <TotalExpenses />
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <Date>11.2021</Date>
+    <TotalIncome />
+    <TotalExpenses />
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
+</ArrayOfMonthlyReport>

@@ -7,4 +7,11 @@
     <Name>Евгений</Name>
     <Money>-1769.5</Money>
   </User>
+  <User>
+    <Login>Pog</Login>
+    <Password>123</Password>
+    <Surname>qqq</Surname>
+    <Name>qqq</Name>
+    <Money>0</Money>
+  </User>
 </ArrayOfUser>
