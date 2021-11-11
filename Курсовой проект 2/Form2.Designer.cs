@@ -49,7 +49,6 @@ namespace Курсовой_проект_2
             this.Error1 = new System.Windows.Forms.Label();
             this.Error2 = new System.Windows.Forms.Label();
             this.Error0 = new System.Windows.Forms.Label();
-            this.Error3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +86,7 @@ namespace Курсовой_проект_2
             this.login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login.ForeColor = System.Drawing.Color.Black;
-            this.login.Location = new System.Drawing.Point(187, 103);
+            this.login.Location = new System.Drawing.Point(196, 104);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(347, 29);
             this.login.TabIndex = 3;
@@ -99,7 +98,7 @@ namespace Курсовой_проект_2
             // pass
             // 
             this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass.Location = new System.Drawing.Point(187, 303);
+            this.pass.Location = new System.Drawing.Point(196, 304);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(347, 29);
             this.pass.TabIndex = 4;
@@ -114,7 +113,7 @@ namespace Курсовой_проект_2
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(182, 71);
+            this.label2.Location = new System.Drawing.Point(191, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 29);
             this.label2.TabIndex = 5;
@@ -125,7 +124,7 @@ namespace Курсовой_проект_2
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(182, 268);
+            this.label3.Location = new System.Drawing.Point(191, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 29);
             this.label3.TabIndex = 6;
@@ -138,7 +137,7 @@ namespace Курсовой_проект_2
             this.clue1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clue1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clue1.ForeColor = System.Drawing.Color.White;
-            this.clue1.Location = new System.Drawing.Point(540, 103);
+            this.clue1.Location = new System.Drawing.Point(549, 104);
             this.clue1.Name = "clue1";
             this.clue1.Size = new System.Drawing.Size(18, 20);
             this.clue1.TabIndex = 7;
@@ -152,7 +151,7 @@ namespace Курсовой_проект_2
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(540, 300);
+            this.label1.Location = new System.Drawing.Point(549, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 20);
             this.label1.TabIndex = 8;
@@ -164,7 +163,7 @@ namespace Курсовой_проект_2
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(294, 30);
+            this.label4.Location = new System.Drawing.Point(303, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 37);
             this.label4.TabIndex = 9;
@@ -174,7 +173,7 @@ namespace Курсовой_проект_2
             // 
             this.Clue11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Clue11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Clue11.Location = new System.Drawing.Point(564, 103);
+            this.Clue11.Location = new System.Drawing.Point(573, 104);
             this.Clue11.Name = "Clue11";
             this.Clue11.Size = new System.Drawing.Size(165, 48);
             this.Clue11.TabIndex = 10;
@@ -184,7 +183,7 @@ namespace Курсовой_проект_2
             // 
             this.Clue22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Clue22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Clue22.Location = new System.Drawing.Point(564, 303);
+            this.Clue22.Location = new System.Drawing.Point(573, 304);
             this.Clue22.Name = "Clue22";
             this.Clue22.Size = new System.Drawing.Size(165, 65);
             this.Clue22.TabIndex = 11;
@@ -197,7 +196,7 @@ namespace Курсовой_проект_2
             this.Enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Enter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Enter.ForeColor = System.Drawing.Color.White;
-            this.Enter.Location = new System.Drawing.Point(301, 355);
+            this.Enter.Location = new System.Drawing.Point(310, 356);
             this.Enter.Name = "Enter";
             this.Enter.Size = new System.Drawing.Size(144, 34);
             this.Enter.TabIndex = 12;
@@ -212,7 +211,7 @@ namespace Курсовой_проект_2
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(313, 407);
+            this.textBox1.Location = new System.Drawing.Point(322, 408);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(117, 17);
             this.textBox1.TabIndex = 13;
@@ -224,7 +223,7 @@ namespace Курсовой_проект_2
             this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(187, 172);
+            this.textBox2.Location = new System.Drawing.Point(196, 173);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(347, 29);
             this.textBox2.TabIndex = 14;
@@ -238,7 +237,7 @@ namespace Курсовой_проект_2
             this.textBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(187, 236);
+            this.textBox3.Location = new System.Drawing.Point(196, 237);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(347, 29);
             this.textBox3.TabIndex = 15;
@@ -253,7 +252,7 @@ namespace Курсовой_проект_2
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(182, 140);
+            this.label5.Location = new System.Drawing.Point(191, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 29);
             this.label5.TabIndex = 16;
@@ -265,7 +264,7 @@ namespace Курсовой_проект_2
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(182, 204);
+            this.label6.Location = new System.Drawing.Point(191, 205);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 29);
             this.label6.TabIndex = 17;
@@ -296,24 +295,14 @@ namespace Курсовой_проект_2
             // Error0
             // 
             this.Error0.BackColor = System.Drawing.Color.Red;
-            this.Error0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Error0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Error0.ForeColor = System.Drawing.Color.White;
-            this.Error0.Location = new System.Drawing.Point(12, 179);
+            this.Error0.Location = new System.Drawing.Point(7, 179);
             this.Error0.Name = "Error0";
-            this.Error0.Size = new System.Drawing.Size(152, 79);
-            this.Error0.TabIndex = 20;
-            this.Error0.Text = "ОШИБКА: Файл accounts.txt  не был найден. Проверьте наличие файла!!!!!!!";
-            // 
-            // Error3
-            // 
-            this.Error3.BackColor = System.Drawing.Color.Red;
-            this.Error3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Error3.ForeColor = System.Drawing.Color.White;
-            this.Error3.Location = new System.Drawing.Point(12, 179);
-            this.Error3.Name = "Error3";
-            this.Error3.Size = new System.Drawing.Size(152, 68);
-            this.Error3.TabIndex = 21;
-            this.Error3.Text = "ОШИБКА: Структура файла accounts.txt была нарушена!!!!!";
+            this.Error0.Size = new System.Drawing.Size(183, 66);
+            this.Error0.TabIndex = 21;
+            this.Error0.Text = "ОШИБКА: Произошла ошибка при чтении файла, пользовательские данные могут быть пот" +
+    "еряны!!!!!";
             // 
             // Form2
             // 
@@ -321,7 +310,6 @@ namespace Курсовой_проект_2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Error3);
             this.Controls.Add(this.Error0);
             this.Controls.Add(this.Error2);
             this.Controls.Add(this.Error1);
@@ -344,6 +332,7 @@ namespace Курсовой_проект_2
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
@@ -375,6 +364,5 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label Error1;
         private System.Windows.Forms.Label Error2;
         private System.Windows.Forms.Label Error0;
-        private System.Windows.Forms.Label Error3;
     }
 }

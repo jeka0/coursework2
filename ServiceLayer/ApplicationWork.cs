@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
 using BusinessLayer;
 using DataAccessLayer;
 
@@ -16,141 +14,184 @@ namespace ServiceLayer
         public IModel model { get; set; }
         public IAuthorizationView authorizationView { get; set; }
         public IRegistrationView registrationView { get; set; }
-        public Elements Expenses;
-        public Elements Income;
+        public Elements Expenses, Income;
         public User SelectedUser { get; private set; }
         public List<User> users;
-        private TextBox[] Old = new TextBox[2] { null, null };
-        private int[] index = new int[2] { 10, 10 };
-        public ApplicationWork(IModel model, IAuthorizationView authorView/*, IMainView mView, IAuthorizationView authorView, IRegistrationView regView*/)
+        public MonthlyReport SelectedMonthlyReport { get; private set; }
+        public List<MonthlyReport> monthlyReports;
+        public ApplicationWork(IModel model, IAuthorizationView authorView)
         {
-            /*mainView = mView;
-            mainView.presenter = this;
-            authorizationView = authorView;
-            authorizationView.presenter = this;
-            registrationView = regView;
-            registrationView.presenter = this;*/
             authorizationView = authorView;
             authorizationView.presenter = this;
             this.model = model;
-            users = this.model.GetUsers;
+            users = this.model.GetUsers();
         }
         public void LoadСategories()
         {
-            Expenses = this.model.ReadElementsXml("Data/" + SelectedUser.Login + "/Expenses.xml");
-            Income = this.model.ReadElementsXml("Data/" + SelectedUser.Login + "/Income.xml");
-            UpdateСategories();
+            Expenses = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml");
+            if (Expenses == null) { Expenses = new Elements(); Expenses.categories.Add("Общее"); }
+            Income = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Income.xml");
+            if (Income == null) { Income = new Elements(); Income.categories.Add("Общее"); }
+        }
+        public void LoadMonthlyReports()
+        {
+            monthlyReports = this.model.Read<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            if (monthlyReports == null) monthlyReports = new List<MonthlyReport>();
+            int count = monthlyReports.Count;
+            String date = DateTime.Today.Month.ToString() + '.' + DateTime.Today.Year.ToString();            
+            if (count != 0) 
+            {
+                if (DateTime.Today.Day.ToString()=="1" && monthlyReports[count - 1].Date!=date) monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
+                else SelectedMonthlyReport = monthlyReports[count - 1]; 
+            } 
+            else
+            {
+                monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month - 1).ToString() + '.' + DateTime.Today.Year.ToString() });
+                monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
+            }
         }
         public void UpdateСategories()
         {
-            mainView.GetCategories.Items.AddRange(Expenses.categories.ToArray());
-            mainView.GetCategories2.Items.AddRange(Income.categories.ToArray());
+            var categories = mainView.GetCategories();
+            categories.Items.Clear();
+            categories.Items.AddRange(IdentifyElements().categories.ToArray());
+            categories.Text = categories.Items[0].ToString();
         }
-
+        private Elements IdentifyElements()
+        {
+            int ind = mainView.GetIndx(), rec = mainView.GetRecordType();
+            if (ind == 0 || (ind == 2 && rec == 1)) return Expenses; else if (ind == 1 || (ind == 2 && rec == 2)) return Income;
+            else if (ind == 2 && rec == 0)
+            { 
+                Elements elements = new Elements();
+                elements.items.AddRange(Expenses.items);
+                elements.items.AddRange(Income.items);
+                return elements;
+            }
+            else return null;
+        }
+        private Comparison<Item> IdentifyComparison()
+        {
+            if (mainView.GetSortType() == 0) return (a, b) => a.Time.CompareTo(b.Time);
+            else
+            if (mainView.GetSortType() == 1) return (a, b) => a.Amount.CompareTo(b.Amount); else return null;
+        }
         public void CreateNewUser()
         {
             User newUser = new User() 
             { 
-                Login = registrationView.GetLogin,
-                Password = registrationView.GetPassword,
-                Name = registrationView.GetName,
-                Surname = registrationView.GetSurname 
+                Login = registrationView.GetLogin(),
+                Password = registrationView.GetPassword(),
+                Name = registrationView.GetName(),
+                Surname = registrationView.GetSurname() 
             };
             SelectedUser = newUser;
             users.Add(newUser);
-            model.SaveXml<List<User>>("Data/accounts.xml", users);
             var elements = new Elements();
             elements.categories.Add("Общее");
+            Expenses = elements; Income = elements;
             model.CreateFolder("Data/" + newUser.Login);
-            model.SaveXml<Elements>("Data/" + newUser.Login + "/Expenses.xml", elements);
-            model.SaveXml<Elements>("Data/" + newUser.Login + "/Income.xml", elements);
+            SaveAccount();
         }
         public bool UserAuthorization()
         {
-            foreach (User user in users) { if (authorizationView.GetLogin == user.Login && authorizationView.GetPassword == user.Password) { SelectedUser = user; return true; } }
-            return false;
+            SelectedUser = users.Find(a => authorizationView.GetLogin() == a.Login && authorizationView.GetPassword() == a.Password);
+            if (SelectedUser != null) return true; else return false;
         }
         public bool UserRegistration()
         {
-            foreach (User user in users) { if (registrationView.GetLogin == user.Login) return false; }
-            return true;
+            if (users.Find(a => registrationView.GetLogin() == a.Login) == null) return true; else return false;
         }
         public void UpdateUserData()
         {
-            mainView.SetLogin = SelectedUser.Login;
-            mainView.SetName = SelectedUser.Name;
-            mainView.SetSurname = SelectedUser.Surname;
+            mainView.SetLogin(SelectedUser.Login);
+            mainView.SetName(SelectedUser.Name);
+            mainView.SetSurname(SelectedUser.Surname);
+            UpdateSum();
         }
-        public void AddNewElement(Item item)
+        private void AddNewElement(Item item)
         {
-            int ind = mainView.GetIndx;
-            Point point = new Point(0, index[ind]);
-            if (Old != null) mainView.GetScreen.ScrollControlIntoView(Old[ind]);
-            TextBox[] textBoxes = new TextBox[5];
-            for (int i = 0; i < 5; i++)
-            {
-                textBoxes[i] = new TextBox();
-                textBoxes[i].BackColor = Color.FromArgb(45, 45, 48);
-                textBoxes[i].ForeColor = Color.White;
-                textBoxes[i].Font = new Font(textBoxes[i].Font.Name, 11, textBoxes[i].Font.Style, textBoxes[i].Font.Unit);
-                textBoxes[i].BorderStyle = BorderStyle.FixedSingle;
-                textBoxes[i].ReadOnly = true;
-                switch (i)
-                {
-                    case 0: textBoxes[i].Size = new Size(97, 24); point.X = 17; textBoxes[i].Text = item.Date; break;
-                    case 1: textBoxes[i].Size = new Size(97, 24); point.X = 120; textBoxes[i].Text = item.Time; break;
-                    case 2: textBoxes[i].Size = new Size(165, 24); point.X = 223; textBoxes[i].Text = item.Category; break;
-                    case 3: textBoxes[i].Size = new Size(291, 24); point.X = 394; textBoxes[i].Text = item.Comment; break;
-                    case 4: textBoxes[i].Size = new Size(115, 24); point.X = 691; textBoxes[i].Text = item.Amount + " руб."; break;
-                }
-                textBoxes[i].Location = point;
-                mainView.GetScreen.Controls.Add(textBoxes[i]);
-            }
-            mainView.GetScreen.ScrollControlIntoView(textBoxes[0]);
-            mainView.GetLabel.Hide();
-            Old[ind] = textBoxes[0];
-            if (index[ind] < 430) index[ind] += 30; else if (index[ind] == 430) index[ind] += 13;
+            var dataGridView = mainView.GetDataGridView();
+            dataGridView.Rows.Add(item.Date, item.Time, item.Category, item.Comment, item.GetStrAmount());
+            int count = dataGridView.Rows.Count;
+            if (count != 0) dataGridView.FirstDisplayedScrollingRowIndex = count - 1;
         }
         public void UpdateElements()
         {
-            Elements elements=null;String file = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income;file = "Data/" + SelectedUser.Login + "/Income.xml"; }
-            Item item = new Item() { Date = mainView.GetDate, Time = mainView.GetTime, Category = mainView.GetCategory, Comment = mainView.GetComment, Amount = mainView.GetAmount };
-            elements.items.Add(item);
+            mainView.GetLabel().Hide();
+            Item item = new Item() 
+            { 
+                Date = mainView.GetDate(), 
+                Time = mainView.GetTime(), 
+                Category = mainView.GetCategory(), 
+                Comment = mainView.GetComment(), 
+                Amount = mainView.GetAmount() 
+            };
+            SelectedMonthlyReport.AddNote(item);
+            SelectedMonthlyReport.CalculateTotalValues();
+            SelectedMonthlyReport.CalculatePercents();
+            SelectedMonthlyReport.Sort();
+            SelectedUser.CalculateBalance(item.Amount);
+            IdentifyElements().items.Add(item);
             AddNewElement(item);
-            model.SaveXml<Elements>(file,elements);
+        }
+        public void UpdateCharts()
+        {
+            SupportingWork.mainView = mainView;
+            SupportingWork.FillInMonthlyReport(monthlyReports);
+            SupportingWork.FillInCategoryReport(SelectedMonthlyReport.GetTotalList(mainView.GetReportType()));
+        }
+        public void UpdateHistory()
+        {
+            if (mainView.GetIndx()==2)
+            {
+                var dataGridView = mainView.GetDataGridView();
+                dataGridView.Rows.Clear();
+                List<Item> items = IdentifyElements().FindItemsByDate(mainView.GetDate());
+                if (items.Count == 0) mainView.GetLabel().Show(); else mainView.GetLabel().Hide();
+                items.Sort(IdentifyComparison());
+                foreach (Item item in items) AddNewElement(item);
+            }
         }
         public void LoadElements()
         {
-            Elements elements=null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            foreach (Item item in elements.items)
-            {
-                AddNewElement(item);
-            }
+            Elements elements= IdentifyElements();
+            int i = 0, count = elements.items.Count;
+            if (count > 0) { mainView.GetLabel().Hide(); if (count > 23) i = count - 23; }
+            for (; i < count; i++)AddNewElement(elements.items[i]);
         }
         public bool CheckCategories()
         {
-            Elements elements = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) elements = Expenses; else if (ind == 1) elements = Income;
-            bool Flag = false;
-            for (int i = 0; i < elements.categories.Count; i++)
-            {
-                if (mainView.GetNewCategory == elements.categories[i].ToString()) { Flag = true; break; }
-            }
-            return Flag;
+            return IdentifyElements().CheckCategories(mainView.GetNewCategory());
         }
         public void AddCategory()
         {
-            Elements elements = null; String file = null;
-            int ind = mainView.GetIndx;
-            if (ind == 0) { elements = Expenses; file = "Data/" + SelectedUser.Login + "/Expenses.xml"; } else if (ind == 1) { elements = Income; file = "Data/" + SelectedUser.Login + "/Income.xml"; }
-            elements.categories.Add(mainView.GetNewCategory);
-            model.SaveXml<Elements>(file, elements);
-
+            IdentifyElements().categories.Add(mainView.GetNewCategory());
+        }
+        public void UpdateSum()
+        {
+            mainView.SetSum(SelectedUser.GetStrAmount());
+        }
+        public void DeleteAccount()
+        {
+            model.DeleteFile("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            model.DeleteFile("Data/" + SelectedUser.Login + "/Expenses.xml");
+            model.DeleteFile("Data/" + SelectedUser.Login + "/Income.xml");
+            model.DeleteFolder("Data/" + SelectedUser.Login);
+            users.Remove(SelectedUser);
+            model.Save<List<User>>("Data/accounts.xml", users);
+            SelectedUser = null;
+        }
+        public void SaveAccount()
+        {
+            model.Save<List<User>>("Data/accounts.xml", users);
+            model.Save<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml", monthlyReports);
+            model.Save<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml", Expenses);
+            model.Save<Elements>("Data/" + SelectedUser.Login + "/Income.xml", Income);
+        }
+        public bool ValidateAmount(String value)
+        {
+            return Double.TryParse(value, out double amount) && amount > 0;
         }
     }
 }

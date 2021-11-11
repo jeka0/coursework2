@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ArrayOfMonthlyReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MonthlyReport>
+    <Date>10.2021</Date>
+    <TotalIncome />
+    <TotalExpenses />
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <Date>11.2021</Date>
+    <TotalIncome>
+      <Category>
+        <category>Общее</category>
+        <percent>63</percent>
+        <amount>59</amount>
+      </Category>
+      <Category>
+        <category>Что-то</category>
+        <percent>16</percent>
+        <amount>15</amount>
+      </Category>
+      <Category>
+        <category>Что</category>
+        <percent>8</percent>
+        <amount>8</amount>
+      </Category>
+      <Category>
+        <category>5</category>
+        <percent>7</percent>
+        <amount>7</amount>
+      </Category>
+      <Category>
+        <category />
+        <percent>4</percent>
+        <amount>4</amount>
+      </Category>
+    </TotalIncome>
+    <TotalExpenses>
+      <Category>
+        <category>Общее</category>
+        <percent>70</percent>
+        <amount>-1317.5</amount>
+      </Category>
+      <Category>
+        <category>X</category>
+        <percent>26</percent>
+        <amount>-500</amount>
+      </Category>
+      <Category>
+        <category>New</category>
+        <percent>2</percent>
+        <amount>-45</amount>
+      </Category>
+    </TotalExpenses>
+    <AmountTotalIncome>93</AmountTotalIncome>
+    <AmountTotalExpenses>-1862.5</AmountTotalExpenses>
+  </MonthlyReport>
+</ArrayOfMonthlyReport>

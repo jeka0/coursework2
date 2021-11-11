@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer;
 
 namespace DataAccessLayer
 {
@@ -19,10 +18,16 @@ namespace DataAccessLayer
         void UpdateUserData();
         void UpdateСategories();
         void LoadСategories();
+        void LoadMonthlyReports();
         void UpdateElements();
         void LoadElements();
         bool CheckCategories();
-        User SelectedUser { get; }
         void AddCategory();
+        void UpdateSum();
+        void SaveAccount();
+        void UpdateHistory();
+        void UpdateCharts();
+        void DeleteAccount();
+        bool ValidateAmount(String value);
     }
 }

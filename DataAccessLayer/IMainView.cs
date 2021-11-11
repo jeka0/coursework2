@@ -4,25 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DataAccessLayer
 {
     public interface IMainView
     {
         IPresenter presenter { get; set; }
-        String GetDate { get; }
-        String GetTime { get; }
-        String GetCategory { get; }
-        String GetComment { get; }
-        String GetAmount { get; }
-        String SetLogin { set; }
-        String SetSurname { set; }
-        String SetName { set; }
-        ComboBox GetCategories { get; }
-        ComboBox GetCategories2 { get; }
-        int GetIndx { get; }
-        Panel GetScreen { get; }
-        String GetNewCategory { get; }
-        Label GetLabel { get; }
+        String GetDate();
+        String GetTime();
+        String GetCategory();
+        String GetComment();
+        void SetSum(String value);
+        double GetAmount();
+        void SetLogin(String value);
+        void SetSurname(String value);
+        void SetName(String value);
+        ComboBox GetCategories();
+        Chart GetGeneralSchedule();
+        Chart GetCategoryChart();
+        int GetIndx();
+        int GetRecordType();
+        int GetSortType();
+        int GetReportType();
+        String GetNewCategory();
+        Label GetLabel();
+        DataGridView GetDataGridView();
+        DataGridView GetCategoryTable();
+        DataGridView GetTableOfMonths();
     }
 }

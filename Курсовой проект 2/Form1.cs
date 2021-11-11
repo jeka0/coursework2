@@ -15,8 +15,9 @@ namespace Курсовой_проект_2
     {
         bool clu11 = true, clu22 = true;
         public IPresenter presenter { get; set; }
-        public String GetLogin { get { return login.Text; } }
-        public String GetPassword { get { return pass.Text; } }
+        public String GetLogin() { return login.Text; }
+        public String GetPassword() { return pass.Text; }
+        public Point point2 = new Point(550,300);
         public Form1()
         {
             InitializeComponent();
@@ -24,13 +25,13 @@ namespace Курсовой_проект_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Location = Form2.point2;
+            this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();
             Error1.Hide();
             Error2.Hide();
             Error0.Hide();
-            Error3.Hide();
+            Error0.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -106,11 +107,10 @@ namespace Курсовой_проект_2
             if (e.KeyChar == ' ') e.Handled = true;
             if (e.KeyChar == 13) { Enter.PerformClick(); e.Handled = true; }
             }
-        public static Point point2;
         private void textBox1_Click(object sender, EventArgs e)
         {
-            point2 = new Point(this.Location.X, this.Location.Y);
             Form2 form2 =  new Form2();
+            form2.point2 = this.Location;
             presenter.registrationView = form2;
             form2.presenter = presenter;
             form2.Show();
@@ -122,25 +122,22 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error0.Hide();
-            Error3.Hide();
+            Error0.Hide();
             if (!(login.Text == "" || login.Text == "Введите логин" || pass.Text == "" || pass.Text == "Введите пароль"))
             {
                 try 
                 {
-                    bool err = false;
-                    if (!err)
+                    if (presenter.UserAuthorization())
                     {
-                        if (presenter.UserAuthorization())
-                        {
-                            MainForm main = new MainForm();
-                            presenter.mainView = main;
-                            main.presenter = presenter;
-                            main.Show();
-                            this.Close();
-                        }
-                        else Error2.Show();
+                        MainForm main = new MainForm();
+                        presenter.mainView = main;
+                        main.presenter = presenter;
+                        presenter.LoadСategories();
+                        presenter.LoadMonthlyReports();
+                        main.Show();
+                        this.Close();
                     }
-                    else Error3.Show();
+                    else Error2.Show();
                 }
                 catch { Error0.Show(); }
             }
