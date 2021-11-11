@@ -33,8 +33,8 @@ namespace Курсовой_проект_2
             this.buttonNO = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.Border = new System.Windows.Forms.Panel();
-            this.Exit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Exit = new System.Windows.Forms.Label();
             this.Border.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,20 +90,8 @@ namespace Курсовой_проект_2
             this.Border.Name = "Border";
             this.Border.Size = new System.Drawing.Size(327, 22);
             this.Border.TabIndex = 37;
-            // 
-            // Exit
-            // 
-            this.Exit.AutoSize = true;
-            this.Exit.BackColor = System.Drawing.Color.Gray;
-            this.Exit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Exit.Location = new System.Drawing.Point(1200, 2);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(22, 22);
-            this.Exit.TabIndex = 0;
-            this.Exit.Text = "X";
+            this.Border.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Border_MouseDown);
+            this.Border.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Border_MouseMove);
             // 
             // label1
             // 
@@ -121,6 +109,20 @@ namespace Курсовой_проект_2
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            // 
+            // Exit
+            // 
+            this.Exit.AutoSize = true;
+            this.Exit.BackColor = System.Drawing.Color.Gray;
+            this.Exit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Exit.Location = new System.Drawing.Point(1200, 2);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(22, 22);
+            this.Exit.TabIndex = 0;
+            this.Exit.Text = "X";
             // 
             // ConfirmationForm
             // 

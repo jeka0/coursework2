@@ -39,5 +39,20 @@ namespace Курсовой_проект_2
             ((Label)sender).BackColor = Color.Gray;
             ((Label)sender).ForeColor = Color.White;
         }
+
+        Point point;
+        private void Border_MouseDown(object sender, MouseEventArgs e)
+        {
+            point = new Point(e.X, e.Y);
+        }
+
+        private void Border_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - point.X;
+                this.Top += e.Y - point.Y;
+            }
+        }
     }
 }
