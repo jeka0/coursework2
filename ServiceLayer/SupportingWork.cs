@@ -16,8 +16,9 @@ namespace ServiceLayer
         public static void FillInCategoryReport(List<Category> list)
         {
             Chart categoryChart = mainView.GetCategoryChart();
-            var table = mainView.GetCategoryTable();
+            var table = mainView.GetCategoryTable(); var label = mainView.GetLabel();
             categoryChart.Series[0].Points.Clear(); table.Rows.Clear();
+            if (list.Count != 0) label.Hide(); else label.Show();
             foreach (var item in list)
             {
                 categoryChart.Series[0].Points.AddXY(item.category, item.ConvertToInt32(item.amount));

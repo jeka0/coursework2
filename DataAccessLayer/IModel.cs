@@ -13,5 +13,7 @@ namespace DataAccessLayer
         void Save<T>(String file, T item);
         T Read<T>(String file);
         void CreateFolder(String folder);
+        void DeleteFile(String file);
+        void DeleteFolder(String folder);
      }
 }

@@ -38,12 +38,16 @@ namespace ServiceLayer
             monthlyReports = this.model.Read<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
             if (monthlyReports == null) monthlyReports = new List<MonthlyReport>();
             int count = monthlyReports.Count;
-            if (count != 0) SelectedMonthlyReport = monthlyReports[count-1]; else 
-            { 
-                SelectedMonthlyReport = new MonthlyReport(); 
-                SelectedMonthlyReport.Date = DateTime.Today.Month.ToString() +'.'+ DateTime.Today.Year.ToString();
-                monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month-1).ToString() + '.' + DateTime.Today.Year.ToString()});
-                monthlyReports.Add(SelectedMonthlyReport); 
+            String date = DateTime.Today.Month.ToString() + '.' + DateTime.Today.Year.ToString();            
+            if (count != 0) 
+            {
+                if (DateTime.Today.Day.ToString()=="1" && monthlyReports[count - 1].Date!=date) monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
+                else SelectedMonthlyReport = monthlyReports[count - 1]; 
+            } 
+            else
+            {
+                monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month - 1).ToString() + '.' + DateTime.Today.Year.ToString() });
+                monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
             }
         }
         public void UpdateСategories()
@@ -167,6 +171,16 @@ namespace ServiceLayer
         public void UpdateSum()
         {
             mainView.SetSum(SelectedUser.GetStrAmount());
+        }
+        public void DeleteAccount()
+        {
+            model.DeleteFile("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
+            model.DeleteFile("Data/" + SelectedUser.Login + "/Expenses.xml");
+            model.DeleteFile("Data/" + SelectedUser.Login + "/Income.xml");
+            model.DeleteFolder("Data/" + SelectedUser.Login);
+            users.Remove(SelectedUser);
+            model.Save<List<User>>("Data/accounts.xml", users);
+            SelectedUser = null;
         }
         public void SaveAccount()
         {

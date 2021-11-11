@@ -46,5 +46,13 @@ namespace DataAccessLayer
         {
             Directory.CreateDirectory(folder);
         }
+        public void DeleteFile(String file)
+        {
+            File.Delete(file);
+        }
+        public void DeleteFolder(String folder)
+        {
+            Directory.Delete(folder);
+        }
     }
 }

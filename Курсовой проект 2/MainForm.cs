@@ -24,10 +24,11 @@ namespace Курсовой_проект_2
         public Chart GetCategoryChart() { return CategoryChart; }
         public DataGridView GetCategoryTable() { return dataGridViewReport1; }
         public DataGridView GetTableOfMonths() { return dataGridViewReport2; }
+        public bool Deleting { get; set; } = false;
         public Label GetLabel()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return NoExpenses; else if (indx == 1) return NoIncome; else if (indx == 2) return NoHistory; else return null;
+            if (indx == 0) return NoExpenses; else if (indx == 1) return NoIncome; else if (indx == 2) return NoHistory; else if (indx == 3) return NoCategories; else return null;
         }
 
         public ComboBox GetCategories()
@@ -137,14 +138,15 @@ namespace Курсовой_проект_2
             presenter.UpdateСategories();
             tabControl1.SelectTab(2);
             presenter.UpdateHistory();
-            tabControl1.SelectTab(0);
+            tabControl1.SelectTab(3);
             presenter.UpdateCharts();
+            tabControl1.SelectTab(0);
 
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
-            presenter.SaveAccount();
+            if(!Deleting)presenter.SaveAccount();
         }
 
         private void Expenses_Click(object sender, EventArgs e)
@@ -176,8 +178,8 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            presenter.UpdateCharts();
             tabControl1.SelectTab(3);
+            presenter.UpdateCharts();
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -307,13 +309,25 @@ namespace Курсовой_проект_2
 
         private void Exit_MouseEnter(object sender, EventArgs e)
         {
-            Exit.BackColor = Color.FromArgb(45, 45, 48);
+            ((Label)sender).BackColor = Color.FromArgb(45, 45, 48);
         }
 
         private void Exit_MouseLeave(object sender, EventArgs e)
         {
-            Exit.BackColor = Color.Gray;
-            Exit.ForeColor = Color.White;
+            ((Label)sender).BackColor = Color.Gray;
+            ((Label)sender).ForeColor = Color.White;
+        }
+
+        private void buttonDeleteAccount_Click(object sender, EventArgs e)
+        {
+            ConfirmationForm confirmationForm = new ConfirmationForm();
+            confirmationForm.mainForm = this;
+            confirmationForm.ShowDialog();
+            if (Deleting)
+            {
+                presenter.DeleteAccount();
+                buttonExit_Click(sender, e);
+            }
         }
     }
 }
