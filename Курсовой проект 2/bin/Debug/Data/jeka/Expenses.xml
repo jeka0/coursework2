@@ -34,5 +34,47 @@
       <Comment>-</Comment>
       <Amount>-45</Amount>
     </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:38:18</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-4</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:49:25</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-50</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:51:26</Time>
+      <Category>Еда</Category>
+      <Comment>-</Comment>
+      <Amount>-0.1</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:53:39</Time>
+      <Category>78</Category>
+      <Comment>-</Comment>
+      <Amount>-0.1</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:56:53</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-0.1</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>21:58:57</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-0.9</Amount>
+    </Item>
   </items>
 </Elements>

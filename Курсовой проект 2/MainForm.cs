@@ -141,7 +141,6 @@ namespace Курсовой_проект_2
             tabControl1.SelectTab(3);
             presenter.UpdateCharts();
             tabControl1.SelectTab(0);
-
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)

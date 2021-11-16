@@ -129,9 +129,6 @@ namespace ServiceLayer
                 Amount = mainView.GetAmount() 
             };
             SelectedMonthlyReport.AddNote(item);
-            SelectedMonthlyReport.CalculateTotalValues();
-            SelectedMonthlyReport.CalculatePercents();
-            SelectedMonthlyReport.Sort();
             SelectedUser.CalculateBalance(item.Amount);
             IdentifyElements().items.Add(item);
             AddNewElement(item);
