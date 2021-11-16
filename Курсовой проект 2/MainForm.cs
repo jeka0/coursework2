@@ -70,7 +70,7 @@ namespace Курсовой_проект_2
         public String GetComment()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) { if (Comment.Text == "Введите комментарий") return "-";else return Comment.Text; } else if (indx == 1) { if (Comment2.Text == "Введите комментарий") return "-"; else return Comment2.Text; } else return null;
+            if (indx == 0) { if (Comment.Text == "Введите комментарий"|| Comment.Text == "") return "-";else return Comment.Text; } else if (indx == 1) { if (Comment2.Text == "Введите комментарий" || Comment2.Text == "") return "-"; else return Comment2.Text; } else return null;
         }
 
         public double GetAmount()

@@ -44,14 +44,12 @@ namespace Курсовой_проект_2
 
         private void clue1_Click(object sender, EventArgs e)
         {
-            if (clu11){ Clue11.Show(); clu11 = false; }
-            else{ Clue11.Hide(); clu11 = true; }
+            if (clu11){ Clue11.Show(); clu11 = false; } else{ Clue11.Hide(); clu11 = true; }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            if (clu22){ Clue22.Show(); clu22 = false; }
-            else{ Clue22.Hide(); clu22 = true; }
+            if (clu22){ Clue22.Show(); clu22 = false; } else{ Clue22.Hide(); clu22 = true; }
         }
         Point point;
 

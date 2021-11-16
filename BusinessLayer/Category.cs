@@ -8,12 +8,13 @@ namespace BusinessLayer
 {
     public class Category:BusinessObject
     {
-        public String category;
-        public int percent;
-        public double amount;
+        private String name;
+        public String Name { get { return ReturnNonEmptyString(name); } set { name = value; } }
+        public int Percent { get; set; }
+        public double Amount { get; set; }
         public void CalculatePercent(double totalAmount)
         {
-            percent = (int)(100 * amount / totalAmount);
+            Percent = (int)(100 * Amount / totalAmount);
         }
     }
 }
