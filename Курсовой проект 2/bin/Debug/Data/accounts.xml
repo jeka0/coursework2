@@ -5,6 +5,27 @@
     <Password>12345</Password>
     <Surname>Латош</Surname>
     <Name>Евгений</Name>
-    <Money>10</Money>
+    <Money>1524</Money>
+  </User>
+  <User>
+    <Login>H</Login>
+    <Password>111</Password>
+    <Surname>12</Surname>
+    <Name>123</Name>
+    <Money>0</Money>
+  </User>
+  <User>
+    <Login>U</Login>
+    <Password>111</Password>
+    <Surname>asd</Surname>
+    <Name>asd</Name>
+    <Money>0</Money>
+  </User>
+  <User>
+    <Login>P</Login>
+    <Password>111</Password>
+    <Surname>asd</Surname>
+    <Name>asd</Name>
+    <Money>0</Money>
   </User>
 </ArrayOfUser>

@@ -3,6 +3,7 @@
   <categories>
     <string>Общее</string>
     <string>Что</string>
+    <string>I</string>
   </categories>
   <items>
     <Item>
@@ -11,6 +12,34 @@
       <Category>Что</Category>
       <Comment>-</Comment>
       <Amount>100</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>Что</Category>
+      <Comment>-</Comment>
+      <Amount>1000</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>50</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>I</Category>
+      <Comment>-</Comment>
+      <Amount>500</Amount>
     </Item>
   </items>
 </Elements>

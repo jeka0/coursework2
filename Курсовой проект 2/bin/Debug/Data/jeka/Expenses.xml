@@ -3,6 +3,7 @@
   <categories>
     <string>Общее</string>
     <string>Еда</string>
+    <string>78</string>
   </categories>
   <items>
     <Item>
@@ -16,6 +17,20 @@
       <Date>16.11.2021</Date>
       <Time>11:17:37</Time>
       <Category>Еда</Category>
+      <Comment>-</Comment>
+      <Amount>-45</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-1</Amount>
+    </Item>
+    <Item>
+      <Date>16.11.2021</Date>
+      <Time>11:41:17</Time>
+      <Category>78</Category>
       <Comment>-</Comment>
       <Amount>-45</Amount>
     </Item>

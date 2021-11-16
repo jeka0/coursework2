@@ -22,7 +22,7 @@ namespace ServiceLayer
             foreach (var item in list)
             {
                 categoryChart.Series[0].Points.AddXY(item.Name, item.ConvertToInt32(item.Amount));
-                table.Rows.Add(item.Name, item.Percent + " %", item.AmountToString(item.Amount));
+                table.Rows.Add(item.Name, item.Percent + " %", item.GetStrAmount());
             }
         }
         public static void FillInMonthlyReport(List<MonthlyReport> monthlyReports)

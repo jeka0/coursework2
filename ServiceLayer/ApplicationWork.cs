@@ -86,6 +86,7 @@ namespace ServiceLayer
                 Surname = registrationView.GetSurname() 
             };
             SelectedUser = newUser;
+            monthlyReports = null; SelectedMonthlyReport = null;
             users.Add(newUser);
             var elements = new Elements();
             elements.categories.Add("Общее");
