@@ -28,6 +28,7 @@ namespace DataAccessLayer
         void UpdateHistory();
         void UpdateCharts();
         void DeleteAccount();
-        bool ValidateAmount(String value);
+        bool ValidateAmount();
+        bool ValidateString(String str);
     }
 }

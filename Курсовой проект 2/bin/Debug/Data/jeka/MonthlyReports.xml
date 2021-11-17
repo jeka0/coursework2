@@ -10,50 +10,55 @@
   <MonthlyReport>
     <TotalIncome>
       <Category>
+        <Name>AAAA</Name>
+        <Percent>56</Percent>
+        <Amount>78000</Amount>
+      </Category>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>43</Percent>
+        <Amount>60065</Amount>
+      </Category>
+      <Category>
         <Name>Что</Name>
-        <Percent>58</Percent>
+        <Percent>1</Percent>
         <Amount>1040</Amount>
       </Category>
       <Category>
         <Name>I</Name>
-        <Percent>33</Percent>
+        <Percent>0</Percent>
         <Amount>600</Amount>
       </Category>
       <Category>
         <Name>Unknown</Name>
-        <Percent>6</Percent>
+        <Percent>0</Percent>
         <Amount>100</Amount>
-      </Category>
-      <Category>
-        <Name>Общее</Name>
-        <Percent>3</Percent>
-        <Amount>60</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
         <Name>Общее</Name>
-        <Percent>29</Percent>
-        <Amount>-56</Amount>
+        <Percent>100</Percent>
+        <Amount>-138121.63</Amount>
       </Category>
       <Category>
         <Name>Еда</Name>
-        <Percent>24</Percent>
+        <Percent>0</Percent>
         <Amount>-45.1</Amount>
       </Category>
       <Category>
         <Name>78</Name>
-        <Percent>24</Percent>
+        <Percent>0</Percent>
         <Amount>-45.1</Amount>
       </Category>
       <Category>
         <Name>Unknown</Name>
-        <Percent>24</Percent>
+        <Percent>0</Percent>
         <Amount>-45</Amount>
       </Category>
     </TotalExpenses>
     <Date>11.2021</Date>
-    <AmountTotalIncome>1800</AmountTotalIncome>
-    <AmountTotalExpenses>-191.2</AmountTotalExpenses>
+    <AmountTotalIncome>139805</AmountTotalIncome>
+    <AmountTotalExpenses>-138256.83000000002</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

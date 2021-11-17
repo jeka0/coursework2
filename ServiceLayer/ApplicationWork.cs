@@ -38,12 +38,12 @@ namespace ServiceLayer
             monthlyReports = this.model.Read<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
             if (monthlyReports == null) monthlyReports = new List<MonthlyReport>();
             int count = monthlyReports.Count;
-            String date = DateTime.Today.Month.ToString() + '.' + DateTime.Today.Year.ToString();            
-            if (count != 0) 
+            String date = DateTime.Today.Month.ToString() + '.' + DateTime.Today.Year.ToString();
+            if (count != 0)
             {
-                if (DateTime.Today.Day.ToString()=="1" && monthlyReports[count - 1].Date!=date) monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
-                else SelectedMonthlyReport = monthlyReports[count - 1]; 
-            } 
+                if (DateTime.Today.Day.ToString() == "1" && monthlyReports[count - 1].Date != date) monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
+                else SelectedMonthlyReport = monthlyReports[count - 1];
+            }
             else
             {
                 monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month - 1).ToString() + '.' + DateTime.Today.Year.ToString() });
@@ -62,7 +62,7 @@ namespace ServiceLayer
             int ind = mainView.GetIndx(), rec = mainView.GetRecordType();
             if (ind == 0 || (ind == 2 && rec == 1)) return Expenses; else if (ind == 1 || (ind == 2 && rec == 2)) return Income;
             else if (ind == 2 && rec == 0)
-            { 
+            {
                 Elements elements = new Elements();
                 elements.items.AddRange(Expenses.items);
                 elements.items.AddRange(Income.items);
@@ -75,6 +75,11 @@ namespace ServiceLayer
             if (mainView.GetSortType() == 0) return (a, b) => a.Time.CompareTo(b.Time);
             else
             if (mainView.GetSortType() == 1) return (a, b) => a.Amount.CompareTo(b.Amount); else return null;
+        }
+        private double IdentifyAmount()
+        {
+            int indx = mainView.GetIndx();
+            if (indx == 0) return Convert.ToDouble(mainView.GetAmount()) * (-1); else if (indx == 1) return Convert.ToDouble(mainView.GetAmount()); else return 0;
         }
         public void CreateNewUser()
         {
@@ -126,7 +131,7 @@ namespace ServiceLayer
                 Time = mainView.GetTime(), 
                 Category = mainView.GetCategory(), 
                 Comment = mainView.GetComment(), 
-                Amount = mainView.GetAmount() 
+                Amount = IdentifyAmount()
             };
             SelectedMonthlyReport.AddNote(item);
             SelectedUser.CalculateBalance(item.Amount);
@@ -187,9 +192,13 @@ namespace ServiceLayer
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml", Expenses);
             model.Save<Elements>("Data/" + SelectedUser.Login + "/Income.xml", Income);
         }
-        public bool ValidateAmount(String value)
+        public bool ValidateAmount()
         {
-            return Double.TryParse(value, out double amount) && amount > 0;
+            return BusinessObject.ValidateAmount(mainView.GetAmount());
+        }
+        public bool ValidateString(String str)
+        {
+            return BusinessObject.ValidateIsNullOrEmpty(str);
         }
     }
 }

@@ -5,13 +5,13 @@
     <Password>12345</Password>
     <Surname>Латош</Surname>
     <Name>Евгений</Name>
-    <Money>1608.8000000000002</Money>
+    <Money>1548.1699999999837</Money>
   </User>
   <User>
     <Login>Pog</Login>
     <Password>111</Password>
     <Surname>asd</Surname>
     <Name>asd</Name>
-    <Money>549</Money>
+    <Money>-2151.32433</Money>
   </User>
 </ArrayOfUser>

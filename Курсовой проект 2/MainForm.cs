@@ -40,7 +40,7 @@ namespace Курсовой_проект_2
         public String GetNewCategory()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return NewCategories.Text; else if (indx == 1) return NewCategories2.Text; else return null;
+            if (indx == 0) { if (NewCategories.Text == "Введите категорию") return ""; else return NewCategories.Text; } else if (indx == 1) { if (NewCategories2.Text == "Введите категорию") return ""; else return NewCategories2.Text; } else return null;
         }
 
         public DataGridView GetDataGridView()
@@ -73,10 +73,10 @@ namespace Курсовой_проект_2
             if (indx == 0) { if (Comment.Text == "Введите комментарий"|| Comment.Text == "") return "-";else return Comment.Text; } else if (indx == 1) { if (Comment2.Text == "Введите комментарий" || Comment2.Text == "") return "-"; else return Comment2.Text; } else return null;
         }
 
-        public double GetAmount()
+        public String GetAmount()
         {
             int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return Convert.ToDouble(Amount.Text) * (-1); else if (indx == 1) return Convert.ToDouble(Amount2.Text); else return 0;
+            if (indx == 0) { if (Amount.Text == "Введите сумму") return ""; else return Amount.Text; } else if (indx == 1) { if (Amount2.Text == "Введите сумму") return ""; else return Amount2.Text; } else return null;
         }
 
         public int GetRecordType()
@@ -103,12 +103,6 @@ namespace Курсовой_проект_2
         {
             int indx = tabControl1.SelectedIndex;
             if (indx == 0) return Amount; else return Amount2;
-        }
-
-        private TextBox IdentifyNewCategories()
-        {
-            int indx = tabControl1.SelectedIndex;
-            if (indx == 0) return NewCategories; else return NewCategories2;
         }
 
         private Button IdentifyAdd()
@@ -186,8 +180,7 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            TextBox Amount = IdentifyAmount();
-            if (!(Amount.Text == "" || Amount.Text == "Введите сумму") && presenter.ValidateAmount(Amount.Text))
+            if (!presenter.ValidateString(GetAmount()) && presenter.ValidateAmount())
             {
                 NoExpenses.Hide();
                 presenter.UpdateElements();
@@ -201,8 +194,7 @@ namespace Курсовой_проект_2
             Error3.Hide();
             Error1.Hide();
             Error2.Hide();
-            TextBox newCategories = IdentifyNewCategories();
-            if (!(newCategories.Text == "" || newCategories.Text == "Введите категорию"))
+            if (!presenter.ValidateString(GetNewCategory()))
             {
                 if (!presenter.CheckCategories())
                 {

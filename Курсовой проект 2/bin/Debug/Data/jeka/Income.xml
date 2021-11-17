@@ -4,6 +4,7 @@
     <string>Общее</string>
     <string>Что</string>
     <string>I</string>
+    <string>AAAA</string>
   </categories>
   <items>
     <Item>
@@ -54,6 +55,27 @@
       <Category>I</Category>
       <Comment>-</Comment>
       <Amount>100</Amount>
+    </Item>
+    <Item>
+      <Date>17.11.2021</Date>
+      <Time>21:16:50</Time>
+      <Category>AAAA</Category>
+      <Comment>-</Comment>
+      <Amount>78000</Amount>
+    </Item>
+    <Item>
+      <Date>17.11.2021</Date>
+      <Time>21:16:50</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>60000</Amount>
+    </Item>
+    <Item>
+      <Date>17.11.2021</Date>
+      <Time>21:34:35</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>5</Amount>
     </Item>
   </items>
 </Elements>

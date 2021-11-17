@@ -26,5 +26,13 @@ namespace BusinessLayer
         {
             if (String.IsNullOrEmpty(str)) return "Unknown"; else return str;
         }
+        static public bool ValidateAmount(String value)
+        {
+            return Double.TryParse(value, out double amount) && amount > 0;
+        }
+        static public bool ValidateIsNullOrEmpty(String value)
+        {
+            return String.IsNullOrEmpty(value);
+        }
     }
 }

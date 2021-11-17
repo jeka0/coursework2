@@ -15,8 +15,8 @@ namespace Курсовой_проект_2
     {
         bool clu11 = true, clu22 = true;
         public IPresenter presenter { get; set; }
-        public String GetLogin() { return login.Text; }
-        public String GetPassword() { return pass.Text; }
+        public String GetLogin() { if (login.Text == "Введите логин") return ""; else return login.Text; }
+        public String GetPassword() { if (pass.Text == "Введите пароль") return ""; else return pass.Text; }
         public Point point2 = new Point(550,300);
         public Form1()
         {
@@ -117,7 +117,7 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (!(login.Text == "" || login.Text == "Введите логин" || pass.Text == "" || pass.Text == "Введите пароль"))
+            if (!(presenter.ValidateString(GetLogin()) || presenter.ValidateString(GetPassword())))
             {
                 try 
                 {

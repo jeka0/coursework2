@@ -16,10 +16,10 @@ namespace Курсовой_проект_2
     {
         bool clu11 = true, clu22 = true;
         public IPresenter presenter { get; set; }
-        public String GetLogin() { return login.Text; }
-        public String GetPassword() { return pass.Text; } 
-        public String GetSurname() { return textBox3.Text; }
-        public String GetName() { return textBox2.Text; } 
+        public String GetLogin() { if (login.Text == "Введите логин") return ""; else return login.Text; }
+        public String GetPassword() { if (pass.Text == "Введите пароль") return ""; else return pass.Text; } 
+        public String GetSurname() { if (textBox3.Text == "Введите фамилию") return ""; else return textBox3.Text; }
+        public String GetName() { if (textBox2.Text == "Введите имя") return ""; else return textBox2.Text; } 
         public Point point2;
         public Form2()
         {
@@ -146,7 +146,7 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (!(login.Text== "Введите логин"|| login.Text == ""|| pass.Text == "Введите пароль" || pass.Text == "" || textBox2.Text == "Введите имя" || textBox2.Text == "" || textBox3.Text == "Введите фамилию" || textBox3.Text == ""))
+            if (!(presenter.ValidateString(GetLogin())|| presenter.ValidateString(GetPassword()) || presenter.ValidateString(GetName()) || presenter.ValidateString(GetSurname())))
             {
                 try
                 {
