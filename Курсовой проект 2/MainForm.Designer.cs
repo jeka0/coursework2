@@ -186,6 +186,7 @@ namespace Курсовой_проект_2
             this.Error3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonDeleteAccount = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -195,7 +196,6 @@ namespace Курсовой_проект_2
             this.Exit = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.buttonDeleteAccount = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1871,6 +1871,21 @@ namespace Курсовой_проект_2
             this.panel3.Size = new System.Drawing.Size(176, 437);
             this.panel3.TabIndex = 29;
             // 
+            // buttonDeleteAccount
+            // 
+            this.buttonDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.buttonDeleteAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDeleteAccount.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteAccount.Location = new System.Drawing.Point(8, 368);
+            this.buttonDeleteAccount.Name = "buttonDeleteAccount";
+            this.buttonDeleteAccount.Size = new System.Drawing.Size(160, 41);
+            this.buttonDeleteAccount.TabIndex = 34;
+            this.buttonDeleteAccount.Text = "Удалить аккаунт";
+            this.buttonDeleteAccount.UseVisualStyleBackColor = false;
+            this.buttonDeleteAccount.Click += new System.EventHandler(this.buttonDeleteAccount_Click);
+            // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
@@ -1936,7 +1951,8 @@ namespace Курсовой_проект_2
             this.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Border.Controls.Add(this.Exit);
             this.Border.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Border.Location = new System.Drawing.Point(-2, 3);
+            this.Border.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Border.Location = new System.Drawing.Point(0, 0);
             this.Border.Name = "Border";
             this.Border.Size = new System.Drawing.Size(1224, 27);
             this.Border.TabIndex = 30;
@@ -1981,21 +1997,6 @@ namespace Курсовой_проект_2
             this.label43.Size = new System.Drawing.Size(155, 29);
             this.label43.TabIndex = 31;
             this.label43.Text = "Навигация:";
-            // 
-            // buttonDeleteAccount
-            // 
-            this.buttonDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.buttonDeleteAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.buttonDeleteAccount.Location = new System.Drawing.Point(8, 368);
-            this.buttonDeleteAccount.Name = "buttonDeleteAccount";
-            this.buttonDeleteAccount.Size = new System.Drawing.Size(160, 41);
-            this.buttonDeleteAccount.TabIndex = 34;
-            this.buttonDeleteAccount.Text = "Удалить аккаунт";
-            this.buttonDeleteAccount.UseVisualStyleBackColor = false;
-            this.buttonDeleteAccount.Click += new System.EventHandler(this.buttonDeleteAccount_Click);
             // 
             // MainForm
             // 

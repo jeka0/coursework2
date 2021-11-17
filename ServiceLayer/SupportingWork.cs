@@ -21,8 +21,8 @@ namespace ServiceLayer
             if (list.Count != 0) label.Hide(); else label.Show();
             foreach (var item in list)
             {
-                categoryChart.Series[0].Points.AddXY(item.category, item.ConvertToInt32(item.amount));
-                table.Rows.Add(item.category, item.percent + " %", item.AmountToString(item.amount));
+                categoryChart.Series[0].Points.AddXY(item.Name, item.Percent);
+                table.Rows.Add(item.Name, item.Percent + " %", item.GetStrAmount());
             }
         }
         public static void FillInMonthlyReport(List<MonthlyReport> monthlyReports)

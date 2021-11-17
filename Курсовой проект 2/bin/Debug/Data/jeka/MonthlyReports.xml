@@ -1,59 +1,64 @@
 <?xml version="1.0"?>
 <ArrayOfMonthlyReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MonthlyReport>
-    <Date>10.2021</Date>
     <TotalIncome />
     <TotalExpenses />
+    <Date>10.2021</Date>
     <AmountTotalIncome>0</AmountTotalIncome>
     <AmountTotalExpenses>0</AmountTotalExpenses>
   </MonthlyReport>
   <MonthlyReport>
-    <Date>11.2021</Date>
     <TotalIncome>
       <Category>
-        <category>Общее</category>
-        <percent>63</percent>
-        <amount>59</amount>
+        <Name>AAAA</Name>
+        <Percent>56</Percent>
+        <Amount>78000</Amount>
       </Category>
       <Category>
-        <category>Что-то</category>
-        <percent>16</percent>
-        <amount>15</amount>
+        <Name>Общее</Name>
+        <Percent>43</Percent>
+        <Amount>60065</Amount>
       </Category>
       <Category>
-        <category>Что</category>
-        <percent>8</percent>
-        <amount>8</amount>
+        <Name>Что</Name>
+        <Percent>1</Percent>
+        <Amount>1040</Amount>
       </Category>
       <Category>
-        <category>5</category>
-        <percent>7</percent>
-        <amount>7</amount>
+        <Name>I</Name>
+        <Percent>0</Percent>
+        <Amount>600</Amount>
       </Category>
       <Category>
-        <category />
-        <percent>4</percent>
-        <amount>4</amount>
+        <Name>Unknown</Name>
+        <Percent>0</Percent>
+        <Amount>100</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
-        <category>Общее</category>
-        <percent>70</percent>
-        <amount>-1317.5</amount>
+        <Name>Общее</Name>
+        <Percent>100</Percent>
+        <Amount>-138129.63</Amount>
       </Category>
       <Category>
-        <category>X</category>
-        <percent>26</percent>
-        <amount>-500</amount>
+        <Name>Еда</Name>
+        <Percent>0</Percent>
+        <Amount>-45.1</Amount>
       </Category>
       <Category>
-        <category>New</category>
-        <percent>2</percent>
-        <amount>-45</amount>
+        <Name>78</Name>
+        <Percent>0</Percent>
+        <Amount>-45.1</Amount>
+      </Category>
+      <Category>
+        <Name>Unknown</Name>
+        <Percent>0</Percent>
+        <Amount>-45</Amount>
       </Category>
     </TotalExpenses>
-    <AmountTotalIncome>93</AmountTotalIncome>
-    <AmountTotalExpenses>-1862.5</AmountTotalExpenses>
+    <Date>11.2021</Date>
+    <AmountTotalIncome>139805</AmountTotalIncome>
+    <AmountTotalExpenses>-138264.83000000002</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

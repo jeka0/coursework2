@@ -22,5 +22,17 @@ namespace BusinessLayer
         {
             if (value > int.MaxValue) return int.MaxValue; else if (value < int.MinValue) return int.MinValue; else return Convert.ToInt32(value);
         }
+        public String ReturnNonEmptyString(String str)
+        {
+            if (String.IsNullOrEmpty(str)) return "Unknown"; else return str;
+        }
+        static public bool ValidateAmount(String value)
+        {
+            return Double.TryParse(value, out double amount) && amount > 0;
+        }
+        static public bool ValidateIsNullOrEmpty(String value)
+        {
+            return String.IsNullOrEmpty(value);
+        }
     }
 }

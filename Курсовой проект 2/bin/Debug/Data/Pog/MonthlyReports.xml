@@ -1,17 +1,67 @@
 <?xml version="1.0"?>
 <ArrayOfMonthlyReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MonthlyReport>
-    <Date>10.2021</Date>
     <TotalIncome />
     <TotalExpenses />
+    <Date>06.2021</Date>
     <AmountTotalIncome>0</AmountTotalIncome>
     <AmountTotalExpenses>0</AmountTotalExpenses>
   </MonthlyReport>
   <MonthlyReport>
-    <Date>11.2021</Date>
     <TotalIncome />
     <TotalExpenses />
-    <AmountTotalIncome>0</AmountTotalIncome>
-    <AmountTotalExpenses>0</AmountTotalExpenses>
+    <Date>07.2021</Date>
+    <AmountTotalIncome>600</AmountTotalIncome>
+    <AmountTotalExpenses>-900</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>08.2021</Date>
+    <AmountTotalIncome>200</AmountTotalIncome>
+    <AmountTotalExpenses>-100</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>09.2021</Date>
+    <AmountTotalIncome>700</AmountTotalIncome>
+    <AmountTotalExpenses>-400</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>10.2021</Date>
+    <AmountTotalIncome>600</AmountTotalIncome>
+    <AmountTotalExpenses>-500</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>100</Percent>
+        <Amount>1104.12567</Amount>
+      </Category>
+      <Category>
+        <Name>q</Name>
+        <Percent>0</Percent>
+        <Amount>5</Amount>
+      </Category>
+    </TotalIncome>
+    <TotalExpenses>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>69</Percent>
+        <Amount>-2260.45</Amount>
+      </Category>
+      <Category>
+        <Name>f</Name>
+        <Percent>31</Percent>
+        <Amount>-1000</Amount>
+      </Category>
+    </TotalExpenses>
+    <Date>11.2021</Date>
+    <AmountTotalIncome>1109.12567</AmountTotalIncome>
+    <AmountTotalExpenses>-3260.45</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>
