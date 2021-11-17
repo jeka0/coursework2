@@ -39,7 +39,7 @@
       <Category>
         <Name>Общее</Name>
         <Percent>100</Percent>
-        <Amount>-138121.63</Amount>
+        <Amount>-138129.63</Amount>
       </Category>
       <Category>
         <Name>Еда</Name>
@@ -59,6 +59,6 @@
     </TotalExpenses>
     <Date>11.2021</Date>
     <AmountTotalIncome>139805</AmountTotalIncome>
-    <AmountTotalExpenses>-138256.83000000002</AmountTotalExpenses>
+    <AmountTotalExpenses>-138264.83000000002</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

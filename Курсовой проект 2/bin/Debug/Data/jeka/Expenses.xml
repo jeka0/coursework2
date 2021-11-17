@@ -104,5 +104,12 @@
       <Comment>4</Comment>
       <Amount>-5</Amount>
     </Item>
+    <Item>
+      <Date>17.11.2021</Date>
+      <Time>22:05:07</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>-8</Amount>
+    </Item>
   </items>
 </Elements>
