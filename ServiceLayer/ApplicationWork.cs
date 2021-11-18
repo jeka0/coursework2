@@ -198,7 +198,7 @@ namespace ServiceLayer
         }
         public bool ValidateString(String str)
         {
-            return BusinessObject.ValidateIsNullOrEmpty(str);
+            return !BusinessObject.ValidateIsNullOrEmpty(str);
         }
     }
 }

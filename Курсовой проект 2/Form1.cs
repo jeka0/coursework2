@@ -117,7 +117,7 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (!(presenter.ValidateString(GetLogin()) || presenter.ValidateString(GetPassword())))
+            if (presenter.ValidateString(GetLogin()) && presenter.ValidateString(GetPassword()))
             {
                 try 
                 {
