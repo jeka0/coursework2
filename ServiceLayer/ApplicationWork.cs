@@ -29,26 +29,17 @@ namespace ServiceLayer
         public void LoadСategories()
         {
             Expenses = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Expenses.xml");
-            if (Expenses == null) { Expenses = new Elements(); Expenses.categories.Add("Общее"); }
+            if (Expenses == null) Expenses = Elements.CreateNew();
             Income = this.model.Read<Elements>("Data/" + SelectedUser.Login + "/Income.xml");
-            if (Income == null) { Income = new Elements(); Income.categories.Add("Общее"); }
+            if (Income == null) Income = Elements.CreateNew();
         }
         public void LoadMonthlyReports()
         {
             monthlyReports = this.model.Read<List<MonthlyReport>>("Data/" + SelectedUser.Login + "/MonthlyReports.xml");
             if (monthlyReports == null) monthlyReports = new List<MonthlyReport>();
             int count = monthlyReports.Count;
-            String date = DateTime.Today.Month.ToString() + '.' + DateTime.Today.Year.ToString();
-            if (count != 0)
-            {
-                if (DateTime.Today.Day.ToString() == "1" && monthlyReports[count - 1].Date != date) monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
-                else SelectedMonthlyReport = monthlyReports[count - 1];
-            }
-            else
-            {
-                monthlyReports.Add(new MonthlyReport() { Date = (DateTime.Today.Month - 1).ToString() + '.' + DateTime.Today.Year.ToString() });
-                monthlyReports.Add(SelectedMonthlyReport = new MonthlyReport() { Date = date });
-            }
+            if (count != 0) { if (monthlyReports[count - 1].Date != MonthlyReport.GetDate()) monthlyReports.Add(SelectedMonthlyReport = MonthlyReport.CreateNew()); else SelectedMonthlyReport = monthlyReports[count - 1]; }
+            else { monthlyReports.Add(MonthlyReport.CreatePrevious()); monthlyReports.Add(SelectedMonthlyReport = MonthlyReport.CreateNew()); }
         }
         public void UpdateСategories()
         {
@@ -90,13 +81,11 @@ namespace ServiceLayer
                 Name = registrationView.GetName(),
                 Surname = registrationView.GetSurname() 
             };
-            SelectedUser = newUser;
             monthlyReports = null; SelectedMonthlyReport = null;
-            users.Add(newUser);
-            var elements = new Elements();
-            elements.categories.Add("Общее");
+            users.Add(SelectedUser = newUser);
+            var elements = Elements.CreateNew();
             Expenses = elements; Income = elements;
-            model.CreateFolder("Data/" + newUser.Login);
+            model.CreateFolder("Data/" + SelectedUser.Login);
             SaveAccount();
         }
         public bool UserAuthorization()
