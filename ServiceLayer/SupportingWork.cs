@@ -24,6 +24,7 @@ namespace ServiceLayer
                 categoryChart.Series[0].Points.AddXY(item.Name, item.Percent);
                 table.Rows.Add(item.Name, item.Percent + " %", item.GetStrAmount());
             }
+            table.ClearSelection();
         }
         public static void FillInMonthlyReport(List<MonthlyReport> monthlyReports)
         {
@@ -41,6 +42,7 @@ namespace ServiceLayer
                 oldValue = value;
             }
             table.Sort(table.Columns[0], System.ComponentModel.ListSortDirection.Descending);
+            table.ClearSelection();
         }
     }
 }

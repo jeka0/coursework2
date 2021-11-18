@@ -110,6 +110,7 @@ namespace ServiceLayer
             dataGridView.Rows.Add(item.Date, item.Time, item.Category, item.Comment, item.GetStrAmount());
             int count = dataGridView.Rows.Count;
             if (count != 0) dataGridView.FirstDisplayedScrollingRowIndex = count - 1;
+            dataGridView.ClearSelection();
         }
         public void UpdateElements()
         {
