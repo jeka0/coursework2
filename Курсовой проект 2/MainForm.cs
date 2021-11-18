@@ -180,7 +180,7 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            if (!presenter.ValidateString(GetAmount()) && presenter.ValidateAmount())
+            if (presenter.ValidateString(GetAmount()) && presenter.ValidateAmount())
             {
                 NoExpenses.Hide();
                 presenter.UpdateElements();
@@ -194,7 +194,7 @@ namespace Курсовой_проект_2
             Error3.Hide();
             Error1.Hide();
             Error2.Hide();
-            if (!presenter.ValidateString(GetNewCategory()))
+            if (presenter.ValidateString(GetNewCategory()))
             {
                 if (!presenter.CheckCategories())
                 {

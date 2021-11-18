@@ -146,7 +146,7 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (!(presenter.ValidateString(GetLogin())|| presenter.ValidateString(GetPassword()) || presenter.ValidateString(GetName()) || presenter.ValidateString(GetSurname())))
+            if (presenter.ValidateString(GetLogin()) && presenter.ValidateString(GetPassword()) && presenter.ValidateString(GetName()) && presenter.ValidateString(GetSurname()))
             {
                 try
                 {

@@ -18,5 +18,10 @@ namespace BusinessLayer
         {
             return items.FindAll(a => a.Date == date);
         }
+        public static Elements CreateNew()
+        {
+            Elements elements = new Elements(); elements.categories.Add("Общее");
+            return elements;
+        }
     }
 }

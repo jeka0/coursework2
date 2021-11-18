@@ -3,9 +3,44 @@
   <MonthlyReport>
     <TotalIncome />
     <TotalExpenses />
-    <Date>06.2021</Date>
+    <Date>01.2021</Date>
     <AmountTotalIncome>0</AmountTotalIncome>
     <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>02.2021</Date>
+    <AmountTotalIncome>15</AmountTotalIncome>
+    <AmountTotalExpenses>-600</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>03.2021</Date>
+    <AmountTotalIncome>500</AmountTotalIncome>
+    <AmountTotalExpenses>-400</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>04.2021</Date>
+    <AmountTotalIncome>1000</AmountTotalIncome>
+    <AmountTotalExpenses>-111</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>05.2021</Date>
+    <AmountTotalIncome>600</AmountTotalIncome>
+    <AmountTotalExpenses>-900</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>06.2021</Date>
+    <AmountTotalIncome>789</AmountTotalIncome>
+    <AmountTotalExpenses>-456</AmountTotalExpenses>
   </MonthlyReport>
   <MonthlyReport>
     <TotalIncome />
