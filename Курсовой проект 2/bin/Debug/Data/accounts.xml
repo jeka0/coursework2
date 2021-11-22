@@ -1,13 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Login>jeka</Login>
-    <Password>12345</Password>
-    <Surname>Латош</Surname>
-    <Name>Евгений</Name>
-    <Money>-44505.830000000016</Money>
-  </User>
-  <User>
     <Login>Pog</Login>
     <Password>111</Password>
     <Surname>asd</Surname>
@@ -15,31 +8,10 @@
     <Money>-2151.32433</Money>
   </User>
   <User>
-    <Login>IO</Login>
-    <Password>78</Password>
-    <Surname>qwe</Surname>
-    <Name>asd</Name>
-    <Money>0</Money>
-  </User>
-  <User>
-    <Login>AAA</Login>
-    <Password>222</Password>
-    <Surname>qwe</Surname>
-    <Name>asd</Name>
-    <Money>0</Money>
-  </User>
-  <User>
-    <Login>pp</Login>
-    <Password>11</Password>
-    <Surname>qw</Surname>
-    <Name>a</Name>
-    <Money>-50</Money>
-  </User>
-  <User>
-    <Login>U</Login>
-    <Password>456</Password>
-    <Surname>asd</Surname>
-    <Name>qwe</Name>
-    <Money>0</Money>
+    <Login>jeka</Login>
+    <Password>12345</Password>
+    <Surname>Латош</Surname>
+    <Name>Евгений</Name>
+    <Money>1466.5</Money>
   </User>
 </ArrayOfUser>

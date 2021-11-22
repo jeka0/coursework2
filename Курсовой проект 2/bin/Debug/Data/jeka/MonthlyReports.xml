@@ -3,62 +3,125 @@
   <MonthlyReport>
     <TotalIncome />
     <TotalExpenses />
-    <Date>10.2021</Date>
+    <Date>08.2021</Date>
     <AmountTotalIncome>0</AmountTotalIncome>
     <AmountTotalExpenses>0</AmountTotalExpenses>
   </MonthlyReport>
   <MonthlyReport>
     <TotalIncome>
       <Category>
-        <Name>I</Name>
-        <Percent>37</Percent>
-        <Amount>80600</Amount>
+        <Name>Проекты</Name>
+        <Percent>94</Percent>
+        <Amount>4500</Amount>
       </Category>
       <Category>
-        <Name>AAAA</Name>
-        <Percent>35</Percent>
-        <Amount>78000</Amount>
+        <Name>Техника</Name>
+        <Percent>6</Percent>
+        <Amount>300</Amount>
+      </Category>
+    </TotalIncome>
+    <TotalExpenses>
+      <Category>
+        <Name>Техника</Name>
+        <Percent>36</Percent>
+        <Amount>-1500</Amount>
       </Category>
       <Category>
         <Name>Общее</Name>
-        <Percent>27</Percent>
-        <Amount>60095</Amount>
+        <Percent>36</Percent>
+        <Amount>-1500</Amount>
       </Category>
       <Category>
-        <Name>Что</Name>
-        <Percent>0</Percent>
-        <Amount>1040</Amount>
+        <Name>Жилье</Name>
+        <Percent>20</Percent>
+        <Amount>-838</Amount>
       </Category>
       <Category>
-        <Name>Unknown</Name>
-        <Percent>0</Percent>
-        <Amount>100</Amount>
+        <Name>Продукты</Name>
+        <Percent>7</Percent>
+        <Amount>-282</Amount>
+      </Category>
+      <Category>
+        <Name>Транспорт</Name>
+        <Percent>1</Percent>
+        <Amount>-35</Amount>
+      </Category>
+    </TotalExpenses>
+    <Date>09.2021</Date>
+    <AmountTotalIncome>4800</AmountTotalIncome>
+    <AmountTotalExpenses>-4155</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>100</Percent>
+        <Amount>6180</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
         <Name>Общее</Name>
-        <Percent>52</Percent>
-        <Amount>-138205.63</Amount>
+        <Percent>80</Percent>
+        <Amount>-5153</Amount>
       </Category>
       <Category>
-        <Name>78</Name>
-        <Percent>29</Percent>
-        <Amount>-76045.1</Amount>
+        <Name>Продукты</Name>
+        <Percent>20</Percent>
+        <Amount>-1276</Amount>
+      </Category>
+    </TotalExpenses>
+    <Date>10.2021</Date>
+    <AmountTotalIncome>6180</AmountTotalIncome>
+    <AmountTotalExpenses>-6429</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome>
+      <Category>
+        <Name>Работа</Name>
+        <Percent>48</Percent>
+        <Amount>3000</Amount>
       </Category>
       <Category>
-        <Name>Еда</Name>
+        <Name>Проекты</Name>
+        <Percent>40</Percent>
+        <Amount>2500</Amount>
+      </Category>
+      <Category>
+        <Name>Техника</Name>
+        <Percent>11</Percent>
+        <Amount>700</Amount>
+      </Category>
+    </TotalIncome>
+    <TotalExpenses>
+      <Category>
+        <Name>Техника</Name>
+        <Percent>39</Percent>
+        <Amount>-2000</Amount>
+      </Category>
+      <Category>
+        <Name>Подарок</Name>
+        <Percent>23</Percent>
+        <Amount>-1200</Amount>
+      </Category>
+      <Category>
+        <Name>Продукты</Name>
         <Percent>19</Percent>
-        <Amount>-50045.1</Amount>
+        <Amount>-997</Amount>
       </Category>
       <Category>
-        <Name>Unknown</Name>
-        <Percent>0</Percent>
-        <Amount>-45</Amount>
+        <Name>Жилье</Name>
+        <Percent>18</Percent>
+        <Amount>-900</Amount>
+      </Category>
+      <Category>
+        <Name>Транспорт</Name>
+        <Percent>1</Percent>
+        <Amount>-32.5</Amount>
       </Category>
     </TotalExpenses>
     <Date>11.2021</Date>
-    <AmountTotalIncome>219835</AmountTotalIncome>
-    <AmountTotalExpenses>-264340.83</AmountTotalExpenses>
+    <AmountTotalIncome>6200</AmountTotalIncome>
+    <AmountTotalExpenses>-5129.5</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>
