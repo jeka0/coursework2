@@ -35,4 +35,11 @@
     <Name>a</Name>
     <Money>-50</Money>
   </User>
+  <User>
+    <Login>U</Login>
+    <Password>456</Password>
+    <Surname>asd</Surname>
+    <Name>qwe</Name>
+    <Money>0</Money>
+  </User>
 </ArrayOfUser>

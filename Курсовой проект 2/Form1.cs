@@ -26,6 +26,8 @@ namespace Курсовой_проект_2
         private void Form1_Load(object sender, EventArgs e)
         {
             Presenters.LoginPresenter.Views.AuthorizationView = this;
+            Presenters.LoginPresenter.Views.RegistrationView = null;
+            Presenters.LoginPresenter.Views.MainView = null;
             this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();
