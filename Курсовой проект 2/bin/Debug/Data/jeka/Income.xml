@@ -77,5 +77,40 @@
       <Comment>-</Comment>
       <Amount>5</Amount>
     </Item>
+    <Item>
+      <Date>21.11.2021</Date>
+      <Time>14:07:14</Time>
+      <Category>I</Category>
+      <Comment>-</Comment>
+      <Amount>80000</Amount>
+    </Item>
+    <Item>
+      <Date>22.11.2021</Date>
+      <Time>18:03:38</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Date>22.11.2021</Date>
+      <Time>19:14:20</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>8</Amount>
+    </Item>
+    <Item>
+      <Date>22.11.2021</Date>
+      <Time>19:53:42</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Date>22.11.2021</Date>
+      <Time>19:53:42</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>7</Amount>
+    </Item>
   </items>
 </Elements>

@@ -19,7 +19,8 @@ namespace Курсовой_проект_2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var view = new Form1();
-            new ApplicationWork(new Database("Data/accounts.xml"), view);
+            var db = new Database("Data/accounts.xml");
+            view.Presenters = new PresentersContainer() { MainPresenter = new MainPresenter(db), LoginPresenter = new LoginPresenter(db) };
             view.Show();
             Application.Run();
         }

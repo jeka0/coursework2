@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
     public interface IMainView
     {
-        IPresenter presenter { get; set; }
+        PresentersContainer Presenters { get; set; }
         String GetDate();
         String GetTime();
         String GetCategory();

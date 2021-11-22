@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     public interface IRegistrationView
     {
-        IPresenter presenter { get; set; }
+        PresentersContainer Presenters { get; set; }
         String GetLogin();
         String GetPassword();
         String GetSurname();

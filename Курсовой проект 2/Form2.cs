@@ -15,7 +15,7 @@ namespace Курсовой_проект_2
     public partial class Form2 : Form, IRegistrationView
     {
         bool clu11 = true, clu22 = true;
-        public IPresenter presenter { get; set; }
+        public PresentersContainer Presenters { get; set; }
         public String GetLogin() { if (login.Text == "Введите логин") return ""; else return login.Text; }
         public String GetPassword() { if (pass.Text == "Введите пароль") return ""; else return pass.Text; } 
         public String GetSurname() { if (textBox3.Text == "Введите фамилию") return ""; else return textBox3.Text; }
@@ -102,8 +102,7 @@ namespace Курсовой_проект_2
         {
             Form1 form1 = new Form1();
             form1.point2 = this.Location;
-            presenter.authorizationView = form1;
-            form1.presenter = presenter;
+            form1.Presenters = Presenters;
             form1.Show();
             this.Close();
         }
@@ -146,18 +145,15 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (presenter.ValidateString(GetLogin()) && presenter.ValidateString(GetPassword()) && presenter.ValidateString(GetName()) && presenter.ValidateString(GetSurname()))
+            if (Presenters.LoginPresenter.ValidateString(GetLogin()) && Presenters.LoginPresenter.ValidateString(GetPassword()) && Presenters.LoginPresenter.ValidateString(GetName()) && Presenters.LoginPresenter.ValidateString(GetSurname()))
             {
                 try
                 {
-                    if (presenter.UserRegistration())
+                    if (Presenters.LoginPresenter.UserRegistration())
                     {
-                        presenter.CreateNewUser();
+                        Presenters.LoginPresenter.CreateNewUser();
                         MainForm main = new MainForm();
-                        presenter.mainView = main;
-                        main.presenter = presenter;
-                        presenter.LoadСategories();
-                        presenter.LoadMonthlyReports();
+                        main.Presenters = Presenters;
                         main.Show();
                         this.Close();
                     }
@@ -170,6 +166,7 @@ namespace Курсовой_проект_2
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            Presenters.LoginPresenter.Views.RegistrationView = this;
             this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();

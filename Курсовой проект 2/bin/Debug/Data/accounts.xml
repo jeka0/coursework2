@@ -5,7 +5,7 @@
     <Password>12345</Password>
     <Surname>Латош</Surname>
     <Name>Евгений</Name>
-    <Money>1531.1699999999837</Money>
+    <Money>-44505.830000000016</Money>
   </User>
   <User>
     <Login>Pog</Login>
@@ -13,5 +13,26 @@
     <Surname>asd</Surname>
     <Name>asd</Name>
     <Money>-2151.32433</Money>
+  </User>
+  <User>
+    <Login>IO</Login>
+    <Password>78</Password>
+    <Surname>qwe</Surname>
+    <Name>asd</Name>
+    <Money>0</Money>
+  </User>
+  <User>
+    <Login>AAA</Login>
+    <Password>222</Password>
+    <Surname>qwe</Surname>
+    <Name>asd</Name>
+    <Money>0</Money>
+  </User>
+  <User>
+    <Login>pp</Login>
+    <Password>11</Password>
+    <Surname>qw</Surname>
+    <Name>a</Name>
+    <Money>-50</Money>
   </User>
 </ArrayOfUser>
