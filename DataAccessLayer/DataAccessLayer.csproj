@@ -44,12 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="IAuthorizationView.cs" />
-    <Compile Include="ILoginPresenter.cs" />
-    <Compile Include="IMainView.cs" />
-    <Compile Include="IModel.cs" />
-    <Compile Include="IMainPresenter.cs" />
-    <Compile Include="IRegistrationView.cs" />
+    <Compile Include="IViews\IAuthorizationView.cs" />
+    <Compile Include="IPresenters\ILoginPresenter.cs" />
+    <Compile Include="IViews\IMainView.cs" />
+    <Compile Include="IModels\IModel.cs" />
+    <Compile Include="IPresenters\IMainPresenter.cs" />
+    <Compile Include="IViews\IRegistrationView.cs" />
     <Compile Include="PresentersContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewsContainer.cs" />
