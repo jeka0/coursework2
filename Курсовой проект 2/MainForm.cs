@@ -119,9 +119,8 @@ namespace Курсовой_проект_2
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Presenters.MainPresenter.Views.Clean();
             Presenters.MainPresenter.Views.MainView = this;
-            Presenters.MainPresenter.Views.AuthorizationView = null;
-            Presenters.MainPresenter.Views.RegistrationView = null;
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();

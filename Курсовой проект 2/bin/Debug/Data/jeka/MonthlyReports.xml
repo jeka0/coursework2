@@ -79,40 +79,50 @@
     <TotalIncome>
       <Category>
         <Name>Работа</Name>
-        <Percent>48</Percent>
+        <Percent>45</Percent>
         <Amount>3000</Amount>
       </Category>
       <Category>
         <Name>Проекты</Name>
-        <Percent>40</Percent>
+        <Percent>37</Percent>
         <Amount>2500</Amount>
       </Category>
       <Category>
         <Name>Техника</Name>
-        <Percent>11</Percent>
+        <Percent>10</Percent>
         <Amount>700</Amount>
+      </Category>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>8</Percent>
+        <Amount>537</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
         <Name>Техника</Name>
-        <Percent>39</Percent>
+        <Percent>36</Percent>
         <Amount>-2000</Amount>
       </Category>
       <Category>
+        <Name>Продукты</Name>
+        <Percent>22</Percent>
+        <Amount>-1228.5</Amount>
+      </Category>
+      <Category>
         <Name>Подарок</Name>
-        <Percent>23</Percent>
+        <Percent>21</Percent>
         <Amount>-1200</Amount>
       </Category>
       <Category>
-        <Name>Продукты</Name>
-        <Percent>19</Percent>
-        <Amount>-997</Amount>
+        <Name>Жилье</Name>
+        <Percent>16</Percent>
+        <Amount>-900</Amount>
       </Category>
       <Category>
-        <Name>Жилье</Name>
-        <Percent>18</Percent>
-        <Amount>-900</Amount>
+        <Name>Общее</Name>
+        <Percent>4</Percent>
+        <Amount>-244</Amount>
       </Category>
       <Category>
         <Name>Транспорт</Name>
@@ -121,7 +131,7 @@
       </Category>
     </TotalExpenses>
     <Date>11.2021</Date>
-    <AmountTotalIncome>6200</AmountTotalIncome>
-    <AmountTotalExpenses>-5129.5</AmountTotalExpenses>
+    <AmountTotalIncome>6737</AmountTotalIncome>
+    <AmountTotalExpenses>-5605</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>
