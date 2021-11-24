@@ -69,6 +69,7 @@ namespace ServiceLayer
         public void SaveAccount()
         {
             Model.Save<List<User>>("Data/accounts.xml", Model.Users);
+            Model.CreateFolder("Data/" + Model.SelectedUser.Login);
             Model.Save<List<MonthlyReport>>("Data/" + Model.SelectedUser.Login + "/MonthlyReports.xml", Model.MonthlyReports);
             Model.Save<Elements>("Data/" + Model.SelectedUser.Login + "/Expenses.xml", Model.Expenses);
             Model.Save<Elements>("Data/" + Model.SelectedUser.Login + "/Income.xml", Model.Income);

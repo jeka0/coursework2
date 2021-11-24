@@ -50,7 +50,7 @@ namespace DataAccessLayer
         }
         public void CreateFolder(String folder)
         {
-            Directory.CreateDirectory(folder);
+            if(!Directory.Exists(folder)) Directory.CreateDirectory(folder);
         }
         public void DeleteFile(String file)
         {
