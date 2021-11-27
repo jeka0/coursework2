@@ -85,10 +85,12 @@ namespace Курсовой_проект_2
         private void pass_Enter(object sender, EventArgs e)
         {
             if (pass.Text == "Введите пароль") pass.Text = "";
+            pass.PasswordChar = '*';
         }
 
         private void pass_Leave(object sender, EventArgs e)
         {
+            pass.PasswordChar = '\0';
             if (pass.Text == "") pass.Text = "Введите пароль";
         }
 
