@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfMonthlyReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>10.2021</Date>
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>100</Percent>
+        <Amount>-2623</Amount>
+      </Category>
+    </TotalExpenses>
+    <Date>11.2021</Date>
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>-2623</AmountTotalExpenses>
+  </MonthlyReport>
+</ArrayOfMonthlyReport>

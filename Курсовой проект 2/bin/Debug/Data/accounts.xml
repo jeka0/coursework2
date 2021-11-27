@@ -14,4 +14,11 @@
     <Name>Евгений</Name>
     <Money>1528</Money>
   </User>
+  <User>
+    <Login>IO</Login>
+    <Password>123</Password>
+    <Surname>qwe</Surname>
+    <Name>asd</Name>
+    <Money>-2623</Money>
+  </User>
 </ArrayOfUser>
