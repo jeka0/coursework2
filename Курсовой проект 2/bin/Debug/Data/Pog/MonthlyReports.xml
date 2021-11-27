@@ -74,29 +74,29 @@
     <TotalIncome>
       <Category>
         <Name>Общее</Name>
-        <Percent>100</Percent>
-        <Amount>1104.12567</Amount>
+        <Percent>60</Percent>
+        <Amount>1227.12567</Amount>
       </Category>
       <Category>
         <Name>q</Name>
-        <Percent>0</Percent>
-        <Amount>5</Amount>
+        <Percent>40</Percent>
+        <Amount>805</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
         <Name>Общее</Name>
-        <Percent>69</Percent>
-        <Amount>-2260.45</Amount>
+        <Percent>72</Percent>
+        <Amount>-2586.45</Amount>
       </Category>
       <Category>
         <Name>f</Name>
-        <Percent>31</Percent>
+        <Percent>28</Percent>
         <Amount>-1000</Amount>
       </Category>
     </TotalExpenses>
     <Date>11.2021</Date>
-    <AmountTotalIncome>1109.12567</AmountTotalIncome>
-    <AmountTotalExpenses>-3260.45</AmountTotalExpenses>
+    <AmountTotalIncome>2032.12567</AmountTotalIncome>
+    <AmountTotalExpenses>-3586.45</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

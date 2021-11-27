@@ -14,7 +14,7 @@ namespace Курсовой_проект_2
     public partial class Form1 : Form, IAuthorizationView
     {
         bool clu11 = true, clu22 = true;
-        public IPresenter presenter { get; set; }
+        public PresentersContainer Presenters { get; set; }
         public String GetLogin() { if (login.Text == "Введите логин") return ""; else return login.Text; }
         public String GetPassword() { if (pass.Text == "Введите пароль") return ""; else return pass.Text; }
         public Point point2 = new Point(550,300);
@@ -25,6 +25,8 @@ namespace Курсовой_проект_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Presenters.LoginPresenter.Views.Clean();
+            Presenters.LoginPresenter.Views.AuthorizationView = this;
             this.Location = point2;
             Clue11.Hide();
             Clue22.Hide();
@@ -105,8 +107,7 @@ namespace Курсовой_проект_2
         {
             Form2 form2 =  new Form2();
             form2.point2 = this.Location;
-            presenter.registrationView = form2;
-            form2.presenter = presenter;
+            form2.Presenters = Presenters;
             form2.Show();
             this.Close();
         }
@@ -117,17 +118,14 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error0.Hide();
             Error0.Hide();
-            if (presenter.ValidateString(GetLogin()) && presenter.ValidateString(GetPassword()))
+            if (Presenters.LoginPresenter.ValidateString(GetLogin()) && Presenters.LoginPresenter.ValidateString(GetPassword()))
             {
                 try 
                 {
-                    if (presenter.UserAuthorization())
+                    if (Presenters.LoginPresenter.UserAuthorization())
                     {
                         MainForm main = new MainForm();
-                        presenter.mainView = main;
-                        main.presenter = presenter;
-                        presenter.LoadСategories();
-                        presenter.LoadMonthlyReports();
+                        main.Presenters = Presenters;
                         main.Show();
                         this.Close();
                     }

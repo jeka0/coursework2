@@ -14,7 +14,7 @@ namespace Курсовой_проект_2
 {
     public partial class MainForm : Form, IMainView
     {
-        public IPresenter presenter { get; set; }
+        public PresentersContainer Presenters { get; set; }
         public void SetLogin(String value) { login0.Text = value; } 
         public void SetSurname(String value) { Surname0.Text = value; }
         public void SetName(String value) { name0.Text = value; }
@@ -119,27 +119,31 @@ namespace Курсовой_проект_2
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Presenters.MainPresenter.Views.Clean();
+            Presenters.MainPresenter.Views.MainView = this;
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
+            Presenters.MainPresenter.LoadСategories();
+            Presenters.MainPresenter.LoadMonthlyReports();
             DateTime minDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1), maxDate = minDate.AddDays(DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month) - 1);
             Date.MinDate = minDate; Date.MaxDate = maxDate; Date2.MinDate = minDate; Date2.MaxDate = maxDate;
-            presenter.UpdateUserData();
-            presenter.LoadElements();
-            presenter.UpdateСategories();
+            Presenters.MainPresenter.UpdateUserData();
+            Presenters.MainPresenter.LoadElements();
+            Presenters.MainPresenter.UpdateСategories();
             tabControl1.SelectTab(1);
-            presenter.LoadElements();
-            presenter.UpdateСategories();
+            Presenters.MainPresenter.LoadElements();
+            Presenters.MainPresenter.UpdateСategories();
             tabControl1.SelectTab(2);
-            presenter.UpdateHistory();
+            Presenters.MainPresenter.UpdateHistory();
             tabControl1.SelectTab(3);
-            presenter.UpdateCharts();
+            Presenters.MainPresenter.UpdateCharts();
             tabControl1.SelectTab(0);
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
-            if(!Deleting)presenter.SaveAccount();
+            if(!Deleting) Presenters.MainPresenter.SaveAccount();
         }
 
         private void Expenses_Click(object sender, EventArgs e)
@@ -172,7 +176,7 @@ namespace Курсовой_проект_2
             Error2.Hide();
             Error3.Hide();
             tabControl1.SelectTab(3);
-            presenter.UpdateCharts();
+            Presenters.MainPresenter.UpdateCharts();
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -180,11 +184,11 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            if (presenter.ValidateString(GetAmount()) && presenter.ValidateAmount())
+            if (Presenters.MainPresenter.ValidateString(GetAmount()) && Presenters.MainPresenter.ValidateAmount())
             {
                 NoExpenses.Hide();
-                presenter.UpdateElements();
-                presenter.UpdateSum();
+                Presenters.MainPresenter.UpdateElements();
+                Presenters.MainPresenter.UpdateSum();
             }
             else Error3.Show();
         }
@@ -194,14 +198,14 @@ namespace Курсовой_проект_2
             Error3.Hide();
             Error1.Hide();
             Error2.Hide();
-            if (presenter.ValidateString(GetNewCategory()))
+            if (Presenters.MainPresenter.ValidateString(GetNewCategory()))
             {
-                if (!presenter.CheckCategories())
+                if (!Presenters.MainPresenter.CheckCategories())
                 {
                     Error1.Hide();
                     Error2.Hide();
-                    presenter.AddCategory();
-                    presenter.UpdateСategories();
+                    Presenters.MainPresenter.AddCategory();
+                    Presenters.MainPresenter.UpdateСategories();
                 }
                 else Error1.Show();
             }
@@ -262,19 +266,18 @@ namespace Курсовой_проект_2
 
         private void UpdateHistoryEvent(object sender, EventArgs e)
         {
-            presenter.UpdateHistory();
+            Presenters.MainPresenter.UpdateHistory();
         }
 
         private void UpdateChartsEvent(object sender, EventArgs e)
         {
-            presenter.UpdateCharts();
+            Presenters.MainPresenter.UpdateCharts();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            presenter.authorizationView = form1;
-            form1.presenter = presenter;
+            form1.Presenters = Presenters;
             form1.Show();
             this.Close();
         }
@@ -316,7 +319,7 @@ namespace Курсовой_проект_2
             confirmationForm.ShowDialog();
             if (Deleting)
             {
-                presenter.DeleteAccount();
+                Presenters.MainPresenter.DeleteAccount();
                 buttonExit_Click(sender, e);
             }
         }

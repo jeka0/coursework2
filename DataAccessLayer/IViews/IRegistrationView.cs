@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-     public interface IAuthorizationView
-     {
-        IPresenter presenter { get; set; }
+    public interface IRegistrationView
+    {
+        PresentersContainer Presenters { get; set; }
         String GetLogin();
         String GetPassword();
-     }
+        String GetSurname();
+        String GetName();
+    }
 }

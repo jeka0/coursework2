@@ -24,7 +24,7 @@ namespace BusinessLayer
         }
         public String ReturnNonEmptyString(String str)
         {
-            if (String.IsNullOrEmpty(str)) return "Unknown"; else return str;
+            if (ValidateIsNullOrEmpty(str)) return "Unknown"; else return str;
         }
         static public bool ValidateAmount(String value)
         {

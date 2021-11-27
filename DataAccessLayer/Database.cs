@@ -11,16 +11,22 @@ namespace DataAccessLayer
 {
     public class Database : IModel
     {
-        List<User> users;
-        public List<User> GetUsers() { return users; } 
+        public Elements Expenses { get; set; }
+        public Elements Income { get; set; }
+        public User SelectedUser { get; set; }
+        public List<User> Users { get; set; }
+        public MonthlyReport SelectedMonthlyReport { get; set; }
+        public List<MonthlyReport> MonthlyReports { get; set; }
+        public static Database Db { get; set; }
         public Database(String file)
         {
+            Db = this;
             try
             {
-                users = Read<List<User>>(file);
-                if(users==null) users = new List<User>();
+                Users = Read<List<User>>(file);
+                if(Users==null) Users = new List<User>();
             }
-            catch { users = new List<User>(); Save<List<User>>(file, users); }
+            catch { Users = new List<User>(); Save<List<User>>(file, Users); }
         }
         public void Save<T>(String file, T item)
         {
@@ -44,7 +50,7 @@ namespace DataAccessLayer
         }
         public void CreateFolder(String folder)
         {
-            Directory.CreateDirectory(folder);
+            if(!Directory.Exists(folder)) Directory.CreateDirectory(folder);
         }
         public void DeleteFile(String file)
         {

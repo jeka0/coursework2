@@ -2,80 +2,171 @@
 <Elements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <categories>
     <string>Общее</string>
-    <string>Что</string>
-    <string>I</string>
-    <string>AAAA</string>
+    <string>Техника</string>
+    <string>Проекты</string>
+    <string>Работа</string>
   </categories>
   <items>
     <Item>
-      <Date>16.11.2021</Date>
-      <Time>11:17:37</Time>
-      <Category>Что</Category>
-      <Comment>-</Comment>
-      <Amount>100</Amount>
+      <Date>15.09.2021</Date>
+      <Time>21:34:09</Time>
+      <Category>Техника</Category>
+      <Comment>Продал музыкальную колонку</Comment>
+      <Amount>300</Amount>
     </Item>
     <Item>
-      <Date>16.11.2021</Date>
-      <Time>11:41:17</Time>
-      <Category>Что</Category>
+      <Date>17.09.2021</Date>
+      <Time>16:34:09</Time>
+      <Category>Проекты</Category>
+      <Comment>Закончил заказ</Comment>
+      <Amount>1500</Amount>
+    </Item>
+    <Item>
+      <Date>17.09.2021</Date>
+      <Time>16:34:09</Time>
+      <Category>Проекты</Category>
+      <Comment>Закончил заказ</Comment>
+      <Amount>3000</Amount>
+    </Item>
+    <Item>
+      <Date>15.10.2021</Date>
+      <Time>22:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>700</Amount>
+    </Item>
+    <Item>
+      <Date>15.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>600</Amount>
+    </Item>
+    <Item>
+      <Date>20.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
       <Comment>-</Comment>
       <Amount>1000</Amount>
     </Item>
     <Item>
-      <Date>16.11.2021</Date>
-      <Time>11:41:17</Time>
+      <Date>20.10.2021</Date>
+      <Time>23:12:58</Time>
       <Category>Общее</Category>
       <Comment>-</Comment>
-      <Amount>10</Amount>
+      <Amount>540</Amount>
+    </Item>
+    <Item>
+      <Date>20.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>890</Amount>
+    </Item>
+    <Item>
+      <Date>23.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>864</Amount>
+    </Item>
+    <Item>
+      <Date>25.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>456</Amount>
+    </Item>
+    <Item>
+      <Date>27.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>230</Amount>
+    </Item>
+    <Item>
+      <Date>29.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>400</Amount>
+    </Item>
+    <Item>
+      <Date>31.10.2021</Date>
+      <Time>23:12:58</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>500</Amount>
+    </Item>
+    <Item>
+      <Date>22.11.2021</Date>
+      <Time>22:19:47</Time>
+      <Category>Работа</Category>
+      <Comment>-</Comment>
+      <Amount>3000</Amount>
+    </Item>
+    <Item>
+      <Date>09.11.2021</Date>
+      <Time>22:19:47</Time>
+      <Category>Проекты</Category>
+      <Comment>-</Comment>
+      <Amount>300</Amount>
+    </Item>
+    <Item>
+      <Date>11.11.2021</Date>
+      <Time>22:19:47</Time>
+      <Category>Проекты</Category>
+      <Comment>-</Comment>
+      <Amount>300</Amount>
+    </Item>
+    <Item>
+      <Date>13.11.2021</Date>
+      <Time>17:19:47</Time>
+      <Category>Проекты</Category>
+      <Comment>-</Comment>
+      <Amount>400</Amount>
     </Item>
     <Item>
       <Date>16.11.2021</Date>
-      <Time>11:41:17</Time>
+      <Time>13:19:47</Time>
+      <Category>Техника</Category>
+      <Comment>-</Comment>
+      <Amount>700</Amount>
+    </Item>
+    <Item>
+      <Date>18.11.2021</Date>
+      <Time>17:19:47</Time>
+      <Category>Проекты</Category>
+      <Comment>-</Comment>
+      <Amount>1500</Amount>
+    </Item>
+    <Item>
+      <Date>23.11.2021</Date>
+      <Time>12:41:32</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>432</Amount>
+    </Item>
+    <Item>
+      <Date>23.11.2021</Date>
+      <Time>14:41:32</Time>
       <Category>Общее</Category>
       <Comment>-</Comment>
       <Amount>50</Amount>
     </Item>
     <Item>
-      <Date>16.11.2021</Date>
-      <Time>11:41:17</Time>
-      <Category>I</Category>
-      <Comment>-</Comment>
-      <Amount>500</Amount>
-    </Item>
-    <Item>
-      <Date>16.11.2021</Date>
-      <Time>21:38:18</Time>
-      <Category>Что</Category>
-      <Comment>-</Comment>
-      <Amount>40</Amount>
-    </Item>
-    <Item>
-      <Date>16.11.2021</Date>
-      <Time>21:49:25</Time>
-      <Category>I</Category>
-      <Comment>-</Comment>
-      <Amount>100</Amount>
-    </Item>
-    <Item>
-      <Date>17.11.2021</Date>
-      <Time>21:16:50</Time>
-      <Category>AAAA</Category>
-      <Comment>-</Comment>
-      <Amount>78000</Amount>
-    </Item>
-    <Item>
-      <Date>17.11.2021</Date>
-      <Time>21:16:50</Time>
+      <Date>23.11.2021</Date>
+      <Time>16:41:32</Time>
       <Category>Общее</Category>
       <Comment>-</Comment>
-      <Amount>60000</Amount>
+      <Amount>21</Amount>
     </Item>
     <Item>
-      <Date>17.11.2021</Date>
-      <Time>21:34:35</Time>
+      <Date>23.11.2021</Date>
+      <Time>18:41:32</Time>
       <Category>Общее</Category>
       <Comment>-</Comment>
-      <Amount>5</Amount>
+      <Amount>34</Amount>
     </Item>
   </items>
 </Elements>

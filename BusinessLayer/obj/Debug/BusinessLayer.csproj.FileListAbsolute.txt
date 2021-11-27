@@ -1,6 +1,6 @@
 D:\Курсовой проект 2\BusinessLayer\bin\Debug\BusinessLayer.dll
 D:\Курсовой проект 2\BusinessLayer\bin\Debug\BusinessLayer.pdb
-D:\Курсовой проект 2\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
 D:\Курсовой проект 2\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 D:\Курсовой проект 2\BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\Курсовой проект 2\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Курсовой проект 2\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache

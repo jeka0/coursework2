@@ -7,14 +7,9 @@ using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
-    public interface IPresenter
+    public interface IMainPresenter
     {
-        IMainView mainView { get; set; }
-        IAuthorizationView authorizationView { get; set; }
-        IRegistrationView registrationView { get; set; }
-        void CreateNewUser();
-        bool UserAuthorization();
-        bool UserRegistration();
+        ViewsContainer Views { get; set; }
         void UpdateUserData();
         void UpdateСategories();
         void LoadСategories();
