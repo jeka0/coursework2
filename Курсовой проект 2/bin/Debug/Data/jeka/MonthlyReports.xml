@@ -134,4 +134,11 @@
     <AmountTotalIncome>6737</AmountTotalIncome>
     <AmountTotalExpenses>-5605</AmountTotalExpenses>
   </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>12.2021</Date>
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
 </ArrayOfMonthlyReport>

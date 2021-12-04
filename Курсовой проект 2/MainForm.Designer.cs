@@ -191,11 +191,11 @@ namespace Курсовой_проект_2
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.labelAccountBalance = new System.Windows.Forms.Label();
-            this.labelSum = new System.Windows.Forms.Label();
             this.Border = new System.Windows.Forms.Panel();
             this.Exit = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.textSum = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1857,12 +1857,12 @@ namespace Курсовой_проект_2
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.textSum);
             this.panel3.Controls.Add(this.buttonDeleteAccount);
             this.panel3.Controls.Add(this.buttonExit);
             this.panel3.Controls.Add(this.label27);
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.labelAccountBalance);
-            this.panel3.Controls.Add(this.labelSum);
             this.panel3.Controls.Add(this.login0);
             this.panel3.Controls.Add(this.name0);
             this.panel3.Controls.Add(this.Surname0);
@@ -1934,18 +1934,6 @@ namespace Курсовой_проект_2
             this.labelAccountBalance.Text = "Остаток на счете:";
             this.labelAccountBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelSum
-            // 
-            this.labelSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSum.ForeColor = System.Drawing.Color.White;
-            this.labelSum.Location = new System.Drawing.Point(3, 251);
-            this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(168, 29);
-            this.labelSum.TabIndex = 30;
-            this.labelSum.Text = "Sum";
-            this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Border
             // 
             this.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -1997,6 +1985,20 @@ namespace Курсовой_проект_2
             this.label43.Size = new System.Drawing.Size(155, 29);
             this.label43.TabIndex = 31;
             this.label43.Text = "Навигация:";
+            // 
+            // textSum
+            // 
+            this.textSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.textSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textSum.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textSum.Location = new System.Drawing.Point(2, 254);
+            this.textSum.Name = "textSum";
+            this.textSum.ReadOnly = true;
+            this.textSum.Size = new System.Drawing.Size(168, 31);
+            this.textSum.TabIndex = 32;
+            this.textSum.Text = "Sum";
+            this.textSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
@@ -2054,6 +2056,7 @@ namespace Курсовой_проект_2
             ((System.ComponentModel.ISupportInitialize)(this.CategoryChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralSchedule)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.Border.ResumeLayout(false);
             this.Border.PerformLayout();
             this.ResumeLayout(false);
@@ -2124,7 +2127,6 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label Error3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.Label labelAccountBalance;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
@@ -2174,11 +2176,6 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -2195,5 +2192,11 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Button buttonDeleteAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.TextBox textSum;
     }
 }
