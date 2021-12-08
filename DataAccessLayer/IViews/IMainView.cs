@@ -16,6 +16,7 @@ namespace DataAccessLayer
         String GetCategory();
         String GetComment();
         void SetSum(String value);
+        void SetAmountPerDay(String value);
         String GetAmount();
         void SetLogin(String value);
         void SetSurname(String value);
