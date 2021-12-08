@@ -152,9 +152,15 @@
         <Amount>15</Amount>
       </Category>
     </TotalIncome>
-    <TotalExpenses />
+    <TotalExpenses>
+      <Category>
+        <Name>Общее</Name>
+        <Percent>100</Percent>
+        <Amount>-50</Amount>
+      </Category>
+    </TotalExpenses>
     <Date>12.2021</Date>
     <AmountTotalIncome>90</AmountTotalIncome>
-    <AmountTotalExpenses>0</AmountTotalExpenses>
+    <AmountTotalExpenses>-50</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>

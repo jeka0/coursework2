@@ -57,6 +57,7 @@ namespace ServiceLayer
             SupportingWork.mainView = Views.MainView;
             SupportingWork.FillInMonthlyReport(Model.MonthlyReports);
             SupportingWork.FillInCategoryReport(Model.SelectedMonthlyReport.GetTotalList(Views.MainView.GetReportType()));
+            Views.MainView.SetMonthlyAmount(Model.SelectedMonthlyReport.TotalAmountToString());
         }
         public void UpdateHistory()
         {

@@ -42,6 +42,10 @@ namespace BusinessLayer
             if(indx == 0) foreach (var item in TotalIncome) item.CalculatePercent(AmountTotalIncome);
             else foreach (var item in TotalExpenses) item.CalculatePercent(AmountTotalExpenses);
         }
+        public String TotalAmountToString()
+        {
+            return AmountToString(AmountTotalIncome + AmountTotalExpenses);
+        }
         public double GetTotalAmount(int index) { if (index == 0) return AmountTotalIncome; else return AmountTotalExpenses; }
         public List<Category> GetTotalList(int index) { if (index == 0) return TotalIncome; else return TotalExpenses; }
         public static MonthlyReport CreateNew() { return new MonthlyReport() { Date = month.ToString("00") + '.' + year.ToString() }; }

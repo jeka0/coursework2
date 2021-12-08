@@ -198,6 +198,8 @@ namespace Курсовой_проект_2
             this.label43 = new System.Windows.Forms.Label();
             this.textBoxAmountPerDay = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.textBoxMonthlyAmount = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1360,6 +1362,8 @@ namespace Курсовой_проект_2
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.tabPage4.Controls.Add(this.label45);
+            this.tabPage4.Controls.Add(this.textBoxMonthlyAmount);
             this.tabPage4.Controls.Add(this.NoCategories);
             this.tabPage4.Controls.Add(this.label42);
             this.tabPage4.Controls.Add(this.panel8);
@@ -1395,7 +1399,7 @@ namespace Курсовой_проект_2
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(480, 98);
+            this.label42.Location = new System.Drawing.Point(480, 151);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(282, 20);
             this.label42.TabIndex = 39;
@@ -1405,7 +1409,7 @@ namespace Курсовой_проект_2
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.dataGridViewReport2);
-            this.panel8.Location = new System.Drawing.Point(410, 112);
+            this.panel8.Location = new System.Drawing.Point(410, 165);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(403, 183);
             this.panel8.TabIndex = 38;
@@ -1503,7 +1507,7 @@ namespace Курсовой_проект_2
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label41.ForeColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(496, 346);
+            this.label41.Location = new System.Drawing.Point(496, 374);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(248, 20);
             this.label41.TabIndex = 37;
@@ -1513,7 +1517,7 @@ namespace Курсовой_проект_2
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.dataGridViewReport1);
-            this.panel7.Location = new System.Drawing.Point(410, 360);
+            this.panel7.Location = new System.Drawing.Point(410, 388);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(403, 183);
             this.panel7.TabIndex = 36;
@@ -2029,6 +2033,31 @@ namespace Курсовой_проект_2
             this.label44.Text = "Общая сумма по виду записи:";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label45
+            // 
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(465, 91);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(133, 43);
+            this.label45.TabIndex = 42;
+            this.label45.Text = "Общая сумма за месяц:";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxMonthlyAmount
+            // 
+            this.textBoxMonthlyAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.textBoxMonthlyAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMonthlyAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxMonthlyAmount.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxMonthlyAmount.Location = new System.Drawing.Point(604, 96);
+            this.textBoxMonthlyAmount.Name = "textBoxMonthlyAmount";
+            this.textBoxMonthlyAmount.ReadOnly = true;
+            this.textBoxMonthlyAmount.Size = new System.Drawing.Size(168, 31);
+            this.textBoxMonthlyAmount.TabIndex = 41;
+            this.textBoxMonthlyAmount.Text = "Sum";
+            this.textBoxMonthlyAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2229,5 +2258,7 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.TextBox textSum;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox textBoxAmountPerDay;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox textBoxMonthlyAmount;
     }
 }
