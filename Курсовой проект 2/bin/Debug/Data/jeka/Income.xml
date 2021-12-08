@@ -168,5 +168,26 @@
       <Comment>-</Comment>
       <Amount>34</Amount>
     </Item>
+    <Item>
+      <Date>07.12.2021</Date>
+      <Time>23:01:05</Time>
+      <Category>Общее</Category>
+      <Comment>-</Comment>
+      <Amount>15</Amount>
+    </Item>
+    <Item>
+      <Date>07.12.2021</Date>
+      <Time>23:01:05</Time>
+      <Category>Проекты</Category>
+      <Comment>-</Comment>
+      <Amount>30</Amount>
+    </Item>
+    <Item>
+      <Date>07.12.2021</Date>
+      <Time>23:01:05</Time>
+      <Category>Техника</Category>
+      <Comment>-</Comment>
+      <Amount>45</Amount>
+    </Item>
   </items>
 </Elements>

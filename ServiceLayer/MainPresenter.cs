@@ -68,6 +68,7 @@ namespace ServiceLayer
                 if (items.Count == 0) Views.MainView.GetLabel().Show(); else Views.MainView.GetLabel().Hide();
                 items.Sort(IdentifyComparison());
                 foreach (Item item in items) AddNewElement(item);
+                Views.MainView.SetAmountPerDay(Model.SelectedUser.AmountToString(items.Sum(item => item.Amount)));
             }
         }
         public void LoadElements()

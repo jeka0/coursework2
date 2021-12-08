@@ -186,6 +186,7 @@ namespace Курсовой_проект_2
             this.Error3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textSum = new System.Windows.Forms.TextBox();
             this.buttonDeleteAccount = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -195,7 +196,8 @@ namespace Курсовой_проект_2
             this.Exit = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textSum = new System.Windows.Forms.TextBox();
+            this.textBoxAmountPerDay = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1004,6 +1006,8 @@ namespace Курсовой_проект_2
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.textBoxAmountPerDay);
             this.tabPage3.Controls.Add(this.buttonRefresh);
             this.tabPage3.Controls.Add(this.label33);
             this.tabPage3.Controls.Add(this.label36);
@@ -1871,6 +1875,20 @@ namespace Курсовой_проект_2
             this.panel3.Size = new System.Drawing.Size(176, 437);
             this.panel3.TabIndex = 29;
             // 
+            // textSum
+            // 
+            this.textSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.textSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textSum.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textSum.Location = new System.Drawing.Point(2, 254);
+            this.textSum.Name = "textSum";
+            this.textSum.ReadOnly = true;
+            this.textSum.Size = new System.Drawing.Size(168, 31);
+            this.textSum.TabIndex = 32;
+            this.textSum.Text = "Sum";
+            this.textSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // buttonDeleteAccount
             // 
             this.buttonDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
@@ -1986,19 +2004,30 @@ namespace Курсовой_проект_2
             this.label43.TabIndex = 31;
             this.label43.Text = "Навигация:";
             // 
-            // textSum
+            // textBoxAmountPerDay
             // 
-            this.textSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.textSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textSum.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textSum.Location = new System.Drawing.Point(2, 254);
-            this.textSum.Name = "textSum";
-            this.textSum.ReadOnly = true;
-            this.textSum.Size = new System.Drawing.Size(168, 31);
-            this.textSum.TabIndex = 32;
-            this.textSum.Text = "Sum";
-            this.textSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAmountPerDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.textBoxAmountPerDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAmountPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxAmountPerDay.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxAmountPerDay.Location = new System.Drawing.Point(274, 94);
+            this.textBoxAmountPerDay.Name = "textBoxAmountPerDay";
+            this.textBoxAmountPerDay.ReadOnly = true;
+            this.textBoxAmountPerDay.Size = new System.Drawing.Size(168, 31);
+            this.textBoxAmountPerDay.TabIndex = 33;
+            this.textBoxAmountPerDay.Text = "Sum";
+            this.textBoxAmountPerDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label44
+            // 
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(278, 46);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(158, 43);
+            this.label44.TabIndex = 34;
+            this.label44.Text = "Общая сумма по виду записи:";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -2198,5 +2227,7 @@ namespace Курсовой_проект_2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.TextBox textSum;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox textBoxAmountPerDay;
     }
 }

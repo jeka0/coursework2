@@ -19,6 +19,7 @@ namespace Курсовой_проект_2
         public void SetSurname(String value) { Surname0.Text = value; }
         public void SetName(String value) { name0.Text = value; }
         public void SetSum(String value) { textSum.Text = value; }
+        public void SetAmountPerDay(String value) { textBoxAmountPerDay.Text = value; }
         public int GetIndx() { return tabControl1.SelectedIndex; }
         public Chart GetGeneralSchedule() { return GeneralSchedule; }
         public Chart GetCategoryChart() { return CategoryChart; }
