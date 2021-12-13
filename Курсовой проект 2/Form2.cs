@@ -154,6 +154,8 @@ namespace Курсовой_проект_2
                         Presenters.LoginPresenter.CreateNewUser();
                         MainForm main = new MainForm();
                         main.Presenters = Presenters;
+                        Presenters.MainPresenter.LoadСategories();
+                        Presenters.MainPresenter.LoadMonthlyReports();
                         main.Show();
                         this.Close();
                     }
