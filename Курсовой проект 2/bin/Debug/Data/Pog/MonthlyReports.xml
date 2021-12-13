@@ -99,4 +99,11 @@
     <AmountTotalIncome>2032.12567</AmountTotalIncome>
     <AmountTotalExpenses>-3586.45</AmountTotalExpenses>
   </MonthlyReport>
+  <MonthlyReport>
+    <TotalIncome />
+    <TotalExpenses />
+    <Date>12.2021</Date>
+    <AmountTotalIncome>0</AmountTotalIncome>
+    <AmountTotalExpenses>0</AmountTotalExpenses>
+  </MonthlyReport>
 </ArrayOfMonthlyReport>

@@ -20,6 +20,7 @@ namespace Курсовой_проект_2
         public void SetName(String value) { name0.Text = value; }
         public void SetSum(String value) { textSum.Text = value; }
         public void SetAmountPerDay(String value) { textBoxAmountPerDay.Text = value; }
+        public void SetMonthlyAmount(String value) { textBoxMonthlyAmount.Text = value; }
         public int GetIndx() { return tabControl1.SelectedIndex; }
         public Chart GetGeneralSchedule() { return GeneralSchedule; }
         public Chart GetCategoryChart() { return CategoryChart; }
@@ -125,8 +126,6 @@ namespace Курсовой_проект_2
             Error1.Hide();
             Error2.Hide();
             Error3.Hide();
-            Presenters.MainPresenter.LoadСategories();
-            Presenters.MainPresenter.LoadMonthlyReports();
             DateTime minDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1), maxDate = minDate.AddDays(DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month) - 1);
             Date.MinDate = minDate; Date.MaxDate = maxDate; Date2.MinDate = minDate; Date2.MaxDate = maxDate;
             Presenters.MainPresenter.UpdateUserData();
