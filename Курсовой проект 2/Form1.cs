@@ -126,6 +126,8 @@ namespace Курсовой_проект_2
                     {
                         MainForm main = new MainForm();
                         main.Presenters = Presenters;
+                        Presenters.MainPresenter.LoadСategories();
+                        Presenters.MainPresenter.LoadMonthlyReports();
                         main.Show();
                         this.Close();
                     }
