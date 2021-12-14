@@ -29,7 +29,7 @@ namespace ServiceLayer
             if (Model.MonthlyReports == null) Model.MonthlyReports = new List<MonthlyReport>();
             int count = Model.MonthlyReports.Count;
             if (count != 0) { if (Model.MonthlyReports[count - 1].Date != MonthlyReport.GetDate()) Model.MonthlyReports.Add(Model.SelectedMonthlyReport = MonthlyReport.CreateNew()); else Model.SelectedMonthlyReport = Model.MonthlyReports[count - 1]; }
-            else { Model.MonthlyReports.Add(MonthlyReport.CreatePrevious()); Model.MonthlyReports.Add(Model.SelectedMonthlyReport = MonthlyReport.CreateNew()); }
+            else Model.MonthlyReports.Add(Model.SelectedMonthlyReport = MonthlyReport.CreateNew()); 
         }
         public Elements IdentifyElements()
         {

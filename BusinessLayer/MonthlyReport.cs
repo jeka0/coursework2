@@ -49,7 +49,6 @@ namespace BusinessLayer
         public double GetTotalAmount(int index) { if (index == 0) return AmountTotalIncome; else return AmountTotalExpenses; }
         public List<Category> GetTotalList(int index) { if (index == 0) return TotalIncome; else return TotalExpenses; }
         public static MonthlyReport CreateNew() { return new MonthlyReport() { Date = month.ToString("00") + '.' + year.ToString() }; }
-        public static MonthlyReport CreatePrevious() { return new MonthlyReport() { Date = (month - 1).ToString("00") + '.' + year.ToString() }; }
         public static String GetDate() { return month.ToString("00") + '.' + year.ToString(); }
     }   
 }

@@ -137,30 +137,40 @@
   <MonthlyReport>
     <TotalIncome>
       <Category>
-        <Name>Техника</Name>
-        <Percent>50</Percent>
-        <Amount>45</Amount>
-      </Category>
-      <Category>
         <Name>Проекты</Name>
-        <Percent>33</Percent>
-        <Amount>30</Amount>
+        <Percent>55</Percent>
+        <Amount>3030</Amount>
       </Category>
       <Category>
         <Name>Общее</Name>
-        <Percent>17</Percent>
-        <Amount>15</Amount>
+        <Percent>27</Percent>
+        <Amount>1515</Amount>
+      </Category>
+      <Category>
+        <Name>Техника</Name>
+        <Percent>18</Percent>
+        <Amount>1012</Amount>
       </Category>
     </TotalIncome>
     <TotalExpenses>
       <Category>
+        <Name>Техника</Name>
+        <Percent>48</Percent>
+        <Amount>-2625</Amount>
+      </Category>
+      <Category>
+        <Name>Жилье</Name>
+        <Percent>37</Percent>
+        <Amount>-2000</Amount>
+      </Category>
+      <Category>
         <Name>Общее</Name>
-        <Percent>100</Percent>
-        <Amount>-50</Amount>
+        <Percent>15</Percent>
+        <Amount>-800</Amount>
       </Category>
     </TotalExpenses>
     <Date>12.2021</Date>
-    <AmountTotalIncome>90</AmountTotalIncome>
-    <AmountTotalExpenses>-50</AmountTotalExpenses>
+    <AmountTotalIncome>5557</AmountTotalIncome>
+    <AmountTotalExpenses>-5425</AmountTotalExpenses>
   </MonthlyReport>
 </ArrayOfMonthlyReport>
