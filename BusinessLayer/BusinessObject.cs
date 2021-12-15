@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class BusinessObject
+    public abstract class BusinessObject
     {
         public String AmountToString(double value)
         {
